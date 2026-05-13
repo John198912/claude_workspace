@@ -22,5 +22,6 @@ _暂无条目_
 | 批次ID | 母稿 | 切片数 | 平台 | 日期 |
 |--------|------|--------|------|------|
 | 20260307-001 | 2026-03-02-shiye-zhihou...md | 6 | 小红书×4, 抖音×1, 知乎×1 | 2026-03-07 |
+| ai-do-everything-bilibili | 2026-05-08-ai-do-everything-wechat.md | 1 | B站脚本×1 | 2026-05-08 |
 
 详见 `content/slices/{batch-id}/_manifest.md`
