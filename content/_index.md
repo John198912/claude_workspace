@@ -1,6 +1,6 @@
 # 内容库索引 · Content Index
 
-> 更新时间：2026-05-08
+> 更新时间：2026-05-16
 
 ## 草稿（drafts）
 
@@ -8,7 +8,8 @@
 |------|------|------|------|---------|
 | 2026-03-02-shiye-zhihou-wo-cai-kaishi-zhengzheng-gongzuo.md | 失业之后，我才开始真正工作 | 2026-03-02 | 草稿 | — |
 | 2026-05-08-ai-do-everything-framework.md | 框架设计·AI能做一切 | 2026-05-08 | 框架 | create-20260508 |
-| 2026-05-08-ai-do-everything-wechat.md | AI能做一切，但你只能"是" | 2026-05-08 | 初稿 | create-20260508 |
+| 2026-05-08-ai-do-everything-wechat.md | AI能做一切，但你只能"是" | 2026-05-08 | 终稿 V3.0 | create-20260508 |
+| 2026-05-16-ai-era-enough-framework.md | 框架设计·AI时代的"够了" | 2026-05-16 | 框架 | create-20260516 |
 
 ## 已发布（published）
 
