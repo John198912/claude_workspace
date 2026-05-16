@@ -1,0 +1,9 @@
+# Claude Code local config
+.claude/
+
+# Logs and audit trail
+data/logs/
+data/audit-log.jsonl
+
+# Windows artifacts
+nul

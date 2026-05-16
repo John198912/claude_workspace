@@ -1,0 +1,585 @@
+{
+  "_meta": {
+    "version": "1.1",
+    "last_updated": "2026-03-02T23:02:48+08:00",
+    "total_topics": 10,
+    "description": "选题池。所有综合评分 ≥ 6 的候选选题存档于此。"
+  },
+
+  "topics": [
+
+    {
+      "topic_id": "topic-20260302-001",
+      "source": "knowledge-topic",
+      "source_note": "kb-20260302-neisheng-waiwang-2",
+      "mining_date": "2026-03-02",
+      "status": "待创作",
+      "final_score": 9.1,
+      "title_options": [
+        { "title": "为什么聪明人反而最不敢辞职？", "style": "悬念型", "click_appeal": 9 },
+        { "title": "大厂人的焦虑，根本不是能力问题", "style": "反常识型", "click_appeal": 8 },
+        { "title": "你真的是害怕失败，还是没有框架支撑你的选择？", "style": "问题型", "click_appeal": 8 }
+      ],
+      "core_question": "为什么有能力的人反而更难离开大厂？「合法性焦虑」是什么，怎么破？",
+      "one_line_pitch": "大多数人不敢离开大公司不是能力问题，是缺少一个框架来理解「不进大厂」是有意义的选择",
+      "knowledge_foundation": {
+        "primary_sources": ["kb-20260302-neisheng-waiwang-2"],
+        "knowledge_sufficiency": "充分",
+        "gaps_to_fill": [],
+        "estimated_research_time": "0"
+      },
+      "content_positioning": {
+        "pillar": "认知升级",
+        "series": null,
+        "level": "L3深度",
+        "prerequisites": [],
+        "follow_ups": ["最小商业闭环实践", "内核分形方法论"]
+      },
+      "audience_fit": {
+        "primary_audience": "受众A（转型者）",
+        "audience_a_value": { "score": 10, "reason": "直击核心痛点：有能力但不敢辞职" },
+        "audience_b_value": { "score": 5, "reason": "学生较少面对这个问题，但有参考价值" },
+        "audience_c_value": { "score": 9, "reason": "觉醒者的切身困境" }
+      },
+      "unique_angle": {
+        "what_makes_it_different": "市面上讲「怎么辞职」的内容很多，几乎没有人从「思想合法性」角度切入",
+        "our_advantage": "知识库中有完整的旧世界终结逻辑 + 内求框架，支撑这个角度",
+        "cross_domain_insight": "心理学「认知合法化」× 社会学「结构性变迁」× 个人成长"
+      },
+      "content_form_suggestion": {
+        "best_form": "深度长文 + 视频",
+        "estimated_word_count": "3000-4000字",
+        "estimated_creation_time": "4-6小时",
+        "slice_potential": "3-5条短内容"
+      },
+      "timing": {
+        "urgency": "长期有效",
+        "optimal_publish_time": "随时可发",
+        "late_penalty": "无"
+      },
+      "risk_assessment": { "overall_risk": "安全", "political_sensitivity": "无", "controversy_level": "低" }
+    },
+
+    {
+      "topic_id": "topic-20260302-002",
+      "source": "trend × knowledge-topic",
+      "source_note": "趋势：AI裁员潮升级 × kb-20260302-neisheng-waiwang-2",
+      "mining_date": "2026-03-02",
+      "status": "待创作",
+      "final_score": 8.9,
+      "title_options": [
+        { "title": "失业之后，我才开始真正工作", "style": "叙事型", "click_appeal": 9 },
+        { "title": "被AI裁掉是一种幸运吗？", "style": "悬念型", "click_appeal": 8 },
+        { "title": "AI裁员，是在帮你从工具变人", "style": "反常识型", "click_appeal": 9 }
+      ],
+      "core_question": "被AI裁员之后该怎么做？不是找下一份工作，而是重新定义「我能提供什么价值」",
+      "one_line_pitch": "AI裁员看似是失业，本质上是一个强制内求的机会——逼你从工具变回人",
+      "knowledge_foundation": {
+        "primary_sources": ["kb-20260302-neisheng-waiwang-2"],
+        "knowledge_sufficiency": "充分",
+        "gaps_to_fill": [],
+        "estimated_research_time": "0"
+      },
+      "content_positioning": {
+        "pillar": "认知升级 × AI赋能",
+        "series": null,
+        "level": "L4叙事",
+        "prerequisites": [],
+        "follow_ups": ["最小商业闭环实践", "合法性焦虑"]
+      },
+      "audience_fit": {
+        "primary_audience": "受众A（转型者）",
+        "audience_a_value": { "score": 10, "reason": "正在经历或害怕被裁员的人，极高共鸣" },
+        "audience_b_value": { "score": 6, "reason": "学生担心未来就业" },
+        "audience_c_value": { "score": 9, "reason": "知识工作者最担心被AI替代" }
+      },
+      "unique_angle": {
+        "what_makes_it_different": "大众讨论「AI会裁掉谁」，我们讨论「被裁之后如何用这个机会重建自我」",
+        "our_advantage": "内圣外王框架提供了完整的心理重建路径",
+        "cross_domain_insight": "职场趋势 × 心理韧性 × 超级个体方法论"
+      },
+      "content_form_suggestion": {
+        "best_form": "视频 + 长文",
+        "estimated_word_count": "3000字",
+        "estimated_creation_time": "3-5小时",
+        "slice_potential": "4-6条"
+      },
+      "timing": {
+        "urgency": "本月最佳",
+        "optimal_publish_time": "2026-03-09之前（本周内）",
+        "late_penalty": "热度下降约30%"
+      },
+      "trend_data": {
+        "heat_level": 9,
+        "evidence": "2025全球科技裁员24.5万；2026届就业形势最严峻；Salesforce明确AI替代客服",
+        "lifecycle_stage": "爆发期"
+      },
+      "risk_assessment": { "overall_risk": "安全", "political_sensitivity": "无", "controversy_level": "低" }
+    },
+
+    {
+      "topic_id": "topic-20260302-003",
+      "source": "knowledge-topic",
+      "source_note": "kb-20260302-neisheng-waiwang-2",
+      "mining_date": "2026-03-02",
+      "status": "待创作",
+      "final_score": 8.8,
+      "title_options": [
+        { "title": "为什么那些一夜成名的人总是快速崩掉？", "style": "悬念型", "click_appeal": 9 },
+        { "title": "内核分形：一个比个人品牌更底层的成长模型", "style": "概念型", "click_appeal": 7 },
+        { "title": "你以为是机会来的太晚，其实是内核还没准备好", "style": "反常识型", "click_appeal": 8 }
+      ],
+      "core_question": "为什么有些人越做越大，有些人一夜成名后崩塌？内核稳定度是决定因素。",
+      "one_line_pitch": "用「分形」数学概念解释个人成长：内核的质量决定扩张的质量",
+      "knowledge_foundation": {
+        "primary_sources": ["kb-20260302-neisheng-waiwang-2"],
+        "knowledge_sufficiency": "充分",
+        "gaps_to_fill": [],
+        "estimated_research_time": "0"
+      },
+      "content_positioning": {
+        "pillar": "认知升级",
+        "series": null,
+        "level": "L3深度",
+        "prerequisites": [],
+        "follow_ups": ["立志取静方法论", "合法性焦虑"]
+      },
+      "audience_fit": {
+        "primary_audience": "受众A · C",
+        "audience_a_value": { "score": 9, "reason": "转型者担心没准备好就出发" },
+        "audience_b_value": { "score": 7, "reason": "学生群体对「什么时候出发」很焦虑" },
+        "audience_c_value": { "score": 9, "reason": "觉醒者正在考虑扩大影响力" }
+      },
+      "unique_angle": {
+        "what_makes_it_different": "「分形」切入个人成长几乎无人做过，跨域感强，记忆点高",
+        "our_advantage": "作者自身经历（刻意远离媒体机会等待内核成熟）是最强论据",
+        "cross_domain_insight": "数学分形理论 × 心理韧性 × 个人品牌"
+      },
+      "content_form_suggestion": {
+        "best_form": "深度长文 + 图文（配分形示意图）",
+        "estimated_word_count": "3500-4500字",
+        "estimated_creation_time": "5-7小时",
+        "slice_potential": "4-5条"
+      },
+      "timing": {
+        "urgency": "长期有效",
+        "optimal_publish_time": "随时可发",
+        "late_penalty": "无"
+      },
+      "risk_assessment": { "overall_risk": "安全", "political_sensitivity": "无", "controversy_level": "无" }
+    },
+
+    {
+      "topic_id": "topic-20260302-004",
+      "source": "trend",
+      "source_note": "趋势：一人公司政策热点 + 数据",
+      "mining_date": "2026-03-02",
+      "status": "待创作",
+      "final_score": 8.6,
+      "title_options": [
+        { "title": "2026年，36%的新公司只有一个人", "style": "数字型", "click_appeal": 9 },
+        { "title": "一人公司入门手册：从0到第一个商业闭环", "style": "方法型", "click_appeal": 8 },
+        { "title": "放弃招人是2026年最聪明的创业决策", "style": "反常识型", "click_appeal": 8 }
+      ],
+      "core_question": "一人公司是什么，为什么现在是最好时机，第一步怎么走？",
+      "one_line_pitch": "数据证明一人公司正在成为主流，AI时代单人可以撬动团队级产出",
+      "knowledge_foundation": {
+        "primary_sources": ["kb-20260302-neisheng-waiwang-2"],
+        "knowledge_sufficiency": "需少量补充",
+        "gaps_to_fill": ["具体工具栈推荐", "国内一人公司成功案例"],
+        "estimated_research_time": "2-3小时"
+      },
+      "content_positioning": {
+        "pillar": "AI赋能 × 一人公司",
+        "series": null,
+        "level": "L2方法",
+        "prerequisites": [],
+        "follow_ups": ["最小商业闭环实践"]
+      },
+      "audience_fit": {
+        "primary_audience": "受众A（转型者）",
+        "audience_a_value": { "score": 10, "reason": "直接给出行动依据和方向" },
+        "audience_b_value": { "score": 6, "reason": "学生可以提前了解" },
+        "audience_c_value": { "score": 8, "reason": "正在考虑单干的知识工作者" }
+      },
+      "unique_angle": {
+        "what_makes_it_different": "用36.3%这个数字 + 政策支持 + 最小商业闭环方法论给出行动框架，不只是讲概念",
+        "our_advantage": "「做+卖」框架来自知识库，有完整方法论支撑",
+        "cross_domain_insight": "政策趋势 × AI工具 × 商业方法论"
+      },
+      "content_form_suggestion": {
+        "best_form": "图文 + 视频",
+        "estimated_word_count": "2500-3500字",
+        "estimated_creation_time": "3-4小时",
+        "slice_potential": "3-4条"
+      },
+      "timing": {
+        "urgency": "本月",
+        "optimal_publish_time": "2026-03内",
+        "late_penalty": "热度下降约20%"
+      },
+      "trend_data": {
+        "heat_level": 8,
+        "evidence": "2025上半年单人创始人占新公司36.3%；上海「超级个体288行动」等官方计划",
+        "lifecycle_stage": "高峰期"
+      },
+      "risk_assessment": { "overall_risk": "安全", "political_sensitivity": "无", "controversy_level": "无" }
+    },
+
+    {
+      "topic_id": "topic-20260302-005",
+      "source": "knowledge-topic × trend",
+      "source_note": "kb-20260302-neisheng-waiwang-2 × 趋势：文科生反而更受欢迎",
+      "mining_date": "2026-03-02",
+      "status": "待创作",
+      "final_score": 8.5,
+      "title_options": [
+        { "title": "AI时代最难被取代的，居然是文科生", "style": "反常识型", "click_appeal": 9 },
+        { "title": "文科生的3个AI时代核心优势（理工生没有的）", "style": "数字型", "click_appeal": 8 },
+        { "title": "文科生，你是艺术家还是运营家？", "style": "问题型", "click_appeal": 7 }
+      ],
+      "core_question": "文科生在AI时代的真正优势是什么？该走艺术家路线还是运营家路线？",
+      "one_line_pitch": "叙事能力、意义建构、宏观思维在AI时代反而升值——文科生的逆袭时机到了",
+      "knowledge_foundation": {
+        "primary_sources": ["kb-20260302-neisheng-waiwang-2"],
+        "knowledge_sufficiency": "充分",
+        "gaps_to_fill": [],
+        "estimated_research_time": "0"
+      },
+      "content_positioning": {
+        "pillar": "AI赋能 × 个人成长",
+        "series": null,
+        "level": "L2-L3",
+        "prerequisites": [],
+        "follow_ups": ["最小商业闭环：做+卖"]
+      },
+      "audience_fit": {
+        "primary_audience": "受众B（探索者/学生）",
+        "audience_a_value": { "score": 7, "reason": "有参考价值" },
+        "audience_b_value": { "score": 10, "reason": "文科生学生群体极高共鸣" },
+        "audience_c_value": { "score": 8, "reason": "文科背景的知识工作者" }
+      },
+      "unique_angle": {
+        "what_makes_it_different": "不是安慰式说「文科也不差」，而是从AI替代逻辑出发论证文科优势",
+        "our_advantage": "「艺术家/运营家」分型框架是原创分类，识别度高",
+        "cross_domain_insight": "AI发展趋势 × 人文优势 × 商业变现路径"
+      },
+      "content_form_suggestion": {
+        "best_form": "视频 + 图文",
+        "estimated_word_count": "2500-3000字",
+        "estimated_creation_time": "3-4小时",
+        "slice_potential": "3-5条"
+      },
+      "timing": {
+        "urgency": "长期有效",
+        "optimal_publish_time": "随时可发",
+        "late_penalty": "无"
+      },
+      "risk_assessment": { "overall_risk": "安全", "political_sensitivity": "无", "controversy_level": "无" }
+    },
+
+    {
+      "topic_id": "topic-20260302-006",
+      "source": "knowledge-topic",
+      "source_note": "kb-20260302-neisheng-waiwang-2",
+      "mining_date": "2026-03-02",
+      "status": "待创作",
+      "final_score": 8.0,
+      "title_options": [
+        { "title": "越努力越焦虑？可能你需要的不是加法，而是减法", "style": "反常识型", "click_appeal": 9 },
+        { "title": "为道日损：AI时代的生存哲学", "style": "概念型", "click_appeal": 7 },
+        { "title": "你在努力的方向，是不是已经过时了？", "style": "问题型", "click_appeal": 8 }
+      ],
+      "core_question": "为什么旧时代「做加法」的成功路径在新时代失效？损去什么，怎么损？",
+      "one_line_pitch": "老子「为道日损」的现代应用：减掉外界评价/表演努力/社交噪音，才能真正显露自我",
+      "knowledge_foundation": {
+        "primary_sources": ["kb-20260302-neisheng-waiwang-2"],
+        "knowledge_sufficiency": "充分",
+        "gaps_to_fill": [],
+        "estimated_research_time": "0"
+      },
+      "content_positioning": {
+        "pillar": "认知升级",
+        "series": null,
+        "level": "L3深度",
+        "prerequisites": [],
+        "follow_ups": ["立志取静方法论"]
+      },
+      "audience_fit": {
+        "primary_audience": "受众A · C",
+        "audience_a_value": { "score": 9, "reason": "转型者正纠结「要不要继续加码」" },
+        "audience_b_value": { "score": 7, "reason": "内卷中的学生群体" },
+        "audience_c_value": { "score": 9, "reason": "觉醒者正在反思旧体系的规则" }
+      },
+      "unique_angle": {
+        "what_makes_it_different": "将道家哲学具体落地：「损」的对象是外界评价体系、表演努力、社交噪音，非常具体",
+        "our_advantage": "知识库中有《道德经》和《大学》双重文本支撑",
+        "cross_domain_insight": "道家哲学 × 现代职业转型 × 神经科学（注意力能量）"
+      },
+      "content_form_suggestion": {
+        "best_form": "深度长文",
+        "estimated_word_count": "3000-4000字",
+        "estimated_creation_time": "4-5小时",
+        "slice_potential": "3-4条"
+      },
+      "timing": {
+        "urgency": "长期有效",
+        "optimal_publish_time": "随时可发",
+        "late_penalty": "无"
+      },
+      "risk_assessment": { "overall_risk": "安全", "political_sensitivity": "无", "controversy_level": "无" }
+    },
+
+    {
+      "topic_id": "topic-20260302-007",
+      "source": "knowledge-topic",
+      "source_note": "kb-20260302-neisheng-waiwang-2",
+      "mining_date": "2026-03-02",
+      "status": "待创作",
+      "final_score": 7.8,
+      "title_options": [
+        { "title": "从未赚过钱的人，如何用最小成本跑通第一个商业闭环", "style": "数字型", "click_appeal": 8 },
+        { "title": "想创业但没有经验？先去摆一次摊", "style": "问题型", "click_appeal": 9 },
+        { "title": "最小商业闭环：做与卖", "style": "直述型", "click_appeal": 6 }
+      ],
+      "core_question": "没有创业经验的人怎么建立第一个商业闭环，成本最小化？",
+      "one_line_pitch": "摆摊是建立商业感知的最低成本实验室，「做+卖」是一切商业的最小单元",
+      "knowledge_foundation": {
+        "primary_sources": ["kb-20260302-neisheng-waiwang-2"],
+        "knowledge_sufficiency": "充分",
+        "gaps_to_fill": ["更多具体案例（摆摊以外）"],
+        "estimated_research_time": "1小时"
+      },
+      "content_positioning": {
+        "pillar": "一人公司 × AI赋能",
+        "series": null,
+        "level": "L2方法",
+        "prerequisites": [],
+        "follow_ups": ["一人公司进阶"]
+      },
+      "audience_fit": {
+        "primary_audience": "受众A（转型者）",
+        "audience_a_value": { "score": 10, "reason": "想创业不知道怎么起步" },
+        "audience_b_value": { "score": 7, "reason": "学生想做副业" },
+        "audience_c_value": { "score": 7, "reason": "有创业想法但犹豫" }
+      },
+      "unique_angle": {
+        "what_makes_it_different": "「摆摊」作为商业感知培养的具体切入点，反常识且可操作",
+        "our_advantage": "知识库中有完整「做+卖」框架",
+        "cross_domain_insight": "小生意逻辑 × 大商业模式 × AI工具赋能"
+      },
+      "content_form_suggestion": {
+        "best_form": "图文 + 视频",
+        "estimated_word_count": "2000-2500字",
+        "estimated_creation_time": "2-3小时",
+        "slice_potential": "3-4条"
+      },
+      "timing": {
+        "urgency": "长期有效",
+        "optimal_publish_time": "随时可发",
+        "late_penalty": "无"
+      },
+      "risk_assessment": { "overall_risk": "安全", "political_sensitivity": "无", "controversy_level": "无" }
+    },
+
+    {
+      "topic_id": "topic-20260302-008",
+      "source": "trend",
+      "source_note": "趋势：垂直KOL超越泛娱乐大V",
+      "mining_date": "2026-03-02",
+      "status": "待创作",
+      "final_score": 7.8,
+      "title_options": [
+        { "title": "2026年，10万粉丝比100万粉丝更值钱", "style": "反常识型", "click_appeal": 9 },
+        { "title": "内容创作者，你做的是艺术还是流量？", "style": "问题型", "click_appeal": 8 },
+        { "title": "为什么平台开始扶持小博主了（数据分析）", "style": "数字型", "click_appeal": 7 }
+      ],
+      "core_question": "2026年做内容，为什么垂直深度比流量规模更重要？",
+      "one_line_pitch": "去伪存真的时代，1-10万精准粉丝的垂直创作者商业价值超越泛娱乐大V",
+      "knowledge_foundation": {
+        "primary_sources": ["kb-20260302-neisheng-waiwang-2"],
+        "knowledge_sufficiency": "需少量补充",
+        "gaps_to_fill": ["B站/小红书平台数据", "垂直KOL变现案例"],
+        "estimated_research_time": "1-2小时"
+      },
+      "content_positioning": {
+        "pillar": "AI赋能 × 个人成长",
+        "series": null,
+        "level": "L2方法",
+        "prerequisites": [],
+        "follow_ups": ["艺术家vs运营家路径选择"]
+      },
+      "audience_fit": {
+        "primary_audience": "受众B · C（正在或计划做内容的人）",
+        "audience_a_value": { "score": 7, "reason": "转型者考虑自媒体路线" },
+        "audience_b_value": { "score": 9, "reason": "学生想做内容创作" },
+        "audience_c_value": { "score": 9, "reason": "知识工作者建立个人IP" }
+      },
+      "unique_angle": {
+        "what_makes_it_different": "用行业数据 + 「去伪存真」趋势论证垂直创作的价值，不是「建议你做垂直」而是「数据告诉你只能做垂直了」",
+        "our_advantage": "「艺术家/运营家」分型提供了框架",
+        "cross_domain_insight": "平台算法趋势 × 商业变现逻辑 × 内容品牌"
+      },
+      "content_form_suggestion": {
+        "best_form": "图文 + 短视频",
+        "estimated_word_count": "2000-3000字",
+        "estimated_creation_time": "3-4小时",
+        "slice_potential": "3-5条"
+      },
+      "timing": {
+        "urgency": "本月",
+        "optimal_publish_time": "2026-03内",
+        "late_penalty": "热度下降约15%"
+      },
+      "trend_data": {
+        "heat_level": 7,
+        "evidence": "1-10万粉丝垂直KOL商业价值超越部分大V；「真实度」成2026年核心内容指标；B站AI内容播放+50%",
+        "lifecycle_stage": "萌芽期"
+      },
+      "risk_assessment": { "overall_risk": "安全", "political_sensitivity": "无", "controversy_level": "无" }
+    },
+
+    {
+      "topic_id": "topic-20260302-009",
+      "source": "knowledge-topic",
+      "source_note": "kb-20260302-neisheng-waiwang-2",
+      "mining_date": "2026-03-02",
+      "status": "待创作",
+      "final_score": 7.5,
+      "title_options": [
+        { "title": "那些从早到晚学习的博主，其实在抓不住重点", "style": "反常识型", "click_appeal": 9 },
+        { "title": "每天专注3小时，比打卡10小时更有效——神经学解释", "style": "数字型", "click_appeal": 8 },
+        { "title": "为什么越认真的人，越容易输给不那么努力的人？", "style": "悬念型", "click_appeal": 8 }
+      ],
+      "core_question": "为什么「专注」比「努力时长」更重要？注意力即能量的底层逻辑是什么？",
+      "one_line_pitch": "每天3-4小时高效专注 > 全天打卡表演努力，这是神经科学和道家哲学的共同结论",
+      "knowledge_foundation": {
+        "primary_sources": ["kb-20260302-neisheng-waiwang-2"],
+        "knowledge_sufficiency": "充分",
+        "gaps_to_fill": [],
+        "estimated_research_time": "0"
+      },
+      "content_positioning": {
+        "pillar": "个人成长 × 认知升级",
+        "series": null,
+        "level": "L2方法",
+        "prerequisites": [],
+        "follow_ups": ["取静：保护你的能量"]
+      },
+      "audience_fit": {
+        "primary_audience": "受众B（探索者）",
+        "audience_a_value": { "score": 7, "reason": "转型中需要高效工作" },
+        "audience_b_value": { "score": 10, "reason": "学生内卷文化中最有共鸣" },
+        "audience_c_value": { "score": 7, "reason": "知识工作者效率优化需求" }
+      },
+      "unique_angle": {
+        "what_makes_it_different": "不是讲「番茄钟」等工具，而是从「注意力即能量」的底层原理出发，反驳表演努力文化",
+        "our_advantage": "援引双缝实验 + 心流理论 + 「为道日损」三维支撑",
+        "cross_domain_insight": "神经科学 × 道家哲学 × 学习方法论"
+      },
+      "content_form_suggestion": {
+        "best_form": "短视频 + 图文",
+        "estimated_word_count": "1500-2500字",
+        "estimated_creation_time": "2-3小时",
+        "slice_potential": "3-4条"
+      },
+      "timing": {
+        "urgency": "长期有效",
+        "optimal_publish_time": "随时可发",
+        "late_penalty": "无"
+      },
+      "risk_assessment": { "overall_risk": "安全", "political_sensitivity": "无", "controversy_level": "低" }
+    },
+
+    {
+      "topic_id": "topic-20260302-010",
+      "source": "knowledge-topic",
+      "source_note": "kb-20260302-neisheng-waiwang-2",
+      "mining_date": "2026-03-02",
+      "status": "待创作",
+      "final_score": 7.2,
+      "title_options": [
+        { "title": "致夹在新旧世界之间的我们", "style": "叙事型", "click_appeal": 8 },
+        { "title": "你的焦虑，不是心理问题，是结构性问题", "style": "问题型", "click_appeal": 9 },
+        { "title": "95后生存危机：一代人的困境与出路", "style": "世代型", "click_appeal": 7 }
+      ],
+      "core_question": "我们这代人的焦虑来自哪里？为什么不能只靠「调节心态」解决？",
+      "one_line_pitch": "我们面临新世界不确定性 + 旧世界父母打压的双重压力，这是结构性问题不是心理问题",
+      "knowledge_foundation": {
+        "primary_sources": ["kb-20260302-neisheng-waiwang-2"],
+        "knowledge_sufficiency": "基本够",
+        "gaps_to_fill": ["更多代际研究数据支撑"],
+        "estimated_research_time": "1-2小时"
+      },
+      "content_positioning": {
+        "pillar": "认知升级 × 个人成长",
+        "series": null,
+        "level": "L4叙事",
+        "prerequisites": [],
+        "follow_ups": ["为道日损", "内求与心力"]
+      },
+      "audience_fit": {
+        "primary_audience": "受众B · C",
+        "audience_a_value": { "score": 7, "reason": "转型者有类似困境" },
+        "audience_b_value": { "score": 10, "reason": "新社会人最高共鸣" },
+        "audience_c_value": { "score": 8, "reason": "觉醒者感同身受" }
+      },
+      "unique_angle": {
+        "what_makes_it_different": "不是情绪安慰，而是提出「结构性问题不能只靠个体心理调节解决」这个更有深度的判断",
+        "our_advantage": "内圣外王框架提供了整代人的出路叙事",
+        "cross_domain_insight": "社会学结构变迁 × 代际心理 × 个人成长叙事"
+      },
+      "content_form_suggestion": {
+        "best_form": "视频（情感共鸣向）",
+        "estimated_word_count": "3000字",
+        "estimated_creation_time": "3-5小时",
+        "slice_potential": "3-4条"
+      },
+      "timing": {
+        "urgency": "长期有效",
+        "optimal_publish_time": "随时可发",
+        "late_penalty": "无"
+      },
+      "risk_assessment": { "overall_risk": "安全", "political_sensitivity": "低", "controversy_level": "低", "note": "涉及代际差异，保持建设性，避免贴标签" }
+    }
+  ],
+
+  "observation_pool": [
+    {
+      "topic_id": "obs-20260302-001",
+      "title": "心流状态的实践方法",
+      "reason": "目前仅有概念描述，缺乏个人实践方法论",
+      "action": "先执行 /learn 补充相关研究（Mihaly Csikszentmihalyi心流理论）"
+    },
+    {
+      "topic_id": "obs-20260302-002",
+      "title": "地方经济与去中心化创业",
+      "reason": "视频仅提及方向，缺乏具体案例支撑",
+      "action": "先执行 /learn 补充二三线城市创业案例"
+    }
+  ],
+
+  "trend_landscape": {
+    "scan_date": "2026-03-02",
+    "macro_trends": [
+      "AI永久性裁员潮升级（2026预计超27万科技岗被裁）",
+      "一人公司/超级个体从概念变为主流（36.3%单人创始人）",
+      "内容创作「去伪存真」：垂直深度 > 流量规模",
+      "情绪与意义消费上升（寺庙文化、道家养生、疗愈经济）"
+    ],
+    "emerging_topics": [
+      "AI Agent替代人工的具体岗位分析",
+      "「技能迁移」能力作为核心职业护城河",
+      "地方经济/县域经济的一人公司机会"
+    ],
+    "declining_topics": [
+      "表演努力型内容（study vlog）",
+      "泛娱乐大V内容",
+      "纯安慰式「调节心态」内容"
+    ],
+    "evergreen_opportunities": [
+      "认知升级 × AI工具实践的结合",
+      "超级个体方法论的具体化、可操作化"
+    ]
+  }
+}

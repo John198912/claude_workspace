@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>融合哲学架构 v6.0</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:#07070f;color:#ddd;
+    padding:20px;max-width:1200px;margin:0 auto;line-height:1.6}
+
+  .top-title{text-align:center;padding:24px 0 6px;font-size:1.3rem;font-weight:700;letter-spacing:3px;
+    background:linear-gradient(90deg,#34d399,#60a5fa,#a78bfa,#fbbf24,#f87171);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .top-sub{text-align:center;font-size:0.73rem;color:#555;margin-bottom:6px}
+  .vbadge{text-align:center;margin-bottom:28px}
+  .vb{display:inline-block;background:#001a10;border:1px solid #065f46;color:#34d399;
+    font-size:0.68rem;padding:3px 14px;border-radius:10px}
+
+  .section{border-radius:12px;margin-bottom:20px;overflow:hidden;border:1px solid}
+  .s-symp{border-color:#065f46}.s-symp .sh{background:linear-gradient(135deg,#001a10,#003a20)}
+  .s-coach{border-color:#0369a1}.s-coach .sh{background:linear-gradient(135deg,#001020,#002040)}
+  .s-dual{border-color:#7c3aed}.s-dual .sh{background:linear-gradient(135deg,#0e0520,#1a0a3a)}
+  .s-pub{border-color:#d97706}.s-pub .sh{background:linear-gradient(135deg,#1a1000,#2a1800)}
+
+  .sh{padding:13px 18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .sh-icon{font-size:1.3rem}
+  .sh-title{font-size:0.95rem;font-weight:700}
+  .sh-sub{font-size:0.67rem;opacity:.6;margin-left:4px}
+  .sh-badge{margin-left:auto;font-size:0.65rem;padding:2px 8px;border-radius:8px}
+  .sb-symp{background:#003a20;color:#34d399}
+  .sb-coach{background:#002040;color:#60a5fa}
+  .sb-dual{background:#1a0a3a;color:#c084fc}
+  .sb-pub{background:#2a1400;color:#fbbf24}
+
+  .sb{background:#0b0b17;padding:16px 18px}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+
+  .block{border-radius:8px;padding:12px;font-size:0.72rem;line-height:1.7;border:1px solid}
+  .bz{background:#0e0520;border-color:#5b21b6}
+  .bw{background:#051a0e;border-color:#065f46}
+  .bf{background:#150a00;border-color:#92400e}
+  .bb{background:#0a1020;border-color:#1e40af}
+  .bg{background:#111118;border-color:#374151}
+  .by{background:#120a00;border-color:#d97706}
+  .br{background:#120008;border-color:#9f1239}
+  .bn{font-weight:700;font-size:0.76rem;margin-bottom:5px;display:block}
+  .bz .bn{color:#c084fc}.bw .bn{color:#34d399}.bf .bn{color:#fb923c}
+  .bb .bn{color:#60a5fa}.bg .bn{color:#9ca3af}.by .bn{color:#fcd34d}.br .bn{color:#fda4af}
+  .bd{color:#6b7280;font-size:0.67rem;margin-bottom:5px;font-style:italic}
+  .block ul{padding-left:14px}.block li{margin-bottom:3px}
+
+  .divlabel{font-size:0.68rem;font-weight:700;letter-spacing:1px;padding:3px 9px;
+    border-radius:4px;display:inline-block;margin:8px 0 6px}
+  .dlg{background:#003a20;color:#34d399}
+  .dlb{background:#002040;color:#60a5fa}
+  .dlz{background:#1a0a3a;color:#c084fc}
+  .dly{background:#2a1400;color:#fbbf24}
+  .dlr{background:#3a0010;color:#fda4af}
+  .dlgr{background:#1a1a2e;color:#9ca3af}
+
+  .quote{background:#0f0f1e;border-left:3px solid #a78bfa;padding:9px 13px;
+    font-size:0.73rem;line-height:1.8;color:#c4b5fd;margin:8px 0;border-radius:0 6px 6px 0;font-style:italic}
+  .quote-g{background:#001a10;border-left:3px solid #065f46;padding:9px 13px;
+    font-size:0.73rem;line-height:1.8;color:#6ee7b7;margin:8px 0;border-radius:0 6px 6px 0}
+  .quote-y{background:#120a00;border-left:3px solid #d97706;padding:9px 13px;
+    font-size:0.73rem;line-height:1.8;color:#fcd34d;margin:8px 0;border-radius:0 6px 6px 0}
+  .quote-b{background:#0a1020;border-left:3px solid #3b82f6;padding:9px 13px;
+    font-size:0.73rem;line-height:1.8;color:#93c5fd;margin:8px 0;border-radius:0 6px 6px 0}
+
+  .principle{background:#0a0a18;border-left:3px solid;border-radius:0 8px 8px 0;
+    padding:9px 13px;margin:5px 0;font-size:0.72rem;line-height:1.7}
+  .pg{border-color:#34d399}.pb{border-color:#60a5fa}.pz{border-color:#a78bfa}
+  .py{border-color:#fbbf24}.pr{border-color:#fda4af}.pgr{border-color:#6b7280}
+
+  .matrix{width:100%;border-collapse:collapse;font-size:0.68rem;margin:8px 0}
+  .matrix th{background:#111;padding:7px;text-align:center;border:1px solid #222;color:#9ca3af;font-weight:600}
+  .matrix td{padding:7px;border:1px solid #1a1a2e;line-height:1.6;vertical-align:top}
+  .matrix tr:nth-child(even) td{background:#0a0a14}
+
+  /* 症状→成长区流程图 */
+  .flow{background:#0a0a14;border:1px solid #1a1a2e;border-radius:10px;padding:14px;margin:10px 0}
+  .flow-title{font-size:0.73rem;font-weight:700;color:#9ca3af;margin-bottom:12px}
+  .flow-row{display:flex;align-items:stretch;gap:0;margin-bottom:6px}
+  .flow-node{border-radius:8px;padding:10px 12px;font-size:0.69rem;text-align:center;flex:1}
+  .flow-arrow{display:flex;align-items:center;padding:0 6px;color:#374151;font-size:1rem;flex-shrink:0}
+  .fn-g{background:#051a0e;border:1px solid #065f46}
+  .fn-b{background:#0a1020;border:1px solid #1e40af}
+  .fn-z{background:#0e0520;border:1px solid #5b21b6}
+  .fn-y{background:#120a00;border:1px solid #d97706}
+  .fn-title{font-weight:700;margin-bottom:3px}
+  .fn-g .fn-title{color:#34d399}
+  .fn-b .fn-title{color:#60a5fa}
+  .fn-z .fn-title{color:#c084fc}
+  .fn-y .fn-title{color:#fcd34d}
+  .fn-desc{color:#6b7280;font-size:0.63rem}
+
+  /* 双层结构 */
+  .dual{background:#0a0a14;border:1px solid #4f46e5;border-radius:10px;padding:14px;margin:10px 0}
+  .dual-title{font-size:0.73rem;font-weight:700;color:#818cf8;margin-bottom:12px}
+  .dual-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .d-ideal{background:#0e0520;border:2px solid #7c3aed;border-radius:8px;padding:12px}
+  .d-prac{background:#051a0e;border:2px solid #065f46;border-radius:8px;padding:12px}
+  .d-title{font-size:0.78rem;font-weight:700;margin-bottom:8px}
+  .d-ideal .d-title{color:#c084fc}
+  .d-prac .d-title{color:#34d399}
+  .d-body{font-size:0.7rem;line-height:1.7;color:#9ca3af}
+  .d-body strong{color:#d1d5db}
+  .d-body ul{padding-left:14px;margin-top:5px}
+  .d-body li{margin-bottom:3px}
+
+  /* 渗透防止约束 */
+  .anti-seep{background:#0a0a14;border:1px solid #374151;border-radius:10px;padding:14px;margin:10px 0}
+  .as-title{font-size:0.73rem;font-weight:700;color:#9ca3af;margin-bottom:10px}
+  .as-item{display:flex;gap:8px;margin-bottom:8px;font-size:0.71rem;line-height:1.7;align-items:flex-start}
+  .as-num{background:#1a1a2e;color:#6b7280;border-radius:4px;padding:2px 7px;
+    font-size:0.65rem;font-weight:700;flex-shrink:0;margin-top:2px}
+  .as-body{color:#d1d5db;line-height:1.7}
+  .as-body strong{color:#f9fafb}
+  .as-body em{color:#9ca3af}
+
+  /* 公共实践模块 */
+  .pub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+  .pub-card{border-radius:8px;padding:12px;border:1px solid;font-size:0.7rem}
+  .pc1{background:#120a00;border-color:#d97706}
+  .pc2{background:#0a1020;border-color:#1e40af}
+  .pc3{background:#0e0520;border-color:#5b21b6}
+  .pc-title{font-weight:700;font-size:0.73rem;margin-bottom:6px}
+  .pc1 .pc-title{color:#fbbf24}
+  .pc2 .pc-title{color:#60a5fa}
+  .pc3 .pc-title{color:#c084fc}
+  .pc-body{color:#9ca3af;line-height:1.7}
+
+  .new-badge{display:inline-block;background:#001a10;border:1px solid #065f46;
+    color:#34d399;font-size:0.6rem;padding:1px 5px;border-radius:3px;margin-left:5px;vertical-align:middle}
+  .upd-badge{display:inline-block;background:#0c2a4a;border:1px solid #1e40af;
+    color:#60a5fa;font-size:0.6rem;padding:1px 5px;border-radius:3px;margin-left:5px;vertical-align:middle}
+
+  /* 穿越路径更新 */
+  .topo-updated{background:#0a0a14;border:1px solid #7c3aed;border-radius:10px;padding:14px;margin:10px 0}
+  .tu-title{font-size:0.73rem;font-weight:700;color:#c084fc;margin-bottom:12px}
+  .tu-flow{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:center;padding:8px 0}
+  .tu-node{border-radius:8px;padding:9px 12px;font-size:0.68rem;text-align:center;min-width:105px}
+  .tu-arrow{color:#374151;font-size:1.1rem;padding:0 2px}
+  .tu-note{font-size:0.63rem;color:#555;text-align:center;margin-top:8px;font-style:italic}
+</style>
+</head>
+<body>
+
+<div class="top-title">融合哲学架构 v6.0</div>
+<p class="top-sub">症状论重构"真实利益" · 教练模型 · 理想/实践双层结构 · 公共实践机制</p>
+<div class="vbadge"><span class="vb">v6.0 核心更新：实在界裂痕→症状→成长区 · 沉浸幻象作为穿越路径 · 双层结构防止相对主义与强制主义 · 内容创作的哲学意义</span></div>
+
+<!-- ══════════════════════════════════
+     模块一：症状论重构"真实利益"
+══════════════════════════════════ -->
+<div class="section s-symp">
+  <div class="sh">
+    <span class="sh-icon">🌱</span>
+    <span class="sh-title">症状论重构"真实利益"</span>
+    <span class="sh-sub">实在界裂痕 → 爱欲/享乐症状 → 个体化成长区</span>
+    <span class="sh-badge sb-symp">Symptom Theory</span>
+  </div>
+  <div class="sb">
+
+    <div class="divlabel dlg">▌你的重构命题</div>
+    <div class="quote-g">
+      <b>真实利益</b> = 根据每个个体的实在界裂痕所产生的、以爱欲和享乐为症状体现出的需求。
+      引导和教育的过程是帮助个体了解什么是可控制的、什么是无法控制和变化的——而非将个体客体化进行控制干预。
+    </div>
+
+    <div class="divlabel dlg">▌三层结构展开</div>
+    <div class="grid3">
+      <div class="block bw">
+        <span class="bn">第一层：实在界裂痕的个体性</span>
+        <span class="bd">对象小a（objet petit a）</span>
+        <ul>
+          <li>每个人进入象征界的方式不同</li>
+          <li>无法被完全整合的剩余是独特的</li>
+          <li>没有两个人的"真实利益"相同</li>
+          <li style="color:#34d399">→ 这是与殖民论证的结构性差异：<br>殖民者的利益是普遍化的，你的重构是个体化的</li>
+        </ul>
+      </div>
+      <div class="block bw">
+        <span class="bn">第二层：症状是路标，不是障碍</span>
+        <span class="bd">拉康晚期：与症状认同（sinthome）</span>
+        <ul>
+          <li>享乐（jouissance）不是需要被消除的</li>
+          <li>而是通往实在界裂痕的路标</li>
+          <li>症状在说：它指向什么样的裂痕？</li>
+          <li style="color:#34d399">→ 斯多葛的"超越享乐"被精确化：<br>不是压制，而是理解症状的意义</li>
+        </ul>
+      </div>
+      <div class="block bw">
+        <span class="bn">第三层：可控/不可控的区分</span>
+        <span class="bd">斯多葛 × 拉康的扭转</span>
+        <ul>
+          <li>可控：象征界层面的操作（叙事、语言游戏）</li>
+          <li>不可控：实在界裂痕的存在、驱力的压力</li>
+          <li>拉康式扭转：不可控不是被接受放弃的</li>
+          <li style="color:#34d399">→ 而是被认识，理解它如何塑造欲望结构，然后在此基础上行动</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divlabel dlg">▌从症状到成长区的路径（v6.0 修订）</div>
+    <div class="flow">
+      <div class="flow-title">成长区的确定：从症状出发，而非从终点倒推</div>
+      <div class="flow-row">
+        <div class="flow-node fn-g">
+          <div class="fn-title">实在界裂痕</div>
+          <div class="fn-desc">个体化的、不可消除的剩余</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node fn-b">
+          <div class="fn-title">爱欲/享乐症状</div>
+          <div class="fn-desc">裂痕在象征界的表现形式</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node fn-z">
+          <div class="fn-title">症状分析</div>
+          <div class="fn-desc">这个症状指向什么裂痕？什么是可控的？</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node fn-y">
+          <div class="fn-title">个体化成长区</div>
+          <div class="fn-desc">由症状向上发现，不由终点向下推导</div>
+        </div>
+      </div>
+      <div style="font-size:0.65rem;color:#555;text-align:center;margin-top:6px;font-style:italic">
+        关键约束：方向是从症状向上发现的，不是从终点向下推导的
+      </div>
+    </div>
+
+    <div class="divlabel dlg">▌"沉浸幻象"作为穿越路径的一部分 <span class="new-badge">v6.0 新增</span></div>
+    <div class="quote-g">
+      <b>核心洞见</b>：即便有人某时刻选择沉浸幻象中充分宣泄欲望，那也是在穿越幻象中充分体验和感知幻象的重要一步。
+      穿越幻象不是单向向上的运动——有时候，向下沉入幻象，是穿越幻象的必要条件。
+    </div>
+
+    <div class="grid3">
+      <div class="block bw">
+        <span class="bn">拉康层面的支撑</span>
+        <ul>
+          <li>症状不能被绕过，只能被穿越</li>
+          <li>穿越意味着充分经历症状</li>
+          <li>直到症状的结构被暴露</li>
+          <li>压制享乐→症状以更强形式回返</li>
+        </ul>
+      </div>
+      <div class="block bw">
+        <span class="bn">禅宗层面的支撑</span>
+        <ul>
+          <li>"魔境"不是需要避免的</li>
+          <li>而是修行的材料</li>
+          <li>充分经历幻象才能认识幻象本质</li>
+          <li>对幻象的认识需要从内部获得</li>
+        </ul>
+      </div>
+      <div class="block bw">
+        <span class="bn">对穿越路径模型的修订</span>
+        <ul>
+          <li>原：渐宗积累→临界点→顿宗断裂→新渐宗</li>
+          <li>修订：渐宗积累（<b>包括沉浸阶段</b>）→临界点→顿宗断裂→新渐宗</li>
+          <li>"沉浸"不是倒退，是积累的一部分</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="topo-updated">
+      <div class="tu-title">穿越路径拓扑模型（v6.0 修订版）</div>
+      <div class="tu-flow">
+        <div class="tu-node" style="background:#051a0e;border:1px solid #065f46">
+          <div style="color:#34d399;font-weight:700;font-size:0.7rem">渐宗积累</div>
+          <div style="color:#555;font-size:0.6rem;margin-top:3px">日常实践<br>自我技术</div>
+        </div>
+        <span class="tu-arrow">+</span>
+        <div class="tu-node" style="background:#120008;border:1px solid #9f1239">
+          <div style="color:#fda4af;font-weight:700;font-size:0.7rem">沉浸阶段</div>
+          <div style="color:#555;font-size:0.6rem;margin-top:3px">充分体验幻象<br>症状宣泄</div>
+        </div>
+        <span class="tu-arrow">→</span>
+        <div class="tu-node" style="background:#1a0a3a;border:1px solid #7c3aed">
+          <div style="color:#c084fc;font-weight:700;font-size:0.7rem">临界点</div>
+          <div style="color:#555;font-size:0.6rem;margin-top:3px">个体化<br>不可预测</div>
+        </div>
+        <span class="tu-arrow">→</span>
+        <div class="tu-node" style="background:#0e0520;border:1px solid #5b21b6">
+          <div style="color:#a78bfa;font-weight:700;font-size:0.7rem">顿宗断裂</div>
+          <div style="color:#555;font-size:0.6rem;margin-top:3px">实在界闯入<br>幻象结构暴露</div>
+        </div>
+        <span class="tu-arrow">→</span>
+        <div class="tu-node" style="background:#051a0e;border:1px solid #065f46">
+          <div style="color:#34d399;font-weight:700;font-size:0.7rem">新的渐宗</div>
+          <div style="color:#555;font-size:0.6rem;margin-top:3px">悟后起修<br>在新层次积累</div>
+        </div>
+      </div>
+      <div class="tu-note">渐宗积累与沉浸阶段不是对立的，而是同一积累过程的两种形态。沉浸是积累，不是倒退。</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     模块二：教练模型
+══════════════════════════════════ -->
+<div class="section s-coach">
+  <div class="sh">
+    <span class="sh-icon">🧭</span>
+    <span class="sh-title">教练模型：解决"谁来确定成长区"的权力问题</span>
+    <span class="sh-sub">从"知道终点的解放者"转变为"帮助个体发现自己方向的同行者"</span>
+    <span class="sh-badge sb-coach">Coaching Model</span>
+  </div>
+  <div class="sb">
+
+    <div class="divlabel dlb">▌模型的核心转换</div>
+    <div class="grid2">
+      <div class="block br">
+        <span class="bn">传统教育/干预模型（被替换）</span>
+        <ul>
+          <li>教育者知道终点在哪里</li>
+          <li>终点由教育者预设</li>
+          <li>被教育者被引导到预设终点</li>
+          <li>成长区由教育者判断和确定</li>
+          <li style="color:#fda4af">→ 权力问题：谁有权预设终点？</li>
+        </ul>
+      </div>
+      <div class="block bb">
+        <span class="bn">教练模型（采用）</span>
+        <ul>
+          <li>教练不预设终点</li>
+          <li>通过提问和反射，帮助个体发现自己的方向</li>
+          <li>终点在对话过程中由个体自己显现</li>
+          <li>成长区由个体的症状自下而上地显现</li>
+          <li style="color:#60a5fa">→ 权力问题的解决：成长区不是被确定的，而是被发现的</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divlabel dlb">▌教练模型的哲学基础</div>
+    <div class="quote-b">
+      每个人都拥有自我教导的能力，教练只做辅导不提供方案。
+      本质原理是：激发和引导个体基于自身的条件和各方面能力以及当下的爱欲、享乐的需求，产生寻求穿越幻象的能力。
+    </div>
+
+    <div class="grid3">
+      <div class="block bb">
+        <span class="bn">苏格拉底的助产术</span>
+        <span class="bd">最古老的教练原型</span>
+        <ul>
+          <li>不传授知识，而是帮助知识被产出</li>
+          <li>提问而非陈述</li>
+          <li>真理在对话者内部，教练只是助产</li>
+        </ul>
+      </div>
+      <div class="block bb">
+        <span class="bn">罗杰斯的人本主义</span>
+        <span class="bd">现代教练的理论基础</span>
+        <ul>
+          <li>每个人都有自我实现的内在倾向</li>
+          <li>治疗师/教练的任务是创造条件</li>
+          <li>无条件积极关注 + 真诚 + 共情</li>
+        </ul>
+      </div>
+      <div class="block bb">
+        <span class="bn">拉康的分析师位置</span>
+        <span class="bd">框架内部的对应</span>
+        <ul>
+          <li>分析师不提供答案，而是占据"空白"位置</li>
+          <li>让分析者自己的欲望结构得以显现</li>
+          <li>分析师的欲望：让分析者发现自己的欲望</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="principle pb">
+      <b>教练模型对代理行动的修订</b>：代理行动的正当性不来自"我知道他的真实利益"，也不只是"我选择最小化干预"，而是"我帮助他发现他自己的下一步"。这把代理行动从单向的干预，转变为双向的对话性过程。
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     模块三：理想/实践双层结构
+══════════════════════════════════ -->
+<div class="section s-dual">
+  <div class="sh">
+    <span class="sh-icon">🔀</span>
+    <span class="sh-title">理想/实践双层结构</span>
+    <span class="sh-sub">防止相对主义（理想层）与防止强制主义（实践层）的同时实现</span>
+    <span class="sh-badge sb-dual">Dual Structure</span>
+  </div>
+  <div class="sb">
+
+    <div class="divlabel dlz">▌核心命题</div>
+    <div class="quote">
+      在对于"穿越幻象"的理想思辨中还是应当保持对于"实在界"和终点的理性客观的明确性，
+      幻象光谱和成长区则是对于实践和传播理论思想时的约束条件。
+    </div>
+
+    <div class="divlabel dlz">▌双层结构的内容</div>
+    <div class="dual">
+      <div class="dual-title">两个层面的不同任务</div>
+      <div class="dual-grid">
+        <div class="d-ideal">
+          <div class="d-title">🔭 理想思辨层面</div>
+          <div class="d-body">
+            <strong>实在界和终点：明确的</strong>
+            <ul>
+              <li>幻象/现实的区分是有意义的</li>
+              <li>穿越幻象有一个方向（不是所有方向都等价）</li>
+              <li>实在界是分析的坐标系，不是相对的</li>
+              <li>这防止了相对主义：不是"所有幻觉层次都同样好"</li>
+            </ul>
+            <br>
+            <em>功能：提供分析的坐标系，使批判成为可能</em>
+          </div>
+        </div>
+        <div class="d-prac">
+          <div class="d-title">🌱 实践传播层面</div>
+          <div class="d-body">
+            <strong>幻觉光谱和成长区：约束条件</strong>
+            <ul>
+              <li>不要求所有人都穿越到最深层次</li>
+              <li>每个人的成长区是个体化的</li>
+              <li>悲悯立场：不以觉醒程度评判个体价值</li>
+              <li>这防止了强制主义：不是"所有人必须达到X层次"</li>
+            </ul>
+            <br>
+            <em>功能：提供行动的约束，使悲悯成为可能</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divlabel dlz">▌双层结构解决的张力</div>
+    <table class="matrix">
+      <tr><th>张力</th><th>理想层的作用</th><th>实践层的作用</th><th>双层结构的解决</th></tr>
+      <tr>
+        <td>批判 vs 相对主义</td>
+        <td>实在界的明确性保证批判有方向</td>
+        <td>—</td>
+        <td>批判是有方向的，不是"一切都好"</td>
+      </tr>
+      <tr>
+        <td>悲悯 vs 强制主义</td>
+        <td>—</td>
+        <td>成长区约束防止强制要求</td>
+        <td>悲悯是有原则的，不是"一切都随意"</td>
+      </tr>
+      <tr>
+        <td>终点明确 vs 路径多元</td>
+        <td>终点在理想层是明确的</td>
+        <td>路径在实践层是多元的</td>
+        <td>知道山顶在哪里，但不强制所有人登顶</td>
+      </tr>
+      <tr>
+        <td>规范性 vs 描述性</td>
+        <td>框架在理想层是规范性的</td>
+        <td>框架在实践层是描述性的</td>
+        <td>同一框架在不同层面有不同性质</td>
+      </tr>
+    </table>
+
+    <div class="divlabel dlz">▌防止理想层向实践层渗透的约束 <span class="new-badge">v6.0 新增</span></div>
+    <div class="anti-seep">
+      <div class="as-title">三个操作性约束：防止"终点明确性"悄悄编码进成长区判断</div>
+      <div class="as-item">
+        <span class="as-num">C1</span>
+        <div class="as-body">
+          <strong>终点的明确性只用于自我定向，不用于他人定向</strong><br>
+          分析者可以用实在界的坐标系理解自己的位置和方向，但在与他人的对话中，任务是帮助他人发现自己的坐标，而不是把自己的坐标投射给他人。
+        </div>
+      </div>
+      <div class="as-item">
+        <span class="as-num">C2</span>
+        <div class="as-body">
+          <strong>成长区的判断必须从个体的症状出发，而非从终点倒推</strong><br>
+          不是"根据终点，他的下一步应该是X"，而是"根据他当前的爱欲和享乐症状，他的成长区可能在哪里"。<em>方向是从症状向上发现的，不是从终点向下推导的。</em>
+        </div>
+      </div>
+      <div class="as-item">
+        <span class="as-num">C3</span>
+        <div class="as-body">
+          <strong>当分析者发现自己在用终点判断他人时，触发反身批判</strong><br>
+          这个发现本身就是第四阶（反身批判）的材料。<em>"我是否在把我的终点坐标投射给他？"是一个必须持续自问的问题。</em>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     模块四：公共实践作为外部遭遇机制
+══════════════════════════════════ -->
+<div class="section s-pub">
+  <div class="sh">
+    <span class="sh-icon">📡</span>
+    <span class="sh-title">公共实践：内容创作作为制度性外部遭遇机制</span>
+    <span class="sh-sub">将框架暴露于无法控制的公共回应，实现可证伪性的制度化</span>
+    <span class="sh-badge sb-pub">Public Practice</span>
+  </div>
+  <div class="sb">
+
+    <div class="divlabel dly">▌内容创作的哲学意义</div>
+    <div class="pub-grid">
+      <div class="pub-card pc1">
+        <div class="pc-title">制度性外部遭遇</div>
+        <div class="pc-body">
+          不同幻觉层次的观众会用框架无法翻译的经验来回应。这系统性地制造了v5.0中说的"第一种外部遭遇"——与不同幻觉层次者的真实冲突。
+        </div>
+      </div>
+      <div class="pub-card pc2">
+        <div class="pc-title">社会层面的实质性拒绝权</div>
+        <div class="pc-body">
+          任何人都可以公开拒绝、批评、反驳框架。这是代理行动正当性条件C2（实质性拒绝权）在社会层面的实现。
+        </div>
+      </div>
+      <div class="pub-card pc3">
+        <div class="pc-title">"对话性假设"的实践化</div>
+        <div class="pc-body">
+          框架声称自己是对话性假设——内容创作是真正把这个声称付诸实践的方式。不是在书斋里声称开放，而是真正放到公共空间接受无法控制的回应。
+        </div>
+      </div>
+    </div>
+
+    <div class="divlabel dly">▌"理性坚强"与"诚实"之间的张力</div>
+    <div class="quote-y">
+      <b>张力</b>："理性坚强"可能意味着不被每一个批评动摇，保持框架稳定性。
+      "诚实"可能意味着当某个反馈真正触及框架核心时，允许自己被动摇。
+      在极端情况下，这两者会产生冲突。
+    </div>
+
+    <div class="principle py">
+      <b>处理原则</b>：对<strong>形式上的批评</strong>保持"理性坚强"（不被情绪化的攻击动摇）；对<strong>实质上触及框架核心预设的反馈</strong>保持"诚实"（允许被真正动摇）。区分这两种反馈，是公共实践中最困难也最重要的技能。
+    </div>
+
+    <div class="divlabel dly">▌区分形式批评与实质反馈的操作性标准</div>
+    <div class="grid2">
+      <div class="block by">
+        <span class="bn">形式批评（保持坚强）</span>
+        <ul>
+          <li>批评在框架的语言游戏之内</li>
+          <li>批评针对某个具体工具的应用</li>
+          <li>批评来自情绪化的攻击，缺乏论证</li>
+          <li>批评可以被框架内部的机制回应</li>
+          <li style="color:#fcd34d">→ 用框架的工具认真回应，但不动摇核心</li>
+        </ul>
+      </div>
+      <div class="block br">
+        <span class="bn">实质反馈（保持诚实）</span>
+        <ul>
+          <li>反馈来自框架无法翻译的经验</li>
+          <li>反馈触及框架的核心预设（幻象/现实区分、实在界概念）</li>
+          <li>反馈无法被框架内部的任何机制消化</li>
+          <li>反馈让你感到真正的不舒适（而非只是被冒犯）</li>
+          <li style="color:#fda4af">→ 这是可证伪性条件被触发的信号，必须认真对待</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

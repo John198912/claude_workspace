@@ -1,0 +1,256 @@
+{
+    "_meta": {
+        "task_id": "seo-slice-20260307-001",
+        "mother_content_id": "draft-20260302-001",
+        "created_at": "2026-03-07T20:55:48+08:00"
+    },
+    "seo_optimization": {
+        "keywords": {
+            "primary": [
+                "失业",
+                "AI裁员",
+                "职业转型",
+                "超级个体"
+            ],
+            "long_tail": [
+                "被AI裁掉怎么办",
+                "失业之后做什么",
+                "AI时代职业转型",
+                "一人公司怎么开始",
+                "裁员后重新出发",
+                "内卷终结之后",
+                "文科生AI时代出路",
+                "超级个体方法论",
+                "最小商业闭环",
+                "失业自由感"
+            ],
+            "current_density": "1.6%",
+            "status": "✅ 自然分布，无需调整"
+        },
+        "title_variants": {
+            "公众号": "失业之后，我才开始真正工作",
+            "知乎": "被AI裁员之后，为什么有人反而活得更好了？",
+            "B站": "被裁之后，我才知道什么叫「真正工作」",
+            "小红书": "失业后我做的5件事，比上班时赚得更多的底层逻辑💡",
+            "抖音": "3个理由，AI裁员可能是好事"
+        },
+        "meta_description": {
+            "short_50": "AI裁员不是终点，是逼你从工具变回人的起点。失业之后，我找到了真正想做的事。",
+            "detailed_150": "经历两次失业，我发现：旧世界教会我们当零件，AI替代的正是这些零件化的岗位。被裁不是能力问题，是整套逻辑走到了尽头。这篇文章不教你找工作，而是分享一套从「工具化的人」变回「真实的人」的路径——立志、做与卖、取静。AI在帮我们做一件事：逼我们求真。"
+        },
+        "tags_by_platform": {
+            "公众号": [
+                "AI裁员",
+                "职业转型",
+                "超级个体",
+                "一人公司",
+                "个人成长",
+                "认知升级"
+            ],
+            "知乎": [
+                "人工智能",
+                "职业规划",
+                "裁员",
+                "职业转型",
+                "超级个体",
+                "一人公司",
+                "个人品牌"
+            ],
+            "B站": [
+                "AI裁员",
+                "失业vlog",
+                "职业转型",
+                "超级个体",
+                "认知升级",
+                "一人公司"
+            ],
+            "小红书": [
+                "#失业自由",
+                "#AI裁员",
+                "#超级个体",
+                "#一人公司",
+                "#职业转型",
+                "#认知升级",
+                "#裁员后的生活",
+                "#个人成长",
+                "#内卷终结",
+                "#Stay Hungry"
+            ],
+            "抖音": [
+                "#AI裁员",
+                "#失业",
+                "#超级个体",
+                "#一人公司",
+                "#职业转型"
+            ]
+        },
+        "optimization_notes": [
+            "首段已自然包含「失业」「AI」核心关键词，无需调整",
+            "五个章节小标题均含有情绪钩子，搜索和推荐双友好",
+            "结尾「阵痛就是征途」具有金句属性，适合被平台抓取为摘要",
+            "建议知乎发布时以问答形式切入：「被AI裁员是一种什么体验？」"
+        ]
+    },
+    "slice_strategy": {
+        "total_slices": 6,
+        "target_platforms": [
+            "公众号",
+            "小红书",
+            "B站",
+            "知乎",
+            "抖音"
+        ],
+        "slices": [
+            {
+                "slice_id": "slice-001",
+                "type": "金句卡片",
+                "title": "AI比人更擅长当零件",
+                "summary": "AI不会累、不会请假、不会要涨薪。如果你定位自己的价值是「执行、稳定、可替代」，那在AI面前竞争优势几乎是零。",
+                "source_section": "第二章",
+                "target_platforms": [
+                    "小红书",
+                    "微博"
+                ],
+                "estimated_virality": 9,
+                "independence_score": 10,
+                "pyramid_layer": "L1_attraction",
+                "publish_order": 1,
+                "next_action": "s-4.1.3-graphic-note",
+                "design_notes": "配图建议：左→零件工厂流水线（灰调），右→人像（暖调）。大字金句居中。"
+            },
+            {
+                "slice_id": "slice-002",
+                "type": "核心观点",
+                "title": "被裁掉，不是因为你不够好",
+                "summary": "Salesforce用AI替代大批客服。这些员工绩效达标，但岗位本身被替代了。裁员是结构性事件，不是对个人价值的否定。",
+                "source_section": "第一章",
+                "target_platforms": [
+                    "小红书",
+                    "知乎"
+                ],
+                "estimated_virality": 8,
+                "independence_score": 9,
+                "pyramid_layer": "L1_attraction",
+                "publish_order": 2,
+                "next_action": "s-4.1.3-graphic-note"
+            },
+            {
+                "slice_id": "slice-003",
+                "type": "方法步骤",
+                "title": "从工具到人：失业后的3步行动指南",
+                "summary": "①立志：找「做了还想继续做」的事 ②做与卖：最小成本跑通第一个商业闭环 ③取静：保护你的能量，远离噪音",
+                "source_section": "第四章",
+                "target_platforms": [
+                    "小红书",
+                    "知乎"
+                ],
+                "estimated_virality": 8,
+                "independence_score": 9,
+                "pyramid_layer": "L2_value",
+                "publish_order": 3,
+                "next_action": "s-4.1.3-graphic-note",
+                "design_notes": "清单体，每步配一个emoji图标和1句话说明"
+            },
+            {
+                "slice_id": "slice-004",
+                "type": "案例故事",
+                "title": "我的5个失败与成功的尝试",
+                "summary": "心理学茶话会→哲学分享→自媒体→桌游吧（失败）→AI系统搭建。每个都是最小成本试探，有的跑通有的没有，但拼起来让我找到了方向。",
+                "source_section": "第四章个人经历",
+                "target_platforms": [
+                    "B站",
+                    "抖音"
+                ],
+                "estimated_virality": 8,
+                "independence_score": 8,
+                "pyramid_layer": "L2_value",
+                "publish_order": 4,
+                "next_action": "s-4.1.2-video-script"
+            },
+            {
+                "slice_id": "slice-005",
+                "type": "问题讨论",
+                "title": "AI到底在裁谁？",
+                "summary": "抛出争议性观点：AI大量裁员可能是在帮我们。不是裁掉最差的人，而是在逼所有人从「工具」变回「人」。你同意吗？",
+                "source_section": "第三章",
+                "target_platforms": [
+                    "知乎",
+                    "即刻"
+                ],
+                "estimated_virality": 9,
+                "independence_score": 8,
+                "pyramid_layer": "L4_interaction",
+                "publish_order": 5,
+                "next_action": "s-4.2.2-adapt",
+                "controversy_risk": "low"
+            },
+            {
+                "slice_id": "slice-006",
+                "type": "金句卡片",
+                "title": "自由的眩晕感",
+                "summary": "每次问自己「我想做什么」，都会有一种自由的眩晕感。有些不知所措，又觉得自己无所不能。",
+                "source_section": "第三章个人经历",
+                "target_platforms": [
+                    "小红书",
+                    "微博"
+                ],
+                "estimated_virality": 7,
+                "independence_score": 10,
+                "pyramid_layer": "L1_attraction",
+                "publish_order": 6,
+                "next_action": "s-4.1.3-graphic-note",
+                "design_notes": "极简风，黑底白字，留白多。有诗意感。"
+            }
+        ],
+        "content_pyramid": {
+            "L1_attraction": {
+                "purpose": "最大化触达，吸引新受众",
+                "slices": [
+                    "slice-001",
+                    "slice-002",
+                    "slice-006"
+                ],
+                "publish_timing": "发布当天及次日"
+            },
+            "L2_value": {
+                "purpose": "提供核心价值，建立信任",
+                "slices": [
+                    "slice-003",
+                    "slice-004"
+                ],
+                "publish_timing": "发布后2-3天"
+            },
+            "L3_depth": {
+                "purpose": "展示专业深度，建立权威",
+                "slices": [
+                    "母内容（公众号长文）"
+                ],
+                "publish_timing": "第一天同步发布"
+            },
+            "L4_interaction": {
+                "purpose": "引发讨论，增强社区感",
+                "slices": [
+                    "slice-005"
+                ],
+                "publish_timing": "发布后3-5天"
+            }
+        },
+        "publishing_schedule": {
+            "day_0": [
+                "母内容（公众号长文）",
+                "slice-001 金句卡片「AI比人更擅长当零件」→ 小红书",
+                "slice-006 金句卡片「自由的眩晕感」→ 小红书"
+            ],
+            "day_1": [
+                "slice-002 核心观点「被裁不是因为你不够好」→ 小红书+知乎"
+            ],
+            "day_2": [
+                "slice-003 方法清单「从工具到人3步」→ 小红书+知乎",
+                "slice-004 故事视频「我的5个尝试」→ B站/抖音"
+            ],
+            "day_3_5": [
+                "slice-005 讨论帖「AI到底在裁谁」→ 知乎+即刻"
+            ]
+        }
+    }
+}

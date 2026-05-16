@@ -1,0 +1,286 @@
+{
+    "_meta": {
+        "version": "1.1",
+        "analysis_date": "2026-03-02T23:15:19+08:00",
+        "topics_analyzed": [
+            "topic-20260302-001",
+            "topic-20260302-002",
+            "topic-20260302-003",
+            "topic-20260302-005"
+        ],
+        "analysis_depth": "standard"
+    },
+    "analyses": {
+        "topic-20260302-001": {
+            "topic_title": "你不是能力不够，是缺少「合法性焦虑」来逃离大厂",
+            "saturation": "中（情绪原因角度饱和，框架角度空白）",
+            "platforms_scanned": [
+                "知乎",
+                "虎嗅",
+                "36氪",
+                "B站",
+                "小红书"
+            ],
+            "competitive_landscape": {
+                "existing_angles": [
+                    {
+                        "angle": "年龄焦虑/财务压力",
+                        "saturation": "高",
+                        "rep_platforms": [
+                            "知乎",
+                            "小红书"
+                        ]
+                    },
+                    {
+                        "angle": "大厂光环与身份认同",
+                        "saturation": "低",
+                        "rep_platforms": [
+                            "36氪"
+                        ]
+                    },
+                    {
+                        "angle": "「苟住」心态与内卷矛盾",
+                        "saturation": "中",
+                        "rep_platforms": [
+                            "虎嗅"
+                        ]
+                    },
+                    {
+                        "angle": "职业倦怠分析",
+                        "saturation": "中",
+                        "rep_platforms": [
+                            "澎湃",
+                            "知乎"
+                        ]
+                    }
+                ],
+                "blind_spots": [
+                    {
+                        "blindspot": "所有内容讲情绪/经济障碍，无人从「认知框架缺失」角度分析——即没有思想框架来理解「不在大厂=有意义选择」",
+                        "opportunity_size": "大",
+                        "our_capability": "是，知识库有完整的旧世界逻辑崩塌论证"
+                    }
+                ]
+            },
+            "differentiation_strategy": {
+                "our_angle": "视角差异 + 深度差异",
+                "description": "竞品讲情绪/经济障碍；我们讲「思想合法性框架缺失」——这是更底层的认知问题",
+                "competitive_advantage": "「合法性焦虑」是原创概念框架，具有强识别度"
+            },
+            "verdict": "值得做",
+            "confidence": "high",
+            "best_platform": "知乎专栏 → 公众号 → B站",
+            "must_include": [
+                "合法性焦虑概念定义",
+                "旧世界逻辑崩塌的论证",
+                "新认知框架的建立"
+            ],
+            "must_avoid": [
+                "「你应该辞职」式建议",
+                "纯焦虑放大",
+                "收入对比"
+            ]
+        },
+        "topic-20260302-002": {
+            "topic_title": "被AI裁掉之后，我才开始真正工作",
+            "saturation": "高（实操清单角度饱和，哲学/认知层面空白）",
+            "platforms_scanned": [
+                "知乎",
+                "虎嗅",
+                "36氪",
+                "B站"
+            ],
+            "competitive_landscape": {
+                "existing_angles": [
+                    {
+                        "angle": "离职实操清单（领失业金/整简历/学技能）",
+                        "saturation": "高",
+                        "rep_platforms": [
+                            "知乎",
+                            "掘金"
+                        ]
+                    },
+                    {
+                        "angle": "AI裁员趋势宏观分析",
+                        "saturation": "中",
+                        "rep_platforms": [
+                            "虎嗅",
+                            "36氪"
+                        ]
+                    },
+                    {
+                        "angle": "「失业日记」叙事",
+                        "saturation": "低",
+                        "rep_platforms": [
+                            "B站"
+                        ]
+                    }
+                ],
+                "blind_spots": [
+                    {
+                        "blindspot": "无内容从「AI在强制我们内求/从工具变人」的哲学角度重新定义裁员事件",
+                        "opportunity_size": "大",
+                        "our_capability": "是，内圣外王框架提供完整的心理重建路径"
+                    }
+                ]
+            },
+            "differentiation_strategy": {
+                "our_angle": "视角差异（失业=机遇的哲学重框）+ 深度差异",
+                "description": "竞品：失业=问题需要解决；我们：失业=AI强制你从工具变人→时代礼物",
+                "competitive_advantage": "内圣外王框架+个人叙事=独特论证链，无法被复制"
+            },
+            "verdict": "值得做·时效优先",
+            "confidence": "high",
+            "timing_warning": "竞品量本周内可能快速增长，建议2026-03-09前发布",
+            "best_platform": "B站视频 → 公众号长文",
+            "must_include": [
+                "旧世界工具化逻辑的论证",
+                "内求的具体路径",
+                "最小商业闭环作为出路"
+            ],
+            "must_avoid": [
+                "「被裁不是你的错」安慰式内容",
+                "实操清单型内容"
+            ]
+        },
+        "topic-20260302-003": {
+            "topic_title": "内核分形：为什么有些人越做越大，有些人成名即崩",
+            "saturation": "中（娱乐圈崩塌内容多但浅，个人成长内核内容泛化）",
+            "platforms_scanned": [
+                "知乎",
+                "公众号",
+                "B站",
+                "抖音"
+            ],
+            "competitive_landscape": {
+                "existing_angles": [
+                    {
+                        "angle": "娱乐圈一夜成名崩塌（八卦向）",
+                        "saturation": "高",
+                        "rep_platforms": [
+                            "凤凰",
+                            "东方财富"
+                        ]
+                    },
+                    {
+                        "angle": "「内心强大」类泛化成长内容",
+                        "saturation": "中",
+                        "rep_platforms": [
+                            "知乎",
+                            "公众号"
+                        ]
+                    },
+                    {
+                        "angle": "个人品牌建立实操",
+                        "saturation": "中",
+                        "rep_platforms": [
+                            "B站"
+                        ]
+                    }
+                ],
+                "blind_spots": [
+                    {
+                        "blindspot": "无任何内容用分形数学框架解释「内核稳定度决定扩张质量」这一规律",
+                        "opportunity_size": "大",
+                        "our_capability": "是，分形概念+朋友圈案例+作者自身经历构成完整论证"
+                    },
+                    {
+                        "blindspot": "现有「内核」内容太模糊，缺乏可操作的自我诊断工具",
+                        "opportunity_size": "中",
+                        "our_capability": "是，立志取静框架可以转化为诊断工具"
+                    }
+                ]
+            },
+            "differentiation_strategy": {
+                "our_angle": "框架差异（分形数学切入）+ 深度差异",
+                "description": "竞品：讲「谁崩了」或「要建立内核」；我们：用分形给出可操作的内核稳定度模型",
+                "competitive_advantage": "「分形」是强记忆锚点，跨域感强，几乎无竞争"
+            },
+            "verdict": "值得做",
+            "confidence": "high",
+            "best_platform": "公众号深度长文 + 图文（配分形几何图）",
+            "must_include": [
+                "分形概念解释（朋友圈案例）",
+                "内核不稳的可识别信号",
+                "立志取静作为建立路径",
+                "作者刻意远离媒体的经历"
+            ],
+            "must_avoid": [
+                "娱乐圈八卦案例",
+                "空泛的心理建设建议"
+            ]
+        },
+        "topic-20260302-005": {
+            "topic_title": "AI时代，文科生反而是最难被取代的人",
+            "saturation": "中高（文科生优势话题15+篇优质内容，整体质量较高）",
+            "platforms_scanned": [
+                "知乎",
+                "36氪",
+                "复旦大学官网",
+                "小红书",
+                "B站"
+            ],
+            "competitive_landscape": {
+                "existing_angles": [
+                    {
+                        "angle": "文科生批判思维/叙事能力优势",
+                        "saturation": "高",
+                        "rep_platforms": [
+                            "36氪",
+                            "ofweek",
+                            "学术媒体"
+                        ]
+                    },
+                    {
+                        "angle": "AI人文训练师新职业",
+                        "saturation": "中",
+                        "rep_platforms": [
+                            "163",
+                            "qq"
+                        ]
+                    },
+                    {
+                        "angle": "文科生AI工具使用方法",
+                        "saturation": "低",
+                        "rep_platforms": [
+                            "B站"
+                        ]
+                    }
+                ],
+                "blind_spots": [
+                    {
+                        "blindspot": "「艺术家型/运营家型」分型框架市场完全空白，无类似分类工具",
+                        "opportunity_size": "大",
+                        "our_capability": "是，作者自身案例（艺术家型UP主）是最强论据"
+                    },
+                    {
+                        "blindspot": "具体变现路径的第一步几乎无内容（大多停留在能力优势分析，不落地）",
+                        "opportunity_size": "中",
+                        "our_capability": "是，「做+卖」框架可以直接转化"
+                    }
+                ]
+            },
+            "differentiation_strategy": {
+                "our_angle": "换角度做——聚焦「分型自测工具+各自第一步行动」",
+                "description": "原角度（泛论文科优势）竞争激烈；换为「艺术家/运营家分型」提供可操作的自我认知工具",
+                "competitive_advantage": "原创分型框架 + 作者自身案例 + 具体变现路径"
+            },
+            "verdict": "换角度做",
+            "confidence": "medium",
+            "recommended_new_title_options": [
+                "文科生，你是艺术家还是运营家？（两条截然不同的AI时代出路）",
+                "AI时代文科生分成两种人：一种做内容，一种卖内容",
+                "找到你的文科生类型，再谈AI时代出路"
+            ],
+            "best_platform": "小红书图文（测试型）→ B站视频",
+            "must_include": [
+                "两种分型的清晰定义与自测标准",
+                "各自变现路径的第一步",
+                "作者自身艺术家型案例"
+            ],
+            "must_avoid": [
+                "重复讲叙事能力/批判思维更强（已被说烂）"
+            ]
+        }
+    }
+}
