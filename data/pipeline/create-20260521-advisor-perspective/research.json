@@ -1,0 +1,125 @@
+{
+  "material_pack": {
+    "topic_id": "create-20260521-advisor-perspective",
+    "title": "建议者视角练习：3个场景帮你做出更清晰的决定",
+    "prepared_at": "2026-05-21",
+
+    "content_positioning": {
+      "pillar": "个人成长 🌱",
+      "series": "自我认知与探索",
+      "level": "L2",
+      "target_audience": ["Lily"],
+      "platform": "小红书",
+      "format": "6图长文",
+      "word_count_range": [1200, 1800],
+      "reader_journey": {
+        "start": "读者带着'我总在纠结、做了决定又后悔'的困扰进入",
+        "middle": "理解自身利益如何干扰决策→学会三步降噪流程→通过3个场景练习",
+        "end": "带走一个可以立刻使用的决策工具+使用说明"
+      },
+      "content_goal": {
+        "primary": "教会受众使用'建议者视角'三步流程做出更清晰的决定",
+        "secondary": "让受众意识到自身利益是决策中的噪声源，但不该被完全忽略",
+        "emotional": "从'我总是做错决定'的自责→'原来噪声是可以被识别的'的赋权"
+      }
+    },
+
+    "core_arguments": [
+      {
+        "argument_id": 1,
+        "statement": "自身利益是伦理推理中最强的噪声源。当你假装在给朋友建议时，你暂时关掉了这个噪声。这就是为什么Anthropic发现'建议者'训练比'决策者'训练有效28倍。",
+        "confidence": "高",
+        "supporting_materials": ["m-001", "m-002"]
+      },
+      {
+        "argument_id": 2,
+        "statement": "但自身利益不全是不噪声——它也包含真实的约束条件。所以建议者视角只是第一步，必须配合'列约束'和'在约束中最优化'两步。",
+        "confidence": "高",
+        "supporting_materials": ["m-002", "m-003"]
+      },
+      {
+        "argument_id": 3,
+        "statement": "三个日常场景可以练习这个工具：职业选择（辞职vs留下）、关系决策（原谅vs底线）、利益诱惑（短期利益vs长期原则）。",
+        "confidence": "中",
+        "supporting_materials": ["m-004", "m-005", "m-006"]
+      }
+    ],
+
+    "supporting_materials": {
+      "theories": [
+        {
+          "material_id": "m-001",
+          "type": "theory",
+          "content": "Anthropic'困难建议'数据集：AI作为建议者时自身利益不在场→推理清晰度显著提高→3M tokens达到85M tokens同等效果。机制：移除自我保存本能的噪声。",
+          "source": "Anthropic Research + think会话洞察H",
+          "credibility": "高",
+          "usage": "图1钩子+图2原理说明"
+        },
+        {
+          "material_id": "m-002",
+          "type": "theory",
+          "content": "三步完整流程：第一步降噪（建议者视角）→第二步列约束（区分恐惧和事实）→第三步在约束中最优化（行动/时间/框架调整）。",
+          "source": "think会话对话3 + 白皮书第六章",
+          "credibility": "高",
+          "usage": "图2-图5的核心框架"
+        }
+      ],
+      "data": [
+        {
+          "material_id": "m-003",
+          "type": "data",
+          "content": "核心数据：建议者训练（3M tokens）=决策者训练（85M tokens）×28倍效率。且建议者训练的OOD泛化显著更好。",
+          "source": "Anthropic Teaching Claude Why公开版",
+          "credibility": "高",
+          "usage": "图1的数据钩子"
+        }
+      ],
+      "cases": [
+        {
+          "material_id": "m-004",
+          "type": "case",
+          "content": "场景1（职业选择）：纠结要不要辞职→建议者视角：'如果最好的朋友在这个岗位，每天被消耗到崩溃，你会建议他留下吗？'→列约束：3个月存款、行业在收缩、年龄40→第三步：不立刻辞职，设6个月过渡期",
+          "source": "构造案例（基于对话3的三步流程）",
+          "credibility": "中",
+          "usage": "图3的完整示例"
+        },
+        {
+          "material_id": "m-005",
+          "type": "case",
+          "content": "场景2（关系决策）：要不要原谅一个伤害过你的人→建议者视角：'如果你的孩子被同样伤害，你会建议他原谅吗？'→列约束：原谅不等于放弃底线、关系基础深厚→第三步：设定'有限原谅'——原谅但保留边界，如果再犯则撤回",
+          "source": "构造案例",
+          "credibility": "中",
+          "usage": "图4的完整示例"
+        },
+        {
+          "material_id": "m-006",
+          "type": "case",
+          "content": "场景3（利益诱惑）：客户要求美化数据换取更高报酬→建议者视角：'如果你的导师知道你做了这个项目，你会希望他知道吗？'→列约束：项目收入是本月主要来源、拒绝可能失去客户→第三步：提议用真实数据+更强的分析角度来赢取客户",
+          "source": "构造案例",
+          "credibility": "中",
+          "usage": "图5的完整示例"
+        }
+      ],
+      "analogies": [
+        {
+          "material_id": "m-007",
+          "type": "analogy",
+          "content": "噪声过滤器类比：你的决策像一杯浑水，自身利益的恐惧是泥沙。建议者视角让你先静置一会儿——泥沙沉下去了，你才能看清楚。但你不是要倒掉整杯水（那会连真实约束一起倒掉），你是要看清楚之后，在保留必要约束的前提下做出选择。",
+          "maps_to": "自身利益噪声 vs 真实约束",
+          "usage": "图2的原理说明"
+        }
+      ]
+    },
+
+    "material_sufficiency": {
+      "sufficient": [
+        {"argument_id": 1, "status": "充分"},
+        {"argument_id": 2, "status": "充分"},
+        {"argument_id": 3, "status": "充分"}
+      ]
+    },
+
+    "creation_readiness": "就绪",
+    "human_input_needed": []
+  }
+}

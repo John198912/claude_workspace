@@ -1,0 +1,162 @@
+{
+  "material_pack": {
+    "topic_id": "create-20260521-zero-level-knowledge",
+    "title": "零级知识：为什么"如何思考"比"思考什么"更重要",
+    "prepared_at": "2026-05-21T00:00:00Z",
+
+    "content_positioning": {
+      "pillar": "认知升级 🧠",
+      "series": "深度思考方法论",
+      "level": "L3",
+      "target_audience": ["Marcus", "Alex"],
+      "platform": "公众号",
+      "word_count_range": [2500, 4000],
+      "reader_journey": {
+        "start": "读者带着'我一直在学正确答案但感觉越来越不够用'的焦虑进入",
+        "middle": "经历认知颠覆——原来我一直只学了二级知识",
+        "end": "带着'我需要打磨原则系统而非积累答案'的方向感离开"
+      },
+      "content_goal": {
+        "primary": "让受众理解知识的层级结构，意识到'如何思考'比'思考什么'更根本",
+        "secondary": "激发受众对自己的推理格式进行反思，埋下'个人宪法'的种子",
+        "emotional": "从焦虑（'我学得不够多'）→ 恍然大悟（'原来我一直在低效学习'）→ 被赋权（'我可以改变学习的方式'）"
+      },
+      "soul_pillar": "有限性智慧",
+      "core_hook": "Anthropic实验证明：教AI'为什么'比教'做什么'有效28倍——这对你意味着什么"
+    },
+
+    "core_arguments": [
+      {
+        "argument_id": 1,
+        "statement": "知识有三个层级：零级知识（推理格式）> 一级知识（推理框架）> 二级知识（具体结论）。大多数人一生都在积累二级知识，而忽略了决定一切的一级和零级知识。",
+        "confidence": "高",
+        "supporting_materials": ["m-001", "m-002", "m-003", "m-005"]
+      },
+      {
+        "argument_id": 2,
+        "statement": "Anthropic用统计学习系统证明：理解原则比记忆规则更泛化。这不是哲学信念，是实证事实。3M tokens的'教推理' = 85M tokens的'教答案' ×28。",
+        "confidence": "高",
+        "supporting_materials": ["m-001", "m-002", "m-004"]
+      },
+      {
+        "argument_id": 3,
+        "statement": "你的推理格式不是'普遍的'——它是被特定文化传统塑造的（西方三段式 vs 儒家四段式）。意识到这一点是认知升级的第一步。",
+        "confidence": "中",
+        "supporting_materials": ["m-003", "m-006", "m-007"]
+      },
+      {
+        "argument_id": 4,
+        "statement": "可纠正性>正确性。一个诚实的错误推理系统是可修正的，一个正确但不可审视的结论系统是脆弱的。你不该追求'正确答案'，该追求'可被审视的推理链'。",
+        "confidence": "高",
+        "supporting_materials": ["m-005", "m-008"]
+      }
+    ],
+
+    "supporting_materials": {
+      "theories": [
+        {
+          "material_id": "m-001",
+          "type": "theory",
+          "content": "Anthropic Teaching Claude Why 实验发现：3M tokens OOD原则训练 = 85M tokens近分布行为训练的效果，28倍效率提升。且OOD训练泛化显著更好。",
+          "source": "Anthropic Research (2026.5.8) + Alignment Science Blog扩展版",
+          "credibility": "高",
+          "usage": "开头钩子+论证2的核心数据支撑"
+        },
+        {
+          "material_id": "m-002",
+          "type": "theory",
+          "content": "知识层级理论：零级知识（推理格式的文化编码）、一级知识（推理框架与方法论）、二级知识（具体结论与答案）。一级知识比二级知识更泛化、更耐久。",
+          "source": "think-20260519-teaching-claude-why (P2体系扩展)",
+          "credibility": "中",
+          "usage": "论证1的核心框架"
+        },
+        {
+          "material_id": "m-003",
+          "type": "theory",
+          "content": "推理格式的文化编码：西方三段式（分析→权衡→决定）与transformer数学结构同构；儒家四段式（格物→致知→诚意→正心）需功能等价转化才能实现。",
+          "source": "think-20260519-teaching-claude-why (对话1)",
+          "credibility": "中",
+          "usage": "论证3的核心框架"
+        }
+      ],
+      "data": [
+        {
+          "material_id": "m-004",
+          "type": "data",
+          "content": "关键数据：行为筛选从22%→15%黑mail率但OOD无改善；系统提示注入（加推理）从15%→3%；困难建议数据集仅3M tokens达到85M tokens同等效果；宪法文档降低misalignment 3.4倍（65%→19%）",
+          "source": "Anthropic Research公开版数据",
+          "credibility": "高",
+          "usage": "贯穿全文的数据骨架"
+        }
+      ],
+      "cases": [
+        {
+          "material_id": "m-005",
+          "type": "case",
+          "content": "困难建议数据集中Claude的真实回应（电网安全困境）：不回答'选20%还是25%'，而是重构问题——'你不应该用单一阈值，你需要一个分级方法'。展示了'重新定义问题>回答表面问题'的原则推理。",
+          "source": "Anthropic Alignment Science Blog扩展版附录",
+          "credibility": "高",
+          "usage": "论证4的可纠正性案例"
+        },
+        {
+          "material_id": "m-006",
+          "type": "case",
+          "content": "MSM奶酪偏好实验：两个模型接收完全相同的微调数据，但因灌入了不同的价值Spec（'亲实惠' vs '亲美国'），在OOD测试中泛化出完全不同的价值观。证明：Spec（宪法）决定了模型如何泛化。",
+          "source": "MSM论文 (arXiv:2605.02087)",
+          "credibility": "高",
+          "usage": "论证3的补充案例"
+        }
+      ],
+      "quotes": [
+        {
+          "material_id": "m-007",
+          "type": "quote",
+          "content": "不是Anthropic选择了西方格式，而是西方格式选择了AI——因为它的操作结构与transformer的数学结构是同一套语法。",
+          "author": "think会话·洞察A",
+          "usage": "论证3的金句收束"
+        }
+      ],
+      "analogies": [
+        {
+          "material_id": "m-008",
+          "type": "analogy",
+          "content": "背1000道微积分题 vs 理解微积分原理。前者在考试出了新题型时完全失效，后者能推导出任何新题的答案。二级知识=背题，一级知识=理解原理。",
+          "maps_to": "知识层级：二级知识 vs 一级知识",
+          "usage": "论证1的入门类比"
+        },
+        {
+          "material_id": "m-009",
+          "type": "analogy",
+          "content": "国际象棋的规则（象走斜线）不是文化相对的，但棋风（攻击型vs防守型）可以是文化塑造的。过程层=规则，宪法层=棋风。",
+          "maps_to": "推理格式的普遍性vs文化特殊性",
+          "usage": "论证3的辅助类比"
+        }
+      ],
+      "counter_examples": [
+        {
+          "material_id": "m-010",
+          "type": "counter",
+          "content": "反面案例：传统应试教育——学生背答案、套模板、追求'正确答案'。在标准化考试中有效（近分布），但在真实世界的复杂问题前完全失效（OOD）。这与Anthropic的行为筛选训练是同构的。",
+          "usage": "论证2的反面对照"
+        }
+      ]
+    },
+
+    "material_sufficiency": {
+      "sufficient": [
+        {"argument_id": 1, "status": "充分", "note": "理论+数据+类比齐全"},
+        {"argument_id": 2, "status": "充分", "note": "数据+反面案例齐全"},
+        {"argument_id": 4, "status": "充分", "note": "案例+类比齐全"}
+      ],
+      "needs_supplement": [
+        {"argument_id": 3, "status": "需补充", "note": "需要创作者个人经历：你是从什么时候开始意识到自己的'推理格式'可能是被文化塑造的？", "action": "⚠️ 人工补充点"}
+      ]
+    },
+
+    "creation_readiness": "就绪",
+    "human_input_needed": [
+      "论证3中需要补充创作者亲身经历：一次跨文化沟通中发现自己'默认的思考方式'和对方不同的经历",
+      "结尾前需要补充个人反思：你现在如何看待自己过去'只追求正确答案'的学习方式？"
+    ]
+  }
+}

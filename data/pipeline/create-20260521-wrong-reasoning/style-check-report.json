@@ -1,0 +1,11 @@
+{
+  "task_id": "create-20260521-wrong-reasoning",
+  "agent": "s-3.3-style-engine",
+  "mode": "check",
+  "check_depth": "standard",
+  "grade": "良好",
+  "overall_match_score": 8.5,
+  "issues": [],
+  "issue_summary": {"total": 0},
+  "review_notes": "播客口播风格与SOUL温和引导高度一致。全文使用'我邀请你''我想和你分享''不是答案，是方向'等推荐表达。思想实验的递进节奏控制得当——从不安到缓解到行动方向。无爹味、无鸡汤、无居高临下。适合单人口播。"
+}

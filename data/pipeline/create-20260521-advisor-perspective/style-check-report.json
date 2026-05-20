@@ -1,0 +1,52 @@
+{
+  "task_id": "create-20260521-advisor-perspective",
+  "agent": "s-3.3-style-engine",
+  "mode": "check",
+  "check_depth": "standard",
+  "original_length": 1600,
+
+  "check_report": {
+    "overall_match_score": 8.5,
+    "grade": "良好",
+
+    "dimension_scores": {
+      "formality_match": {"score": 8, "status": "✅ 符合"},
+      "tone_match": {"score": 9, "status": "✅ 符合"},
+      "humor_match": {"score": 7, "status": "✅ 符合"},
+      "conversational_match": {"score": 9, "status": "✅ 符合"},
+      "info_density_match": {"score": 8, "status": "✅ 符合"},
+      "anti_cliche_match": {"score": 8, "status": "✅ 符合"}
+    },
+
+    "issues": [
+      {
+        "issue_id": "i-001",
+        "severity": "low",
+        "category": "轻微规则化语气",
+        "location": "图2原理部分",
+        "original_text": "这不是逃避责任——这是临时关掉噪声，让你的伦理推理更清晰。",
+        "problem_description": "整体语调温和，此处'不是...是...'的否定-肯定句式轻微偏向指导姿态，但仍在可接受范围",
+        "suggested_fixes": [
+          "我的理解是：这不是逃避责任——更像是临时关掉噪声，让自己听清楚自己的判断。"
+        ],
+        "auto_fix_applied": false
+      }
+    ],
+
+    "issue_summary": {
+      "total": 1,
+      "high_severity": 0,
+      "medium_severity": 0,
+      "low_severity": 1
+    }
+  },
+
+  "revised_content": "无需整体改动。小红书平台的对话感天然更强，初稿已充分体现。1处低严重度建议——作者自行判断。",
+
+  "diff_summary": {
+    "total_changes": 0,
+    "high_impact_changes": []
+  },
+
+  "human_review_required": false
+}

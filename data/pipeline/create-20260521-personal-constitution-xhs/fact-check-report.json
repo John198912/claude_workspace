@@ -1,0 +1,11 @@
+{
+  "task_id": "create-20260521-personal-constitution-xhs",
+  "agent": "s-3.4.1-fact-check",
+  "check_mode": "quick",
+  "overall_score": 8.8,
+  "grade": "通过",
+  "passed": true,
+  "issues": [],
+  "kb_cross_check": {"matched_entries": 2, "supported_claims": 2},
+  "review_notes": "核查通过。0问题。核心数据引用准确（80页宪法、3.4倍提升）。"
+}

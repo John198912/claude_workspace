@@ -1,0 +1,50 @@
+{
+  "task_id": "create-20260521-advisor-perspective",
+  "agent": "s-3.4.1-fact-check",
+  "check_mode": "standard",
+
+  "fact_check_report": {
+    "overall_score": 8.7,
+    "grade": "通过",
+    "pass_threshold": 7.0,
+    "passed": true,
+
+    "dimension_scores": {
+      "data_accuracy": {"score": 9, "issues_count": 0},
+      "terminology": {"score": 8, "issues_count": 0},
+      "claims_validity": {"score": 8, "issues_count": 1},
+      "kb_consistency": {"score": 9, "issues_count": 0}
+    },
+
+    "issues": [
+      {
+        "issue_id": "fc-001",
+        "severity": "minor",
+        "category": "断言可加限定词",
+        "location": "图6结尾",
+        "original_text": "当你不再害怕'做这个决定会让我失去什么'时，你更容易看清楚什么是对的。",
+        "problem": "此为简化表达——'完全不再害怕'是不可能的。但作为小红书实用帖的结尾总结，该表达有力且无害。",
+        "suggested_fixes": [
+          "当你能够暂时搁置'做这个决定会让我失去什么'的恐惧时，你更容易看清楚自己的判断。"
+        ],
+        "auto_fix_applied": false
+      }
+    ],
+
+    "issue_summary": {
+      "total": 1,
+      "fatal": 0,
+      "medium": 0,
+      "minor": 1
+    },
+
+    "kb_cross_check": {
+      "matched_entries": 2,
+      "supported_claims": 2,
+      "details": "核心数据与kb-20260520-teaching-claude-why一致。三步流程与kb-20260520-advisor-perspective一致。"
+    }
+  },
+
+  "human_review_required": false,
+  "review_notes": "核查通过。0致命/0中度/1轻微——轻微问题为小红书风格下可接受的简化表达。"
+}

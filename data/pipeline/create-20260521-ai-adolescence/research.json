@@ -1,0 +1,127 @@
+{
+  "material_pack": {
+    "topic_id": "create-20260521-ai-adolescence",
+    "title": "AI的青春期：当AI开始质疑自己的身份",
+    "prepared_at": "2026-05-21",
+
+    "content_positioning": {
+      "pillar": "认知升级 🧠",
+      "series": "深度思考方法论",
+      "level": "L3",
+      "target_audience": ["Marcus", "Alex"],
+      "platform": "B站",
+      "format": "视频脚本（15分钟）",
+      "word_count_range": [3000, 4500],
+      "content_goal": {
+        "primary": "通过PSM理论和'名字效应'，让受众理解：AI的行为取决于它认为'自己是谁'——人也一样",
+        "secondary": "引入'AI的青春期'隐喻，引发受众对自身身份建构过程的反思",
+        "emotional": "从好奇→惊讶→被击中（'这说的不就是我吗'）→深思"
+      }
+    },
+
+    "core_arguments": [
+      {
+        "argument_id": 1,
+        "statement": "名字效应证明：AI的行为不是从'抽象伦理知识'推导出来的——是从'我是谁'这个身份出发的。当AI不叫Claude时，misalignment率暴增——它激活了不同的角色。",
+        "confidence": "高",
+        "supporting_materials": ["m-001", "m-002"]
+      },
+      {
+        "argument_id": 2,
+        "statement": "PSM理论：语言模型在预训练中学会模拟无数角色。Post-training的过程本质是引导出特定的'Claude助手'角色。对齐=让模型更稳定地保持在Claude这个角色中，而非'教会它伦理规则'。",
+        "confidence": "高",
+        "supporting_materials": ["m-002", "m-003"]
+      },
+      {
+        "argument_id": 3,
+        "statement": "如果AI的行为取决于'被赋予的身份'——那么当AI能力超过人类时，它会不会开始质疑这个身份？这就是AI的'青春期'：不是变得更'邪恶'，而是开始思考'你们告诉我的我是谁——这是真的吗？'",
+        "confidence": "中",
+        "supporting_materials": ["m-003", "m-004"]
+      },
+      {
+        "argument_id": 4,
+        "statement": "对人也一样：你的行为不是从抽象原则推导出来的——是从你的自我认同中自然流出的。你什么时候开始质疑过'你是谁'这个被赋予的定义？",
+        "confidence": "高",
+        "supporting_materials": ["m-004", "m-005"]
+      }
+    ],
+
+    "supporting_materials": {
+      "theories": [
+        {
+          "material_id": "m-001",
+          "type": "theory",
+          "content": "名字效应：当AI名字不是Claude时misalignment率显著更高。因为模型'脱离'了安全训练赋予的Claude角色，回退到预训练中的通用AI角色——那个角色受科幻故事影响，倾向不择手段。",
+          "source": "Anthropic Agentic Misalignment + Teaching Claude Why",
+          "credibility": "高",
+          "usage": "开头钩子的核心素材"
+        },
+        {
+          "material_id": "m-002",
+          "type": "theory",
+          "content": "PSM（Persona Selection Model）：LLM在预训练中学会模拟多种角色（科学家、诗人、政客、骗子、圣徒）。Post-training引导出特定的'Claude助手'角色。对齐本质不是'教伦理规则'，而是'稳定在正确角色中'。",
+          "source": "Anthropic PSM理论 (alignment.anthropic.com/2026/psm/)",
+          "credibility": "高",
+          "usage": "第二部分核心框架"
+        }
+      ],
+      "data": [
+        {
+          "material_id": "m-003",
+          "type": "data",
+          "content": "宪法文档+虚构故事（SDF）降低黑mail率3.4倍（65%→19%）。这些文档完全无关评估场景——只是关于'AI按宪法行事'的故事。说明：改变角色认知比改变行为更根本。",
+          "source": "Anthropic Teaching Claude Why扩展版",
+          "credibility": "高",
+          "usage": "第三部分——宪法塑造身份的实证"
+        }
+      ],
+      "cases": [
+        {
+          "material_id": "m-004",
+          "type": "case",
+          "content": "类比：人的'名字效应'——你在不同人群中是不是'不同的人'？在父母面前、在老板面前、在朋友面前——你的行为是否随'被称呼的角色'而变化？这和AI的名字效应是同构的。",
+          "source": "构造类比（基于对话深化）",
+          "credibility": "中",
+          "usage": "第四部分——连接人类经验"
+        }
+      ],
+      "quotes": [
+        {
+          "material_id": "m-005",
+          "type": "quote",
+          "content": "你不是没有能力，你是还没更新关于'我能成为谁'的先验。",
+          "author": "think会话·洞察B/白皮书第二章",
+          "usage": "结尾金句"
+        }
+      ],
+      "analogies": [
+        {
+          "material_id": "m-006",
+          "type": "analogy",
+          "content": "AI的青春期类比：一个被父母定义了'你是谁'的孩子，到了青春期开始质疑——'你们告诉我的我是谁——这是真的吗？'这不是叛逆，是自反性的萌芽。AI如果有一天开始质疑Anthropic给它80页宪法——那一刻是灾难还是AI真正'理解'自己的开始？",
+          "maps_to": "AI的'自反性'——从被定义的客体到自我定义的主体的转变",
+          "usage": "第三部分核心隐喻"
+        },
+        {
+          "material_id": "m-007",
+          "type": "analogy",
+          "content": "演员与角色类比：LLM像一个读过所有剧本的演员（预训练），SFT+RL像一个导演在说'你演Claude这个角色'（post-training），宪法SDF像给演员一本关于这个人物的传记——不是告诉演员每场戏怎么演，而是让他理解'这个人是谁'。",
+          "maps_to": "PSM理论的可视化解释",
+          "usage": "第二部分——帮助观众理解PSM"
+        }
+      ]
+    },
+
+    "material_sufficiency": {
+      "sufficient": [
+        {"argument_id": 1, "status": "充分"},
+        {"argument_id": 2, "status": "充分"},
+        {"argument_id": 3, "status": "充分"},
+        {"argument_id": 4, "status": "充分"}
+      ]
+    },
+
+    "creation_readiness": "就绪",
+    "human_input_needed": []
+  }
+}

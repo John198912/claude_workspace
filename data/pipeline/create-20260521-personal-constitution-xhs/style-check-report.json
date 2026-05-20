@@ -1,0 +1,9 @@
+{
+  "task_id": "create-20260521-personal-constitution-xhs",
+  "agent": "s-3.3-style-engine",
+  "mode": "check",
+  "grade": "良好",
+  "overall_match_score": 8.8,
+  "issues": [],
+  "review_notes": "小红书互动贴风格准确——轻量、对话感强、每图有明确的互动钩子。'个人宪法'概念通过Claude宪法的故事自然引入，无黑话感。图4的'诚实vs自我欺骗'处理得当——不说教，只给两个选项让读者自己选。全程推荐表达（'你可以''我邀请你'），无爹味。"
+}

@@ -1,0 +1,70 @@
+{
+  "task_id": "create-20260521-zero-level-knowledge",
+  "agent": "s-3.3-style-engine",
+  "mode": "check",
+  "check_depth": "standard",
+  "original_length": 3800,
+
+  "check_report": {
+    "overall_match_score": 8.2,
+    "grade": "良好",
+
+    "dimension_scores": {
+      "formality_match": {"score": 8, "status": "✅ 符合"},
+      "tone_match": {"score": 8, "status": "✅ 符合"},
+      "humor_match": {"score": 7, "status": "✅ 符合"},
+      "conversational_match": {"score": 9, "status": "✅ 符合"},
+      "info_density_match": {"score": 8, "status": "✅ 符合"},
+      "anti_cliche_match": {"score": 7, "status": "✅ 符合"}
+    },
+
+    "issues": [
+      {
+        "issue_id": "i-001",
+        "severity": "low",
+        "category": "轻微决断语气",
+        "location": "第四章开头",
+        "original_text": "你不该追求'永远正确'。你该追求'错了可以快速发现和修正'。",
+        "problem_description": "'你该'在SOUL风格中属于边界表达——虽非'你应该'的直接违规，但连续两个'你该'叠加产生轻微的指导姿态",
+        "suggested_fixes": [
+          "一个更耐久的方向是：追求'错了可以快速发现和修正'，而非'永远正确'。",
+          "我的经验是：'永远正确'是不可能的，但'错了能快速发现'是可以训练的。"
+        ],
+        "auto_fix_applied": false
+      },
+      {
+        "issue_id": "i-002",
+        "severity": "low",
+        "category": "模板化表达",
+        "location": "第一章",
+        "original_text": "这不是'理解比背诵好'这种正确的废话。",
+        "problem_description": "'正确的废话'本身是SOUL内容中被标记的AI特征词汇——虽然此处是反讽使用，但已被识别",
+        "suggested_fixes": [
+          "这不是那种人人都点头却没人行动的'道理'。"
+        ],
+        "auto_fix_applied": false
+      }
+    ],
+
+    "issue_summary": {
+      "total": 2,
+      "high_severity": 0,
+      "medium_severity": 0,
+      "low_severity": 2,
+      "by_category": {
+        "轻微决断语气": 1,
+        "模板化表达": 1
+      }
+    }
+  },
+
+  "revised_content": "无需整体改写，仅2处低严重度建议。初稿整体风格与SOUL品牌高度一致：对话感强、无爹味、无鸡汤、个人经历自然融入、论证诚实。",
+
+  "diff_summary": {
+    "total_changes": 0,
+    "high_impact_changes": []
+  },
+
+  "human_review_required": false,
+  "review_notes": "2处低严重度问题——建议作者自行判断是否修改。不改也不影响发布质量。"
+}

@@ -1,0 +1,115 @@
+{
+  "material_pack": {
+    "topic_id": "create-20260521-personal-constitution",
+    "title": "个人宪法工作坊：写下你的3条核心原则",
+    "prepared_at": "2026-05-21",
+    "content_positioning": {
+      "pillar": "个人成长 🌱",
+      "series": "自我认知与探索",
+      "level": "L2",
+      "target_audience": ["Lily", "Marcus", "Alex"],
+      "platform": "公众号",
+      "word_count_range": [3000, 5000],
+      "reader_journey": {
+        "start": "读者可能刚读完A1（零级知识），带着'我意识到我需要原则系统，但从哪开始'的需求进入",
+        "middle": "被一步步引导：回忆最难决定→提取原则→检验真伪→设定排序→测试宪法→建立迭代",
+        "end": "带着一份初版个人宪法离开，知道如何持续打磨它"
+      },
+      "content_goal": {
+        "primary": "让读者在读完这篇文章的过程中，实际写出自己的3条核心原则",
+        "secondary": "建立'宪法是活文档'的认知——不是一次写完就束之高阁",
+        "emotional": "从'我不知道从哪开始'→'原来我的原则已经在我做过的最难决定里'→'我写下来了'的成就感"
+      }
+    },
+    "core_arguments": [
+      {
+        "argument_id": 1,
+        "statement": "Anthropic为Claude写了80页宪法——定义它是谁、信什么、在困境中如何选择。你为自己写了吗？个人宪法不是'目标清单'，而是'原则系统'——目标告诉你往哪走，原则告诉你走到岔路口时如何选。",
+        "confidence": "高",
+        "supporting_materials": ["m-001", "m-002"]
+      },
+      {
+        "argument_id": 2,
+        "statement": "你的原则已经在你做过的最难的决定里。不需要从零发明——只需要从你的经历中提取。'最难的决定'比'最成功的决定'更能暴露你的真实原则。",
+        "confidence": "高",
+        "supporting_materials": ["m-003"]
+      },
+      {
+        "argument_id": 3,
+        "statement": "原则之间会有冲突——这不是你的宪法设计得不好。排序规则就是你的'元宪法'。当两条原则指向相反方向时，有时'重构问题>回答问题'。",
+        "confidence": "中",
+        "supporting_materials": ["m-004", "m-005"]
+      },
+      {
+        "argument_id": 4,
+        "statement": "宪法是活文档——每次困境中打开它、使用它、修改它。完美的宪法不存在，但有盲区的宪法比没有宪法好——因为盲区可以被发现和修正。",
+        "confidence": "高",
+        "supporting_materials": ["m-006"]
+      }
+    ],
+    "supporting_materials": {
+      "theories": [
+        {
+          "material_id": "m-001",
+          "type": "theory",
+          "content": "Anthropic Claude宪法：80页身份文档，不是使用手册。定义Claude是什么、信什么。宪法SDF（通过文档浸润改变角色先验）降低misalignment 3.4倍。",
+          "source": "Anthropic Claude宪法 (2026.1) + Teaching Claude Why",
+          "credibility": "高",
+          "usage": "开头钩子——为什么你也需要一份宪法"
+        },
+        {
+          "material_id": "m-002",
+          "type": "theory",
+          "content": "原则 vs 目标：目标告诉你往哪走，原则告诉你走到岔路口时如何选。目标在实现后失效，原则在实现后更确定。目标需要外部条件配合，原则在任何条件下都可以被坚持。",
+          "source": "think会话 Q6 + 白皮书第五章",
+          "credibility": "高",
+          "usage": "第一部分——区分宪法和目标清单"
+        }
+      ],
+      "cases": [
+        {
+          "material_id": "m-003",
+          "type": "case",
+          "content": "引导问题序列（基于附录C的20问）：回忆最难决定→提取原则→追溯来源→重复→质控检查。完整引导流程：5个阶段。",
+          "source": "白皮书附录C + 第五章",
+          "credibility": "高",
+          "usage": "全文的引导骨架"
+        },
+        {
+          "material_id": "m-004",
+          "type": "case",
+          "content": "原则冲突示例：原则A'诚实' vs 原则B'不伤害他人'——朋友问新发型好不好看。排序规则示例：'当诚实和不伤害冲突时，如果对方处于脆弱状态，不伤害优先；如果对方需要真实反馈来成长，诚实优先。'",
+          "source": "构造案例（白皮书第五章）",
+          "credibility": "中",
+          "usage": "第三部分——排序规则"
+        },
+        {
+          "material_id": "m-005",
+          "type": "case",
+          "content": "重构问题示例：'我应该诚实还是善良？'→重构：'在什么条件下诚实服务于善良？这两个原则的冲突是真实的还是表面的？'Claude在电网安全困境中不回答'20%还是25%'，而是重构为'分级方法'。",
+          "source": "困难建议数据集Claude回应 + Q5深化",
+          "credibility": "高",
+          "usage": "第三部分——原则冲突时的高级处理"
+        }
+      ],
+      "quotes": [
+        {
+          "material_id": "m-006",
+          "type": "quote",
+          "content": "一份有盲区的宪法比没有宪法好——因为盲区可以被发现和修正，而没有宪法意味着你每次都在重新发明你的决策框架。",
+          "author": "think会话·白皮书第五章",
+          "usage": "第四部分——鼓励读者接受不完美"
+        }
+      ]
+    },
+    "material_sufficiency": {
+      "sufficient": [
+        {"argument_id": 1, "status": "充分"},
+        {"argument_id": 2, "status": "充分"},
+        {"argument_id": 3, "status": "充分"},
+        {"argument_id": 4, "status": "充分"}
+      ]
+    },
+    "creation_readiness": "就绪"
+  }
+}
