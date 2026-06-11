@@ -1,0 +1,64 @@
+{
+  "gate": "publish_package_gate",
+  "artifact": {
+    "path": "content/slices/create-20260608-ai-recursive-self-human-value/slice-015-bilibili-video.md",
+    "platform": "bilibili",
+    "type": "video"
+  },
+  "reviewer": {
+    "agent_id": "qg-publish-bilibili-001",
+    "context_mode": "fresh_independent"
+  },
+  "gate_status": "conditional",
+  "checks": [
+    {
+      "name": "body_not_empty",
+      "result": "pass",
+      "detail": "完整脚本约2000字口播量，含五个结构分段，正文非空。"
+    },
+    {
+      "name": "required_sections",
+      "result": "pass",
+      "detail": "frontmatter完整（id/platform/type/title）；含封面文案、正文（完整脚本）、标签、设计指引。"
+    },
+    {
+      "name": "platform_known",
+      "result": "pass",
+      "detail": "bilibili在平台枚举内。"
+    },
+    {
+      "name": "platform_hard_limits",
+      "result": "pass",
+      "detail": "B站标题'AI已经在建造自己了，我们手里还剩什么 | 上周五件事深度解析'约38字，符合建议范围。"
+    },
+    {
+      "name": "forbidden_terms_scan",
+      "result": "pass",
+      "detail": "未检出绝对化用词、站外导流词、商业推广未标注等违规项。"
+    },
+    {
+      "name": "brand_compliance",
+      "result": "pass",
+      "detail": "无'Marcus''Lily'代称；所有英文引用有中文翻译；同行者姿态；无焦虑贩卖；结尾CTA为互动引导而非商业承诺。"
+    },
+    {
+      "name": "bilibili_format_check",
+      "result": "warn",
+      "detail": "脚本为文字稿，实际拍摄前需确认：①【画面】标记是否与剪辑师沟通清楚；②数据可视化（80%/52倍/57.5%）是否有对应素材；③Mollick/Anthropic官博截图需确认版权使用授权。建议发布前完成拍摄review。"
+    }
+  ],
+  "blockers": [],
+  "warnings": [
+    {
+      "severity": "medium",
+      "summary": "视频脚本需拍摄制作后才能最终验证",
+      "detail": "当前为文字脚本，实际节奏/时长以拍摄为准。建议拍摄完成后再次确认10分钟目标时长是否达标。"
+    }
+  ],
+  "human_review": {
+    "required": true,
+    "status": "pending",
+    "note": "发布前需：①完成拍摄；②确认数据可视化素材；③拍摄版时长核查（目标10分钟）。"
+  },
+  "created_at": "2026-06-08T23:00:00.000Z"
+}

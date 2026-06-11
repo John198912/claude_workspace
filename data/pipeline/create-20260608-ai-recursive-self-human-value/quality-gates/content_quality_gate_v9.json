@@ -1,0 +1,78 @@
+{
+  "gate": "content_quality_gate",
+  "artifact": {
+    "path": "data/pipeline/create-20260608-ai-recursive-self-human-value/draft-v9-ops.md",
+    "version": "v9-ops",
+    "audience": "通用ops主版（隐性双视角：已有事业 + 还在探索）",
+    "fuses": ["v2-通用", "v4-marcus", "v6-lily"]
+  },
+  "reviewer": {
+    "agent_id": "qg-reviewer-v9-ops-independent",
+    "context_mode": "fresh_independent",
+    "note": "由 Orchestrator 用 Agent 工具以全新独立上下文拉起的只读 reviewer，未参与生成。原始裁决 conditional_pass；下列状态为 reviewer 裁决 + Orchestrator 复核源文件 + 修复后的最终结论。"
+  },
+  "gate_status": "pass",
+  "gate_status_note": "reviewer 初判 conditional_pass，指出 1 项 high + 若干 medium/low。Orchestrator 复核源文件后：high(48倍伪归因)已修复；reviewer 的 57.4% medium 经核验为误报（全流程一致使用 57.5%）已驳回；其余为 v2 gate 即存在、v7/v8 已带病发布的流程级遗留不确定项，非 v9 新增，记录在案不阻断。",
+  "checks": [
+    {
+      "name": "fact_claim_audit",
+      "result": "pass_after_fix",
+      "detail": "reviewer 初判 conditional。复核与处置：(1) [HIGH·已修复] 原 L43 'Anthropic自己说，52倍里，人类熟练工花4到8小时只能贡献4倍，剩下48倍是AI做人做不到的优化'——经核验该分解不在任何一手来源，仅出现在派生稿与 slice-001-bilibili，属伪造的逐字归因。已改写为'代码优化速度从去年的3倍，暴增到今年的52倍——同一件事的优化效率，一年里翻了十几倍'（仅保留可核验事实，去除虚假归因）。(2) [MEDIUM·驳回] reviewer 称'验证记录为57.4%、草稿57.5%矛盾'——Orchestrator grep 全流程文件（p1-p4-deep-think/outline/topic-mine/全部slice/前序v5 gate）一致为 57.5%，无任何 57.4% 记录；reviewer 所引 info-intake 57.4% 在本任务目录不存在，判定为 reviewer 幻觉，维持 57.5%。(3) [MEDIUM·遗留] Anthropic'呼吁全球暂停'与 Altman'幼虫版本'/'OpenAI确认模型参与创造自己'——v2 gate 即标记 source alignment uncertain，v4/v7/v8 均带此项发布；属真实事件但来源覆盖待确认，非 v9 新增，建议 publish 前补来源或软化归因。其余事实主张（80%+合并代码、8倍产出、3→52倍、51%→64%/129场景、机器流量多数派、Mollick改口+OpenAI章程引文、Imas/Phil经济学、Gary Marcus反方）均挂源一致。"
+    },
+    {
+      "name": "english_quote_translation",
+      "result": "pass",
+      "detail": "正文英文全量盘点。专有名词（可直接保留）：AI/Anthropic/Claude/OpenAI/Sam Altman/GPT-5.3 Codex/GPT-5.5/Cloudflare/CEO/Ethan Mollick/Dwarkesh Patel/Google DeepMind/Alex Imas/Epoch/Phil Trammell/Gary Marcus。需翻译项——全部中文为主、原文括注：①《当AI建造自己》(When AI Builds Itself) ②《共存与协同智能的终结》(Co-Existence and the End of Co-Intelligence) ③'这看起来像是提示注入。'('This is prompt-injection-shaped.') ④马的警告：完整中译+原文括注 ⑤'我们没有任何数据'：完整中译（含'数据界的曼哈顿计划'）+原文括注 ⑥破折号(em-dash) ⑦通用人工智能(AGI) 首次出现即译。无任何英文引用缺中译。[已修复] Imas'内在偏好'句原带引号但无英文原文，经核验为实质转述而非逐字引语，已去引号改为转述句式，避免把转述伪装成逐字引用。"
+    },
+    {
+      "name": "audience_persona_anonymization",
+      "result": "pass",
+      "detail": "正文人群代称扫描：Lily=0 / 马库斯=0 / 莉莉=0。'Marcus'仅以'Gary Marcus'（被引真实AI批评者，frontmatter sources 列明）出现，非人群代称。隐性区分到位且可读：开篇'对有些人是一把刀…对另一些人是一只手…我不替你贴标签'；S3 用'一种人/另一种人'平行陈述供读者自行对号；行动段(S5)零身份硬分组（'如果你已经有稳定收入/还在找方向'命中=0），其条件均挂在'纸面状态'（右栏空/满）而非身份，同一读者可双向自检。"
+    },
+    {
+      "name": "brand_compliance_forbidden_expressions",
+      "result": "pass",
+      "detail": "正文 grep：你应该=0 / 你必须=0 / 我来教你=0 / 年轻人就是要=0 / 只要努力就能=0 / 成功人士都是=0。临界项均良性：'必须'×1 在被拆解的读者焦虑引语内（'我必须马上找到答案'的紧绷）；'你就能'×1 为被显式否定的稻草人（'很容易滑向一个暗示：只要你够清醒、够努力，你就能守住…/不是这样的'）。"
+    },
+    {
+      "name": "brand_compliance_forbidden_patterns",
+      "result": "pass",
+      "detail": "焦虑贩卖 PASS（命名焦虑后即松绑：'看见边界不是泄气是减负'、'右栏空了别慌'）/ 空洞鸡汤 PASS（每处安抚都挂在两栏可操作动作上）/ 居高临下 PASS（'我自己差点想绕过去'第一人称示弱，同行者姿态）/ 极端化AI PASS（Gary Marcus+复杂性刹车三条件+IPO动机三重反方平衡；AI喻为海平面非反派）/ 快速致富 PASS（明确拒绝'宏大人生改造方案'）/ 理论堆砌 PASS（关系性部门→定价测试；判断力是流量→医生看片/写作者废稿；分配层→工业革命后手工皮具）。"
+    },
+    {
+      "name": "brand_compliance_rivet_structure",
+      "result": "pass",
+      "detail": "R：三事实重锤开场+'哪一件让你咯噔'打破'AI只是工具'默认假设。I：S2四层拆解（能力/基础设施/叙事/经济）照亮自动化vs自主化深层结构。V：S3'分配层不在你手里'诚实边界，对两种处境各自验证。E：S4海平面/芭蕾/练习场+Mollick初稿与128破折号具身化。T：S5给出ZPD内今晚可做的判断动作（一张纸·两栏·一个问题·定期重做）。五阶完整自然。"
+    },
+    {
+      "name": "narrative_dual_audience_coherence",
+      "result": "pass",
+      "detail": "reviewer 判定：是一篇连贯文章而非两篇拼接。共享脊柱（海平面不可逆→供给侧vs需求侧→判断力是流量→练习场被AI侵蚀→可复用的判断仪式）通用；两种处境作为对同一内容的平行解读叠加，而非隔离区块。读者无需跳过'对方段落'：S3'一种人/另一种人'同处一段且都收束到'看见边界是减负'；S5单一练习承载两种填充物（'正在收钱的服务'vs'上周才第一次试的事'）而不分叉指令。隐性而可辨——稳定收入者认得'后视镜数据/窗口期'，探索者认得'别慌，很多人一开始都是空的'。"
+    }
+  ],
+  "blockers": [],
+  "resolved_or_refuted": [
+    { "severity": "high", "issue": "L43 '52倍里48倍非人力'伪造逐字归因 Anthropic", "disposition": "已修复——改写为仅含可核验事实(3→52倍)，去除虚假归因" },
+    { "severity": "medium", "issue": "reviewer 称 57.4% vs 57.5% 矛盾", "disposition": "已驳回——复核全流程一致 57.5%，reviewer 所引 57.4% 记录在本任务不存在，判为误报" },
+    { "severity": "low", "issue": "Imas '内在偏好'句以引号伪装逐字引语", "disposition": "已修复——去引号改为转述" }
+  ],
+  "carried_over_known_risks": [
+    { "severity": "medium", "issue": "Anthropic'呼吁全球暂停'来源覆盖待确认", "note": "v2 gate 即标记 uncertain；v4/v7/v8 带此项发布；建议 publish 前补来源或软化", "location": "draft-v9-ops.md 第45行附近" },
+    { "severity": "medium", "issue": "Altman'幼虫版本'引语 / 'OpenAI确认模型参与创造自己'来源对齐不清", "note": "同上，流程级遗留，非 v9 新增", "location": "draft-v9-ops.md 第47行附近" },
+    { "severity": "low", "issue": "Phil Trammell 'Epoch经济学负责人'职务未在来源显式佐证（Mollick=沃顿、Imas=DeepMind AGI经济学主任 已佐证）", "note": "非承重，建议对 Dwarkesh 该期核实", "location": "draft-v9-ops.md 第34行附近" }
+  ],
+  "notable_strengths": [
+    "隐性双视角设计成功：零人群代称泄漏，行动段零身份硬分组（条件挂在工作表状态而非读者身份），两类读者从同一脊柱各取全值。",
+    "对AI炒作有真实反方制衡（Gary Marcus反驳+复杂性刹车三条件+IPO末日动机折扣），既避免极端化AI又保持诚实。",
+    "RIVET 完整且每个抽象概念都具身落地，满足理论堆砌防线。",
+    "英文引用全部中文为主、原文括注；并主动把无原文的转述句去引号，提高引证诚实度。",
+    "v2 gate 的'你应该注意'(low)违规已在 v9 修正为'值得注意'。"
+  ],
+  "reviewer_summary": "在用户最关心的维度（三版融合、隐性双视角、英文翻译、品牌合规、RIVET）上 v9 干净通过。独立 reviewer 发现的唯一 high（伪造的48倍 Anthropic 归因）已修复；其 57.4% medium 经源文件复核为误报已驳回；Imas 引号 low 已改为转述。剩余 Altman/暂停/Trammell 为 v2 gate 即存在、v7/v8 已带病发布的流程级遗留不确定项，非 v9 新增，记录在案、建议发布前一并清理。最终：pass，0 阻断项。",
+  "human_review": {
+    "required": true,
+    "status": "pending",
+    "note": "发布前确认两点：①是否接受 Altman'幼虫'/Anthropic'暂停'两处流程级遗留来源不确定（与 v4/v7/v8 同口径）；②本文为公众号首发深度位（~6300字，与 v7 同量级），专项渠道可用 v4/v6 切片精准分发。"
+  },
+  "created_at": "2026-06-08T23:30:00.000Z"
+}

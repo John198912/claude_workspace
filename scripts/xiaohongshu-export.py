@@ -12,6 +12,8 @@ from pathlib import Path
 from datetime import datetime
 from dataclasses import dataclass
 
+from gatekeeper import validate_publish_package
+
 
 # 小红书平台限制配置
 XHS_LIMITS = {
@@ -400,6 +402,13 @@ def parse_slice_file(file_path: str) -> dict:
     }
 
 
+def extract_markdown_section(content: str, heading: str) -> str:
+    """按二级标题提取 Markdown 分节内容。"""
+    pattern = rf"^##\s*{re.escape(heading)}.*?\n(.*?)(?=^##\s+|\Z)"
+    match = re.search(pattern, content, re.DOTALL | re.MULTILINE)
+    return match.group(1).strip() if match else ""
+
+
 def extract_sections(content: str) -> dict:
     """提取各部分内容"""
     sections = {
@@ -410,26 +419,66 @@ def extract_sections(content: str) -> dict:
     }
 
     # 提取封面文案
-    cover_match = re.search(r'## 封面文案.*?\n\n(>.*?)(?=\n\n##|\Z)', content, re.DOTALL)
-    if cover_match:
-        sections['cover'] = cover_match.group(1).replace('> ', '').replace('>', '').strip()
+    cover_text = extract_markdown_section(content, "封面文案")
+    if cover_text:
+        sections['cover'] = cover_text.replace('> ', '').replace('>', '').strip()
 
     # 提取正文
-    body_match = re.search(r'## 正文.*?\n\n(.*?)(?=\n\n##|\Z)', content, re.DOTALL)
-    if body_match:
-        sections['body'] = body_match.group(1).strip()
+    sections['body'] = extract_markdown_section(content, "正文")
 
     # 提取标签
-    tags_match = re.search(r'## 标签.*?\n\n(.*?)(?=\n\n##|\Z)', content, re.DOTALL)
-    if tags_match:
-        sections['hashtags'] = tags_match.group(1).strip()
+    sections['hashtags'] = extract_markdown_section(content, "标签")
 
     # 提取设计指引
-    design_match = re.search(r'## 设计指引.*?\n\n(.*?)(?=\n\n##|\Z)', content, re.DOTALL)
-    if design_match:
-        sections['design'] = design_match.group(1).strip()
+    sections['design'] = extract_markdown_section(content, "设计指引")
 
     return sections
+
+
+def normalize_platform(value: str) -> str:
+    """标准化平台别名。"""
+    value = (value or "").strip().lower()
+    aliases = {
+        "小红书": "xiaohongshu",
+        "xhs": "xiaohongshu",
+        "xiaohongshu": "xiaohongshu",
+    }
+    return aliases.get(value, value)
+
+
+def is_xiaohongshu_slice(file_path: Path) -> bool:
+    """判断文件是否为小红书切片，支持 xiaohongshu 与 xhs 命名。"""
+    name = file_path.name.lower()
+    if "xiaohongshu" in name or "-xhs-" in name or "_xhs_" in name:
+        return True
+    try:
+        data = parse_slice_file(str(file_path))
+    except Exception:
+        return False
+    return normalize_platform(data["frontmatter"].get("platform", "")) == "xiaohongshu"
+
+
+def build_publish_package(sections: dict, frontmatter: dict, title: str) -> dict:
+    """构造 publish_package_gate 使用的轻量发布包。"""
+    return {
+        "slice_id": frontmatter.get("id", Path(frontmatter.get("source_path", "")).stem),
+        "parent_id": frontmatter.get("parent_id", ""),
+        "platform": normalize_platform(frontmatter.get("platform", "xiaohongshu")),
+        "type": frontmatter.get("type", ""),
+        "title": title,
+        "cover": sections.get("cover", ""),
+        "body": sections.get("body", ""),
+        "hashtags": parse_tags(sections.get("hashtags", "")),
+        "design": sections.get("design", ""),
+    }
+
+
+def assert_publish_package_ready(pkg: dict) -> None:
+    """发布包硬规则校验；失败时抛出 ValueError，避免静默导出空正文。"""
+    result = validate_publish_package(pkg)
+    if result["status"] == "blocked":
+        reasons = "; ".join(b.get("summary", "未知问题") for b in result["blockers"])
+        raise ValueError(f"publish_package_gate blocked: {reasons}")
 
 
 def format_for_xiaohongshu(sections: dict, title: str, content_id: str = "") -> str:
@@ -574,8 +623,11 @@ def format_for_xiaohongshu(sections: dict, title: str, content_id: str = "") -> 
 def export_single_file(file_path: str, output_dir: str = None, content_id: str = "") -> str:
     """导出单个切片文件为小红书格式"""
     data = parse_slice_file(file_path)
+    data['frontmatter']['source_path'] = file_path
     sections = extract_sections(data['content'])
     title = data['frontmatter'].get('title', '未命名')
+    pkg = build_publish_package(sections, data['frontmatter'], title)
+    assert_publish_package_ready(pkg)
 
     # 从文件名或 frontmatter 获取 content_id
     if not content_id:
@@ -605,8 +657,8 @@ def export_batch(slice_dir: str, output_dir: str = None, content_id: str = "") -
     if not slice_path.exists():
         raise FileNotFoundError(f"目录不存在: {slice_dir}")
 
-    # 查找所有小红书切片文件
-    xiaohongshu_files = list(slice_path.glob("*xiaohongshu*.md"))
+    # 查找所有小红书切片文件，支持 xiaohongshu 与 xhs 命名/平台字段
+    xiaohongshu_files = [p for p in slice_path.glob("*.md") if is_xiaohongshu_slice(p)]
 
     if not xiaohongshu_files:
         print(f"⚠️ 未在 {slice_dir} 中找到小红书切片文件")
@@ -617,6 +669,7 @@ def export_batch(slice_dir: str, output_dir: str = None, content_id: str = "") -
         output_dir = slice_path / "publish-ready"
 
     exported = []
+    failures = []
     for file in xiaohongshu_files:
         try:
             export_file = export_single_file(str(file), str(output_dir), content_id)
@@ -626,7 +679,11 @@ def export_batch(slice_dir: str, output_dir: str = None, content_id: str = "") -
             })
             print(f"✅ 已导出: {file.name}")
         except Exception as e:
+            failures.append({"source": str(file), "error": str(e)})
             print(f"❌ 导出失败: {file.name} - {e}")
+
+    if failures:
+        raise RuntimeError(f"{len(failures)} 个小红书切片未通过 publish_package_gate: {failures}")
 
     return exported
 
@@ -680,16 +737,24 @@ if __name__ == "__main__":
     elif args.batch:
         # 批量导出
         content_id = args.content_id or ""
-        exported = export_batch(args.input, args.output, content_id)
-        print(f"\n📦 共导出 {len(exported)} 个文件")
-        print(f"📁 输出目录: {args.output or Path(args.input) / 'publish-ready'}")
+        try:
+            exported = export_batch(args.input, args.output, content_id)
+            print(f"\n📦 共导出 {len(exported)} 个文件")
+            print(f"📁 输出目录: {args.output or Path(args.input) / 'publish-ready'}")
+        except Exception as e:
+            print(f"❌ 批量导出失败: {e}", file=sys.stderr)
+            sys.exit(1)
     elif args.input:
         # 单文件导出并打印
         content_id = args.content_id or ""
-        result = export_single_file(args.input, args.output, content_id)
-        if args.output:
-            print(f"✅ 已导出到: {result}")
-        else:
-            print(result)
+        try:
+            result = export_single_file(args.input, args.output, content_id)
+            if args.output:
+                print(f"✅ 已导出到: {result}")
+            else:
+                print(result)
+        except Exception as e:
+            print(f"❌ 导出失败: {e}", file=sys.stderr)
+            sys.exit(1)
     else:
         parser.print_help()

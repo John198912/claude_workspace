@@ -1,0 +1,62 @@
+{
+  "gate": "content_quality_gate",
+  "artifact": {
+    "path": "data/pipeline/create-20260608-ai-recursive-self-human-value/draft-v5-lily.md",
+    "version": "v6-lily-final",
+    "audience": "Lily only"
+  },
+  "reviewer": {
+    "agent_id": "qg-reviewer-lily-001",
+    "context_mode": "fresh_independent"
+  },
+  "gate_status": "pass",
+  "checks": [
+    {
+      "name": "fact_claim_audit",
+      "result": "pass",
+      "detail": "12 fact-type claims identified. All supported by the 5 listed sources. No unsupported claims. The article uses fewer hard data points than the Marcus version (by design — Lily needs permission not a diagnostic tool) and the facts that are used (Imas 'no data', Anthropic 52x, Cloudflare 57.5%) are sourced and accurate."
+    },
+    {
+      "name": "brand_compliance_forbidden_expressions",
+      "result": "pass",
+      "detail": "Zero matches for '你应该', '你必须', '年轻人就是要', '我来教你', '成功人士都是这样', '只要努力就能'. The article consistently uses '你' in observational/descriptive mode ('你会发现', '你可能在想') rather than prescriptive mode."
+    },
+    {
+      "name": "brand_compliance_forbidden_patterns",
+      "result": "pass",
+      "detail": "All six patterns checked. 焦虑贩卖: PASS — explicitly names anxiety and reframes it as a rational signal. 空洞鸡汤: PASS — every 'permission' is backed by structural argument (Imas data, Anthropic acceleration). 居高临下: PASS — consistent peer posture. 极端化AI: PASS — counter-view cited (Gary Marcus). 快速致富: PASS — absent. 理论堆砌: PASS — theoretical concepts (feedback loop, premature commitment) are embodied in Lily's lived experience."
+    },
+    {
+      "name": "brand_compliance_rivet_structure",
+      "result": "pass",
+      "detail": "RIVET calibrated for Lily's 松绑 needs: R — breaks 'I need to figure out who I am ASAP'; I — illuminates that even experts don't know, so premature commitment is the real risk; V — validates her anxiety as a working perception system, not a deficiency; E — embodies via Mollick's 初稿 choice and the doctor/writer practice-field analogies (repurposed for Lily's 'exploration as raw material' angle); T — one practice: replace 'finding the answer' with 'asking a better question', with the 3-month review exercise."
+    },
+    {
+      "name": "brand_compliance_voice_posture",
+      "result": "pass",
+      "detail": "Voice calibrated for Lily: warmer than Marcus, less diagnostic, more permission-giving. Maintains '走在前面半步的同行者' but the 'same step' is more visible here — the article positions itself as someone who's also figuring it out, not someone who's figured it out and is now teaching. The distinction from Marcus's tone is clear and intentional."
+    },
+    {
+      "name": "narrative_core_claim_timing",
+      "result": "pass",
+      "detail": "Core claim revealed in S1 final paragraph: '在一个连最该知道答案的人都公开说我们没有数据的世界里，你的不知道不是落后的证据——是你在和现实对齐.' This is within the first 10% of the article."
+    },
+    {
+      "name": "narrative_audience_single_focus",
+      "result": "pass",
+      "detail": "Lily-only calibration verified. No Marcus language (X/Y framework, income audit, 收入结构, 护城河/窗口). No action items that presume the reader already has a monetized identity to audit. The article's central gesture — unbinding — would be actively counterproductive for Marcus (who needs unbinding the opposite direction: from his current identity). Clean separation."
+    },
+    {
+      "name": "narrative_lily_specific_checks",
+      "result": "pass",
+      "detail": "Three Lily-specific narrative checks: (1) Does the article avoid implying 'you just need to find your thing'? PASS — explicitly argues against premature commitment. (2) Does it give exploration legitimacy without romanticizing it? PASS — reframes exploration as 'judgment raw material' with specific mechanism (data points → pattern recognition → judgment), not as a spiritual journey. (3) Does it provide a concrete tool without creating pressure? PASS — the 3-month review question is a retrospective observation exercise, not a progress metric with a target."
+    }
+  ],
+  "blockers": [],
+  "human_review": {
+    "required": true,
+    "status": "pending",
+    "note": "发布前确认：Lily-only定位意味着Marcus受众会感到'太软'。这是设计意图。两个版本按序发布——先Marcus（拆迁），后Lily（松绑），或在同一周内分渠道发布。"
+  },
+  "created_at": "2026-06-08T22:00:00.000Z"
+}

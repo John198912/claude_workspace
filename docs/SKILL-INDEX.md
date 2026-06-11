@@ -1,7 +1,9 @@
 # Skill 统一索引 · SKILL-INDEX
 
-> 版本：V2.0 | 更新日期：2026-04-22 | 总计：20个核心 Skill
-> V2.0 重大变更：简化架构，46个Skill合并为20个核心Skill，移除二级调度，减少审核节点
+> 版本：V2.1 | 更新日期：2026-06-06 | 总计：**21 个核心 Skill + 6 个扩展 Skill**
+> 口径：核心 21（M1:4 / M2:2 / M3:9 / M4:3 / M5:3）+ 扩展 6（见文末「扩展 Skill」）。`*-enhancement.md` 为核心 Skill 的增强覆盖层，不单独计数。
+> V2.1 变更：对齐花名册与磁盘实况；新增 6-gate 独立审查协议（见 `docs/QUALITY-GATES.md`）。
+> V2.0 变更：简化架构，46→核心Skill，移除二级调度，减少人工审核节点。
 
 ---
 
@@ -12,7 +14,7 @@
 - 审核节点：13 → 2（-85%）
 - 移除 Context Snapshot 机制
 - 取消二级调度架构
-- 详见：`docs/MIGRATION-V2.md`
+- 版本演进详见：`docs/CHANGELOG.md`
 
 ---
 
@@ -85,7 +87,7 @@
 
 ---
 
-## M3 · 内容创作（7个）
+## M3 · 内容创作（9个）
 
 ### 内容体系与定位
 
@@ -223,9 +225,26 @@ M5: s-5.1.1 → s-5.2 → s-5.3
 
 ---
 
+## 扩展 Skill（6个，可选）
+
+> 这些 Skill 真实存在于磁盘且为 `Active`，是核心 21 之外的可选增强。多为 dbskill 集成或哲学/战略增强，按需调用。
+
+| 编号 | 名称 | 职能 | 来源 | 文件路径 |
+|------|------|------|------|---------|
+| **a-1.4.1-philosopher** | 哲学分析引擎 | 五阶分析·对话性假设（齐泽克/拉康×维特根斯坦×福柯） | 自建 | `skills/m1-knowledge/a-1.4.1-philosopher.md` |
+| **s-1.4-action-diagnostics** | 执行心理学诊断 | 行动/拖延诊断 | dbskill `/dbs-action` | `skills/m1-knowledge/s-1.4-action-diagnostics/README.md` |
+| **s-2.0-business-validate** | 商业模式诊断 | 商业可行性验证 | dbskill `/dbs-diagnosis` | `skills/m2-topic/s-2.0-business-validate/README.md` |
+| **s-2.3-pacing-strategy** | 慢即是快战略 | 非线性成长·长期内容战略 | 自建 | `skills/m2-topic/s-2.3-pacing-strategy.md` |
+| **s-3.0-content-diagnostics** | 内容诊断 | 内容问题诊断 | dbskill `/dbs-content` | `skills/m3-creation/s-3.0-content-diagnostics/README.md` |
+| **s-3.4.2-ai-check** | AI写作检测 | AI味检测（score>6.0 硬阻断） | dbskill `/dbs-ai-check` | `skills/m3-creation/s-3.4.2-ai-check/README.md` |
+
+> 增强覆盖层（不计入花名册）：`a-1.2-deep-think-philosophy-enhancement.md`、`s-2.2-topic-validate-v2.5-enhancement.md`、`s-4.1-slice-engine-hook-enhancement.md`、`a-1.4-resources/`、`m4-distribution/xiaohongshu-title-templates.md`。
+
+---
+
 ## 归档的 Skill（V1.1）
 
-以下 Skill 已合并，原文件移至 `skills/_archived/`：
+以下 V1.1 子 Skill 已合并进上述核心 Skill（通过 git 历史可追溯，仓内未保留 `_archived/` 目录）：
 
 **M1（9个）：**
 - s-1.1.1/2/3-*.md → s-1.1-info-intake.md
@@ -278,21 +297,18 @@ M5: s-5.1.1 → s-5.2 → s-5.3
 
 ---
 
-## 迁移指南
+## 迁移与回滚
 
-详见 `docs/MIGRATION-V2.md`
+版本演进见 `docs/CHANGELOG.md`。回滚通过 git 进行（例：`git revert` 或 `git checkout <tag> -- <path>`），不再依赖手工 `.backup` 文件。
 
-**快速回滚：**
-```bash
-# 恢复 V1.1 版本
-cp CLAUDE.md.v1.1.backup CLAUDE.md
-cp docs/SKILL-INDEX.md.v1.1.backup docs/SKILL-INDEX.md
-mv skills_v1.1_backup skills
-```
+## 质量门
+
+Skill 的产出在关键节点受独立审查门约束（入库/发布/策略/事实可信度变化）。协议见 `docs/QUALITY-GATES.md`。
 
 ---
 
 **版本历史：**
-- V2.0（2026-04-22）：简化架构，20个核心Skill
+- V2.1（2026-06-06）：花名册对齐磁盘（核心21+扩展6）；新增 6-gate 独立审查协议
+- V2.0（2026-04-22）：简化架构，核心 Skill 合并
 - V1.4（2026-03-18）：46个Skill，二级调度
 - V1.0（2026-03-01）：初始版本

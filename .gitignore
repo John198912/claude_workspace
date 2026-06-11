@@ -5,5 +5,11 @@
 data/logs/
 data/audit-log.jsonl
 
+# macOS artifacts
+.DS_Store
+
+# Qoder artifacts
+.qoder/
+
 # Windows artifacts
 nul

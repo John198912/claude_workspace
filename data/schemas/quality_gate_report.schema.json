@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "quality_gate_report.schema.json",
+  "title": "Quality Gate Report (V2.1, 轻量版)",
+  "description": "关键节点独立审查的统一报告。由临时、独立、只读的 reviewer 子 agent 产出，Orchestrator 据此决定阻断/返工/放行。刻意保持轻量：sha256 与 evidence_ledger 为可选项，仅在做实证主张或需要留痕时填写。",
+  "type": "object",
+  "required": ["gate", "artifact", "reviewer", "gate_status", "blockers", "created_at"],
+  "additionalProperties": true,
+  "properties": {
+    "gate": {
+      "type": "string",
+      "description": "触发的关键 gate",
+      "enum": [
+        "workflow_consistency_gate",
+        "source_evidence_gate",
+        "kb_publish_gate",
+        "content_quality_gate",
+        "publish_package_gate",
+        "data_quality_gate"
+      ]
+    },
+    "artifact": {
+      "type": "object",
+      "required": ["path"],
+      "properties": {
+        "path": { "type": "string", "description": "被审查产物的相对路径" },
+        "sha256": { "type": "string", "description": "可选。需要留痕/证明审了哪一版时才填。单人系统默认留空。" }
+      }
+    },
+    "reviewer": {
+      "type": "object",
+      "required": ["agent_id", "context_mode"],
+      "properties": {
+        "agent_id": { "type": "string", "description": "审查子 agent 标识，必须不同于生成者" },
+        "context_mode": {
+          "type": "string",
+          "description": "审查必须在全新独立上下文中进行，禁止复用生成时的上下文",
+          "const": "fresh_independent"
+        }
+      }
+    },
+    "gate_status": {
+      "type": "string",
+      "enum": ["pass", "conditional", "blocked"],
+      "description": "pass=放行；conditional=可带标注进入但需人工确认；blocked=存在未清零的 fatal/high，禁止进入下游"
+    },
+    "checks": {
+      "type": "array",
+      "description": "可选。逐项检查结果。",
+      "items": {
+        "type": "object",
+        "required": ["name", "result"],
+        "properties": {
+          "name": { "type": "string" },
+          "result": { "type": "string", "enum": ["pass", "warn", "fail"] },
+          "detail": { "type": "string" }
+        }
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "description": "阻断项。任一 fatal/high 未清零 => gate_status 必须为 blocked。",
+      "items": {
+        "type": "object",
+        "required": ["severity", "summary"],
+        "properties": {
+          "severity": { "type": "string", "enum": ["fatal", "high", "medium", "low"] },
+          "summary": { "type": "string" },
+          "location": { "type": "string" },
+          "remediation": { "type": "string" }
+        }
+      }
+    },
+    "evidence_ledger": {
+      "type": "array",
+      "description": "可选。仅对做实证主张的内容必填；纯思辨/解释/隐喻/观点类主张不强制。",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "claim_type", "verdict"],
+        "properties": {
+          "claim_id": { "type": "string" },
+          "claim_type": {
+            "type": "string",
+            "enum": ["fact", "interpretation", "metaphor", "opinion"],
+            "description": "区分事实/解释/隐喻/观点。只有 fact 需要 source。"
+          },
+          "source": { "type": "string" },
+          "retrieved_at": { "type": "string" },
+          "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+          "verdict": { "type": "string", "enum": ["supported", "unsupported", "uncertain", "not_applicable"] }
+        }
+      }
+    },
+    "human_review": {
+      "type": "object",
+      "required": ["required"],
+      "properties": {
+        "required": { "type": "boolean" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected", "not_required"] }
+      }
+    },
+    "created_at": { "type": "string", "description": "报告生成时间 ISO8601" }
+  }
+}

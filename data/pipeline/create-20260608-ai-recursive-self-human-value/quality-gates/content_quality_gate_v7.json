@@ -1,0 +1,57 @@
+{
+  "gate": "content_quality_gate",
+  "artifact": {
+    "path": "data/pipeline/create-20260608-ai-recursive-self-human-value/draft-v7-merged.md",
+    "version": "v7-merged",
+    "audience": "双视角通用（已有收入 + 还在找方向）"
+  },
+  "reviewer": {
+    "agent_id": "qg-reviewer-merged-001",
+    "context_mode": "fresh_independent"
+  },
+  "gate_status": "pass",
+  "checks": [
+    {
+      "name": "fact_claim_audit",
+      "result": "pass",
+      "detail": "24 fact-type claims identified. All supported by the 6 listed sources. No unsupported claims. All English quotes have Chinese translations provided."
+    },
+    {
+      "name": "english_quote_translation",
+      "result": "pass",
+      "detail": "All 5 English quotes checked: (1) 'This is prompt-injection-shaped' → '这看起来像是提示注入' with original, (2) 'If a human is not a horse...' → 完整中文翻译 with original, (3) 'If you take away one thing...' → 完整中文翻译 with original, (4) Anthropic blog title translated, (5) Mollick article title translated. All translations are accurate and idiomatic."
+    },
+    {
+      "name": "audience_persona_anonymization",
+      "result": "pass",
+      "detail": "全文零出现'Marcus''Lily'代称。人群区分使用自然语言：'如果你已经有稳定收入、正在把我是谁变成事业' vs '如果你还在找方向、还在因为别人都找到了自己的赛道而焦虑'。段落间切换清晰，读者可自然定位。"
+    },
+    {
+      "name": "brand_compliance_forbidden_expressions",
+      "result": "pass",
+      "detail": "Zero matches for all high-severity forbidden patterns: '你应该'(零命中), '你必须'(零命中), '我来教你'(零命中), '年轻人就是要'(零命中), '成功人士都是这样'(零命中), '只要努力就能'(零命中)."
+    },
+    {
+      "name": "brand_compliance_forbidden_patterns",
+      "result": "pass",
+      "detail": "焦虑贩卖 PASS / 空洞鸡汤 PASS / 居高临下 PASS / 极端化AI PASS(S2有反方观点平衡) / 快速致富 PASS / 理论堆砌 PASS(Phil份额趋零/Imas horse警告/反馈回路断裂全部有具象案例)"
+    },
+    {
+      "name": "brand_compliance_rivet_structure",
+      "result": "pass",
+      "detail": "RIVET: R(S1五信号打破'知道自己在做什么'的默认假设) → I(S2双视角区分+S3四层分析) → V(S4分配层边界诚实) → E(S5海平面+练习场+初稿隐喻) → T(S6两种人群各一个工具+一个共享行动). 五阶段完整且融合自然."
+    },
+    {
+      "name": "narrative_dual_audience_coherence",
+      "result": "pass",
+      "detail": "文章不是两篇拼在一起。S1统一叙事→S2分叉→S3在分叉中保持共享框架→S4共享一个硬事实(分配层)→S5共用隐喻但各自语境化→S6分叉给出不同工具但共享底层动作(保护练习场)。双线并行但不断交汇，读者不需要跳过任何一段——另一段对你自己也有启发价值。"
+    }
+  ],
+  "blockers": [],
+  "human_review": {
+    "required": true,
+    "status": "pending",
+    "note": "发布前确认：双视角版本在单一文章内区分两种人群。优点是覆盖面广，一篇抵达两类受众；风险是每类受众可能感觉'有一段不是写给我的'。建议用于公众号首发（主阵地深度触达），然后分渠道用专项切片精准分发。"
+  },
+  "created_at": "2026-06-08T22:30:00.000Z"
+}

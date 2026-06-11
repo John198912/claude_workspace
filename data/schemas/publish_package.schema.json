@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "publish_package.schema.json",
+  "title": "Publish Package / 发布包 (V2.1)",
+  "description": "M4 唯一发布包契约。统一 s-4.1-slice-engine 产出、s-4.2.2-adapt 适配、xiaohongshu-export.py 导出三方。物理形态是 content/slices/{parent-id}/slice-{NNN}-{platform}-{type}.md（YAML frontmatter + 固定 Markdown 分节）；本 schema 描述其解析后的规范结构。解决 adapt 旧 JSON 契约与导出脚本 Markdown 契约的断裂（旧 JSON 从未落盘，是幽灵契约）。",
+  "type": "object",
+  "required": ["slice_id", "platform", "title", "body"],
+  "additionalProperties": true,
+  "properties": {
+    "slice_id": { "type": "string", "description": "对应 frontmatter.id，如 slice-001" },
+    "parent_id": { "type": "string", "description": "母稿 id，对应切片目录名" },
+    "platform": {
+      "type": "string",
+      "enum": ["wechat", "xiaohongshu", "zhihu", "bilibili", "douyin", "jike", "weibo", "podcast"],
+      "description": "对应 frontmatter.platform。导出器按此选择导出规则，禁止对未知平台静默处理。"
+    },
+    "type": { "type": "string", "description": "切片类型，如 金句卡片/观点笔记/视频脚本" },
+    "title": { "type": "string", "minLength": 1 },
+    "cover": { "type": "string", "description": "解析自 Markdown 分节 `## 封面文案`，可空" },
+    "body": {
+      "type": "string",
+      "minLength": 1,
+      "description": "解析自 Markdown 分节 `## 正文`。禁止为空——空正文必须被 publish_package_gate 阻断。"
+    },
+    "hashtags": {
+      "type": "array",
+      "description": "解析自 Markdown 分节 `## 标签`",
+      "items": { "type": "string" }
+    },
+    "design": { "type": "string", "description": "解析自 Markdown 分节 `## 设计指引`，可空" }
+  },
+  "x-markdown-contract": {
+    "frontmatter_required": ["id", "type", "platform", "title"],
+    "sections_required": ["## 正文"],
+    "sections_optional": ["## 封面文案", "## 标签", "## 设计指引"],
+    "file_glob": "content/slices/{parent-id}/slice-{NNN}-{platform-or-alias}-{type}.md",
+    "note": "xiaohongshu-export.py 支持 xiaohongshu 与 xhs 文件名/平台别名，并按上述分节解析。新增平台导出器必须复用同一分节契约。"
+  }
+}

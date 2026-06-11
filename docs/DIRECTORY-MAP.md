@@ -25,28 +25,30 @@ ProjectFilesV1.1/
 │
 ├── docs/                                  # L1 项目文档
 │   ├── DIRECTORY-MAP.md                  #   本文件·目录蓝图+文件生命周期
-│   ├── SKILL-INDEX.md                    #   全Skill统一索引（V2.0: 20个核心Skill）
-│   ├── MIGRATION-V2.md                   #   V2.0 迁移指南
-│   ├── USER-GUIDE.md                     #   功能操作说明书
-│   └── CHANGELOG.md                      #   更新日志
+│   ├── SKILL-INDEX.md                    #   全Skill统一索引（V2.1: 核心21 + 扩展6）
+│   ├── SOUL-CORE-INSIGHTS.md             #   SOUL 个人品牌宪法（人读版）
+│   ├── QUALITY-GATES.md                  #   6-gate 独立审查协议（V2.1）
+│   ├── USER-GUIDE-V2.md                  #   功能操作说明书
+│   └── CHANGELOG.md                      #   更新日志（含版本演进/回滚指引）
 │
 ├── skills/                                # Skill 文件库（只读参考，不产生数据文件）
-│   ├── m1-knowledge/                     #   M1 知识积累（4个核心Skill）
-│   ├── m2-topic/                         #   M2 选题策划（2个核心Skill）
-│   ├── m3-creation/                      #   M3 内容创作（7个Skill）
-│   ├── m4-distribution/                  #   M4 多平台分发（3个核心Skill）
-│   ├── m5-feedback/                      #   M5 数据反馈（3个核心Skill）
-│   ├── _archived/                        #   V1.1 归档文件（34个）
-│   └── external/skills/                  #   Anthropic 官方扩展技能库
+│   ├── m1-knowledge/                     #   M1 知识积累（核心4 + 扩展 a-1.4.1/s-1.4）
+│   ├── m2-topic/                         #   M2 选题策划（核心2 + 扩展 s-2.0/s-2.3）
+│   ├── m3-creation/                      #   M3 内容创作（核心9 + 扩展 s-3.0/s-3.4.2）
+│   ├── m4-distribution/                  #   M4 多平台分发（核心3）
+│   └── m5-feedback/                      #   M5 数据反馈（核心3）
+│   # 注：无 _archived/ 目录（V1.1 子 Skill 已合并，经 git 历史追溯）；
+│   #     无内置 external/ 官方技能库（如安装再调用）
 │
 ├── knowledge-base/                        # 知识库（M1 产出的长期知识资产）
 │   ├── _index.md                         #   L2 知识库总索引
 │   ├── _graph.json                       #   知识图谱（V2.0）
+│   ├── ai-llm/                           #   AI/LLM 类
 │   ├── technology/                       #   技术类
 │   ├── mindset/                          #   认知类
-│   ├── business/                         #   商业类
 │   ├── growth/                           #   成长类
-│   └── viewpoint/                        #   观点类
+│   ├── viewpoint/                        #   观点类
+│   └── imported/                         #   外部导入暂存
 │
 ├── content/                               # 内容库（M3→M4 的创作产物）
 │   ├── _content-map.json                 #   内容体系地图（s-3.1.1 产出/维护）
@@ -112,12 +114,17 @@ ProjectFilesV1.1/
 │   │   │   └── {YYYYMMDD}-{slug}.json   #     s-2.2-topic-validate 评分 + 竞品
 │   │   └── calendar.md                   #   内容日历（s-2.2-topic-validate 产出）
 │   │
+│   ├── ── brand/                         # ★ 品牌契约与品牌健康
+│   │   ├── brand-canon.yaml              #   SOUL 品牌宪法机器契约（M2/M3/M4/M5 默认读取）
+│   │   └── brand-health-{date}.json      #   s-5.3-optimize 品牌健康
+│   │
 │   ├── ── style-profiles/                # ★ 风格档案（M3.3 产出）
-│   │   ├── personal.json                 #   个人风格画像（s-3.3-style-engine 维护）
+│   │   ├── personal.json                 #   个人风格覆盖层（不得覆盖 brand-canon）
 │   │   └── references/                   #   参考创作者风格
 │   │       └── {creator-slug}.json       #     s-3.3-style-engine 产出
 │   │
 │   ├── ── style-guides/                  # ★ 项目级风格指南
+│   │   ├── README.md                     #   风格覆盖说明
 │   │   └── {project-slug}.yaml           #   s-3.3-style-engine project_overlay 消费
 │   │
 │   ├── ── feedback/                      # ★ 数据反馈（M5 产出）
@@ -136,9 +143,6 @@ ProjectFilesV1.1/
 │   │
 │   ├── ── audience/                      # ★ 受众画像（V2.0 新增）
 │   │   └── audience-profile-v{N}.json    #   s-5.3-optimize 受众更新
-│   │
-│   ├── ── brand/                         # ★ 品牌健康（V2.0 新增）
-│   │   └── brand-health-{date}.json      #   s-5.3-optimize 品牌健康
 │   │
 │   ├── ── optimization/                  # ★ 优化记录（V2.0 新增）
 │   │   └── system-{date}.json            #   s-5.3-optimize 系统优化
@@ -455,8 +459,24 @@ audit-log.jsonl
 
 ---
 
+## V2.1 新增产物（2026-06-06）
+
+```
+.claude/commands/                         # 真实命令入口（落地后；CLAUDE.md 工作流命令表的实现）
+docs/QUALITY-GATES.md                     # 6-gate 独立审查协议
+data/platform-rules.md                    # 平台规则轻量层（publish_package_gate 依据）
+data/schemas/
+  ├── quality_gate_report.schema.json     # 统一审查报告
+  ├── feedback_raw_event.schema.json      # M5 原始事件统一 schema
+  └── publish_package.schema.json         # M4 发布包唯一契约（slice Markdown）
+data/pipeline/{task_id}/quality-gates/    # 各 gate 的 quality_gate_report 落盘
+scripts/gatekeeper.py                     # 质量门可执行内核
+scripts/check_consistency.py              # 文档自洽 linter（workflow_consistency_gate）
+```
+
 ## 版本历史
 
+- **V2.1（2026-06-06）**：对齐目录与磁盘实况（移除不存在的归档目录、外部技能库、迁移文档等幽灵引用）；新增质量门产物
 - **V2.0（2026-04-22）**：移除 Context Snapshot，改为三层数据传递协议；新增审核日志系统
 - **V1.3（2026-03-15）**：新增完整目录树、外部素材导入规范
 - **V1.0（2026-03-01）**：初始版本

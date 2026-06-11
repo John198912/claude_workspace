@@ -1,0 +1,102 @@
+{
+  "gate": "content_quality_gate",
+  "artifact": {
+    "path": "data/pipeline/create-20260606-cognitive-surrender-codex/draft-v2.md",
+    "sha256": "db6f44305f04b91e023518986e9199971f8975d826e4606f3f41e0545ecd2818"
+  },
+  "reviewer": {
+    "agent_id": "independent-content-quality-reviewer-codex",
+    "context_mode": "fresh_independent"
+  },
+  "gate_status": "pass",
+  "checks": [
+    {
+      "name": "fact_claim_source_support",
+      "result": "pass",
+      "detail": "终稿中的主要实证主张均能在 research.md、fact-check-report.md 及文末来源中找到支撑，包括 BCG 758 名顾问实验、Shaw & Nave 的认知投降/三系统理论、MIT Media Lab EEG 写作研究、Mollick 汇总的土耳其与台北教育实验、arXiv 2604.04721 的 N=1,222 随机对照实验。"
+    },
+    {
+      "name": "claim_type_separation",
+      "result": "pass",
+      "detail": "终稿将 SOUL 品牌判断、方向盘/GPS/健身器材等隐喻、主体性与有限性相关表达作为 interpretation/metaphor/opinion 使用，没有把这些哲学表达伪装成实证事实；不应因缺外部证据阻断。"
+    },
+    {
+      "name": "fatal_high_blockers",
+      "result": "pass",
+      "detail": "未发现 fatal 或 high blocker。没有发现硬性事实错误、编造数据、实证 claim 无来源、或改写后新增未复核事实主张。"
+    },
+    {
+      "name": "preprint_working_paper_handling",
+      "result": "warn",
+      "detail": "终稿已明确标注 MIT EEG 研究为预印本且样本不大，也明确标注 arXiv 2604.04721 为预印本。Shaw & Nave 在文末标为 SSRN，但正文未显式写“工作论文”；当前表述主要用于概念来源而非定论，不构成阻断，建议发布前可补一句“这仍是工作论文口径”。"
+    },
+    {
+      "name": "rewrite_regression",
+      "result": "pass",
+      "detail": "对照 fact-check-report.md，终稿 v2 未发现新增的未复核事实主张；高风险数字多被降级为概括性表述，降低了证据风险。"
+    }
+  ],
+  "blockers": [],
+  "evidence_ledger": [
+    {
+      "claim_id": "CQ-001",
+      "claim_type": "fact",
+      "source": "Shaw & Nave, SSRN 2026; Wharton Executive Education 2026",
+      "retrieved_at": "2026-06-06",
+      "confidence": "high",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "CQ-002",
+      "claim_type": "fact",
+      "source": "HBS AI Institute, Navigating the Jagged Technological Frontier, 2023",
+      "retrieved_at": "2026-06-06",
+      "confidence": "high",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "CQ-003",
+      "claim_type": "fact",
+      "source": "MIT Media Lab, Your Brain on ChatGPT, 2025; fact-check-report.md FC-005",
+      "retrieved_at": "2026-06-06",
+      "confidence": "medium",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "CQ-004",
+      "claim_type": "fact",
+      "source": "Ethan Mollick, Choosing to Stay Human, 2026-05-26",
+      "retrieved_at": "2026-06-06",
+      "confidence": "medium",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "CQ-005",
+      "claim_type": "fact",
+      "source": "Liu et al., AI Assistance Reduces Persistence and Hurts Independent Performance, arXiv:2604.04721, 2026",
+      "retrieved_at": "2026-06-06",
+      "confidence": "medium",
+      "verdict": "supported"
+    },
+    {
+      "claim_id": "CQ-006",
+      "claim_type": "interpretation",
+      "verdict": "not_applicable"
+    },
+    {
+      "claim_id": "CQ-007",
+      "claim_type": "metaphor",
+      "verdict": "not_applicable"
+    },
+    {
+      "claim_id": "CQ-008",
+      "claim_type": "opinion",
+      "verdict": "not_applicable"
+    }
+  ],
+  "human_review": {
+    "required": false,
+    "status": "not_required"
+  },
+  "created_at": "2026-06-06T02:14:05+08:00"
+}

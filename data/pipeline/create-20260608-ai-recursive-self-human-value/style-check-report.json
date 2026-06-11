@@ -1,0 +1,114 @@
+{
+  "task_id": "create-20260608-ai-recursive-self-human-value",
+  "agent": "s-3.3-style-engine",
+  "mode": "check",
+  "check_depth": "standard",
+  "original_length": 3100,
+  "brand_canon": "data/brand/brand-canon.yaml",
+  "style_profile": "data/style-profiles/personal.json",
+
+  "check_report": {
+    "overall_match_score": 8.2,
+    "grade": "良好",
+
+    "dimension_scores": {
+      "formality_match": {"score": 8, "status": "✅ 符合", "note": "正式度5-6，专业底色但说人话，符合个人风格设定"},
+      "tone_match": {"score": 9, "status": "✅ 符合", "note": "温和引导+ENTP式认知挑战，同行者姿态贯穿全文"},
+      "humor_match": {"score": 7, "status": "✅ 符合", "note": "非段子手式幽默，但反差类比（海平面隐喻）和反直觉切入体现ENTP机智"},
+      "conversational_match": {"score": 9, "status": "✅ 符合", "note": "强对话感，像深夜聊天而非演讲"},
+      "info_density_match": {"score": 9, "status": "✅ 符合", "note": "每段有信息增量，五路信号→四层回答→五重冲击→海平面隐喻→三行动，层次分明"},
+      "anti_cliche_match": {"score": 8, "status": "✅ 符合", "note": "无AI模板化表达，无空洞鸡汤，具体行动替代抽象鼓励"}
+    },
+
+    "issues": [
+      {
+        "issue_id": "i-001",
+        "severity": "low",
+        "category": "语气一致性",
+        "location": "S5行动一和行动二",
+        "original_text": "如果右边是空的，别慌。" / "如果你现在的答案是'没有'——别沮丧。",
+        "problem_description": "「别慌」「别沮丧」两次出现，轻微重复，削弱第二个的情感冲击力",
+        "suggested_fixes": ["将第二个'别沮丧'改为更具体的表达，如'这不意味着你做错了什么'"],
+        "auto_fix_applied": false
+      },
+      {
+        "issue_id": "i-002",
+        "severity": "low",
+        "category": "修辞效果保留",
+        "location": "结尾段",
+        "original_text": "你要害怕的是：你还在练习写代码，而没有练习决定写什么。",
+        "problem_description": "「你要害怕的是」接近「你必须」句式，属于命令式表达的边缘。但此处是结尾平行结构的一部分，具有修辞目的——与前文「你不需要害怕AI写代码」形成对比张力，属于ENTP式认知挑战的刻意使用。",
+        "suggested_fixes": ["保留：属于修辞性使用，符合风格引擎'刻意使用命令式以达成修辞效果'的例外条款"],
+        "auto_fix_applied": false
+      },
+      {
+        "issue_id": "i-003",
+        "severity": "low",
+        "category": "信息密度",
+        "location": "S2结尾（经济层面段落）",
+        "original_text": "耶鲁Budget Lab的数据也显示，目前还看不到明显影响。",
+        "problem_description": "耶鲁Budget Lab的引用无具体数据点，仅为方向性陈述，可增加一句话使其更具体或删除",
+        "suggested_fixes": ["可考虑补充具体数据或改为'即使是最敏感的劳动力市场指标，也还没有出现理论预测的替代效应'"],
+        "auto_fix_applied": false
+      }
+    ],
+
+    "issue_summary": {
+      "total": 3,
+      "high_severity": 0,
+      "medium_severity": 0,
+      "low_severity": 3,
+      "by_category": {
+        "语气一致性": 1,
+        "修辞效果保留": 1,
+        "信息密度": 1
+      }
+    },
+
+    "brand_compliance_check": {
+      "forbidden_patterns": {
+        "焦虑贩卖": {"status": "✅ 通过", "note": "命名焦虑但不贩卖——提供框架和行动而非加剧恐慌"},
+        "空洞鸡汤": {"status": "✅ 通过", "note": "所有鼓励性表达都有具体行动支撑"},
+        "居高临下": {"status": "✅ 通过", "note": "全程'同行者'姿态"},
+        "极端化AI": {"status": "✅ 通过", "note": "四层回答包含反方观点，避免极端化叙事"},
+        "快速致富": {"status": "✅ 通过", "note": "无"},
+        "理论堆砌": {"status": "✅ 通过", "note": "理论（如关系性部门）有具象化案例支撑"}
+      },
+      "recommended_expressions_usage": {
+        "你可以试试": "未使用，但全文语气符合该精神",
+        "一个思路是": "出现变体：'一个更诚实的思路是'",
+        "换个角度看": "出现：S3结尾'换个角度看'",
+        "我的经验是": "未直接使用，但个人视角贯穿（'最让我触动的部分'）"
+      },
+      "forbidden_expressions_check": {
+        "你应该": "✅ 未出现",
+        "你必须": "✅ 未出现",
+        "年轻人就是要": "✅ 未出现",
+        "我来教你": "✅ 未出现",
+        "成功人士都是这样": "✅ 未出现",
+        "只要努力就能": "✅ 未出现"
+      }
+    },
+
+    "ai_cliche_scan": {
+      "chinese_blacklist": {
+        "本质上来说": "✅ 未出现",
+        "归根结底": "✅ 未出现",
+        "底层逻辑": "✅ 未出现",
+        "赛道": "✅ 未出现",
+        "赋能": "✅ 未出现"
+      },
+      "lazy_physiological": {
+        "心跳加速": "✅ 未出现（v1中曾出现，已在v2中替换为'不安'）",
+        "瞳孔放大": "✅ 未出现",
+        "手心出汗": "✅ 未出现",
+        "后背一凉": "✅ 未出现"
+      }
+    }
+  },
+
+  "revised_content_note": "三个低严重度问题不影响整体质量，建议保留修辞性使用的'你要害怕的是'（属于刻意修辞效果），修复i-001的'别慌/别沮丧'重复，增强i-003的耶鲁数据具体性。",
+
+  "human_review_required": false,
+  "review_notes": "整体风格一致性高（8.2分），品牌禁忌全部通过，AI模板化表达零命中。三个低严重度问题可在下次迭代中微调，不影响发布质量。"
+}

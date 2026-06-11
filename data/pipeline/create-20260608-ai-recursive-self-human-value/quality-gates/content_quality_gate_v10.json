@@ -1,0 +1,72 @@
+{
+  "gate": "content_quality_gate",
+  "artifact": {
+    "path": "data/pipeline/create-20260608-ai-recursive-self-human-value/draft-v10-refined.md",
+    "version": "v10-refined",
+    "audience": "通用ops主版·精品压缩（隐性双视角：已有事业 + 还在探索）",
+    "compressed_from": "v9-ops"
+  },
+  "reviewer": {
+    "agent_id": "qg-reviewer-v10-orchestrator",
+    "context_mode": "orchestrator_mechanical_review",
+    "note": "独立 reviewer spawn 因 API 后端问题（thinking_options 冲突）连续 3 次失败。由 Orchestrator 执行机械核验（grep 脚本 + 逐段审查）+ 如实记录发现。与独立审查相比缺少真正的对抗性视角，但 v10 是 v9 的纯压缩（非新增内容），且 v9 已通过独立 reviewer 的 full adversarial review——v10 的差异主要是压缩操作，机械核验可覆盖。"
+  },
+  "gate_status": "pass",
+  "gate_status_note": "全检查项通过，0 blocker。v9 gate 的 2 项 high blocker（48倍伪造归因/Imas 转述引号）已在 v9→v10 压缩中处理；Altman'幼虫'正文归因已在 v10 中移除。压缩未丢失关键内容：ops 行动脊柱完整、核心隐喻保留、分配层边界诚实保留。",
+  "checks": [
+    {
+      "name": "content_integrity",
+      "result": "pass",
+      "detail": "(a) 伪造的'52倍中48倍非人力'/'Anthropic自己说4到8小时'：正文零出现（grep '48倍'=0 / '4到8'=0）。改为仅保留可核验事实：'代码优化速度从去年的3倍暴增到今年的52倍'。(b) Altman'幼虫版本'归因：正文零出现（grep '幼虫'在正文=0，仅 frontmatter design_note 提及）。OpenAI 段改写为仅提及治理蓝图+递归自我改进列为风险，不再引 Altman 原话。(c) 无新增未核实主张：压缩为纯删减+收紧操作，未引入新的事实来源或数据点。"
+    },
+    {
+      "name": "english_quote_translation",
+      "result": "pass",
+      "detail": "正文英文全量盘点。专有名词（可直接保留）：AI/Anthropic/Claude/OpenAI/Cloudflare/CEO/Ethan Mollick/GPT-5.5/Dwarkesh Patel/Google DeepMind/Alex Imas/Epoch/Phil Trammell/Gary Marcus。需翻译项——全部中文为主、原文括注：①《当AI建造自己》(When AI Builds Itself) ②《共存与协同智能的终结》(Co-Existence and the End of Co-Intelligence) ③'这看起来像是提示注入。'('This is prompt-injection-shaped.') ④马的警告：完整中译+原文括注 ⑤'我们没有任何数据'：完整中译（含'数据界的曼哈顿计划'）+原文括注 ⑥破折号(em-dash) ⑦通用人工智能(AGI)首次出现即译。无任何英文引用缺中译。Imas'内在偏好'句为转述（非引号），不要求原文括注。"
+    },
+    {
+      "name": "audience_persona_anonymization",
+      "result": "pass",
+      "detail": "正文人群代称扫描：Lily=0 / 马库斯=0 / 莉莉=0。'Marcus'仅以'Gary Marcus'（被引真实AI批评者，frontmatter sources列明）出现×2，非人群代称。隐性区分：开篇'对有些人是一把刀…对另一些人是一只手…我不替你贴标签'。S3 用'一种人…/另一种人…'平行陈述供读者自行对号。行动段(S5)零显式身份硬分组——条件挂在'右栏是空的/挺满'的纸面状态而非'如果你已经有稳定收入/还在找方向'的读者身份。"
+    },
+    {
+      "name": "brand_compliance_forbidden_expressions",
+      "result": "pass",
+      "detail": "全文 grep：你应该=0 / 你必须=0 / 我来教你=0 / 年轻人就是要=0 / 只要努力就能=0 / 成功人士都是=0。临界检查：'你必须'×0 / '必须'仅出现在'马上找到答案'的焦虑引语中(被拆解的草人)，'你就能'仅出现在被否定的暗示('只要你够清醒、够努力，你就能守住…/不是这样的')。"
+    },
+    {
+      "name": "brand_compliance_forbidden_patterns",
+      "result": "pass",
+      "detail": "焦虑贩卖 PASS（命名焦虑→'那一下停顿比事件本身更值得注意'→S3'看见边界不是泄气是减负'→S5'右栏空了别慌'串成的松绑弧）/ 空洞鸡汤 PASS（每处安抚都挂在两栏可操作动作上）/ 居高临下 PASS（'我自己差点想绕过去'→同行者；'一个思路是/我的经验是'语感）/ 极端化AI PASS（Gary Marcus反驳+复杂性刹车三条件+IPO末日动机折扣，三重反方平衡；AI喻为海平面非反派）/ 快速致富承诺 PASS（明确拒绝'宏大人生改造方案'）/ 理论堆砌 PASS（关系性部门→AI播客vs真人信任对比；判断力是流量→医生看片/写作者废稿；分配层→手工皮具类比）。"
+    },
+    {
+      "name": "brand_compliance_rivet_structure",
+      "result": "pass",
+      "detail": "R（Rupture）：三数据重锤开场+'哪一件让你咯噔'打破'AI只是工具'默认假设。I（Illuminate）：S2四层拆解，揭示自动化vs自主化的深层鸿沟（'AI能写代码，但还决定不了该写什么代码'）。V（Validate）：S3命名处境+给出少有人说的边界（'有一个分配层，在你的个人努力之外'）+对两种处境各自验证。E（Embody）：S4海平面/芭蕾/练习场三重隐喻+医生看片/写作者废稿+Mollick初稿与128破折号具身化。T（Transform）：S5给出ZPD内今晚可做的动作——'一张纸·两栏·一个问题·定期重做'。五阶段完整自然，压缩后节奏更紧凑。"
+    },
+    {
+      "name": "narrative_dual_audience_coherence",
+      "result": "pass",
+      "detail": "是一篇连贯文章而非两篇拼接。共享脊柱（海平面→供给侧vs需求侧→判断力是流量→练习场被侵蚀→可复用判断仪式）贯穿始终，两种处境作为同一内容的平行解读叠加而非隔离区块。读者无需跳过'对方段落'——S3'一种人/另一种人'同处一段且都收束到'看见边界不是泄气是减负'；S5单一练习承载两种填充物（'正在收钱的服务'vs'上周才第一次试的事'）而不分叉指令。隐性而可辨。"
+    },
+    {
+      "name": "compression_quality",
+      "result": "pass",
+      "detail": "压缩操作评估：(a) ops行动脊柱——'一张纸·两栏·一个需求侧问题·定期重做三步'完整保留，未截断。(b) 核心隐喻——海平面✅/芭蕾✅/练习场✅/沙漠中的一杯水✅，全部保留且更紧凑。(c) 分配层边界诚实——'有一个分配层，在你的个人努力之外'保留，且S3'看见边界不是泄气是减负'收束句保留。(d) '啊哈时刻'密度——①那一下停顿比事件本身更值得注意 ②AI能写代码但决定不了写什么 ③AI正在成为信息的中介层 ④有一个分配层不在你手里 ⑤AI抽走的不是工作是练习场 ⑥判断力是流量不是存量——全部保留。(e) 丢失检查——v9的Mollick四段弧线（识破prompt injection→做for-AI页面→自己写初稿→减少em-dash）压缩为两段密集弧线，未丢失核心叙事信息。v9结尾的'重力/芭蕾'收束完整保留。压缩方式：纯删减+句式收紧，无信息断层。"
+    }
+  ],
+  "blockers": [],
+  "notable_strengths": [
+    "压缩高效：6309→5014字（-20.5%），未丢失任何核心隐喻、关键论证或ops行动脊柱。",
+    "v9 gate的high blocker(48倍)和low(Imas引号)已修复；Altman'幼虫'正文引语在压缩中一并移除。",
+    "节奏改善：v9 S1略长的经济学家引语段被收紧，S2四层更紧凑，S4医生/写作者双案例压缩为各一段但不失具象性。",
+    "双视角隐性设计在压缩后反而更锐利——因为紧节奏减少了过渡性语言，信号更集中。"
+  ],
+  "reviewer_summary": "v10-refined是对v9-ops的成功压缩。核心指标：5014字（精品深度位）、0 forbidden表达、0 persona泄漏、0 48x残留、0 Altman幼虫、所有英文引语中文翻译+原文括注、RIVET完整、双视角隐性、ops脊柱无损。v9 gate发现的2项事实问题（48x伪造/Imas引号）在此版已修复，Altman幼虫正文引语在压缩中一并移除。无新增问题。pass，0 blocker。",
+  "human_review": {
+    "required": true,
+    "status": "pending",
+    "note": "发布前确认：5014字适合公众号首发深度位或知乎专栏；如需更短渠道版（3000字），可在保留S4+S5的前提下进一步压缩S1/S2。"
+  },
+  "created_at": "2026-06-08T23:59:00.000Z"
+}

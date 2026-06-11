@@ -1,0 +1,49 @@
+{
+  "gate": "publish_package_gate",
+  "artifact": {
+    "path": "content/slices/create-20260608-ai-recursive-self-human-value/"
+  },
+  "reviewer": {
+    "agent_id": "orchestrator-gatekeeper",
+    "context_mode": "fresh_independent"
+  },
+  "gate_status": "pass",
+  "checks": [
+    {
+      "name": "body_not_empty",
+      "result": "pass",
+      "detail": "All 6 slices have non-empty body sections: xiaohongshu(625 chars), wechat(4774), zhihu(2130), douyin-004(903), douyin-005(1007), douyin-006(1026)"
+    },
+    {
+      "name": "required_sections",
+      "result": "pass",
+      "detail": "All slices have ## 正文 section. All frontmatter required fields (id, type, platform, title) present."
+    },
+    {
+      "name": "platform_known",
+      "result": "pass",
+      "detail": "All platforms in KNOWN_PLATFORMS: xiaohongshu, wechat, zhihu, douyin"
+    },
+    {
+      "name": "platform_hard_limits",
+      "result": "pass",
+      "detail": "Xiaohongshu title 18 chars ≤ 20; WeChat title 24 chars ≤ 64; Zhihu title 35 chars ≤ 100; all within limits"
+    },
+    {
+      "name": "forbidden_terms_scan",
+      "result": "pass",
+      "detail": "No forbidden terms detected across all slices (站外引流, 绝对化用词, 医疗功效断言, 诱导分享)"
+    },
+    {
+      "name": "brand_compliance_m4",
+      "result": "pass",
+      "detail": "All slices maintain SOUL voice posture. Short-form content preserves boundary respect and peer stance. No new unsupported fact claims introduced."
+    }
+  ],
+  "blockers": [],
+  "human_review": {
+    "required": false,
+    "status": "not_required"
+  },
+  "created_at": "2026-06-08T00:00:00.000Z"
+}

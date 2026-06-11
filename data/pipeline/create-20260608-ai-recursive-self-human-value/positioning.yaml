@@ -1,0 +1,50 @@
+content_positioning:
+  topic_id: "create-20260608-ai-recursive-self-human-value"
+  title: "当AI开始建造自己：你的不可替代性，不在技能库里"
+  analyzed_at: "2026-06-08T20:00:00+08:00"
+
+  system_position:
+    pillar: "AI时代认知 × 自我建构"
+    series: "独立深度文章（桥接内容——连接AI技术趋势与个体自我建构两个支柱）"
+    series_position: null
+    level: "L3（深度长文，2500-3500字）"
+
+  prerequisite_content:
+    required: []
+    recommended:
+      - title: "控制性理念：在AI重塑一切的时代，真实稳定的自我是唯一不可被替代的资产"
+        id: "SOUL-CORE-INSIGHTS"
+        status: "已发布"
+        url: "docs/SOUL-CORE-INSIGHTS.md"
+
+  follow_up_content:
+    direct_next:
+      - title: "关系性部门——用Dwarkesh框架重新理解你的个人价值"
+        series_position: null
+        status: "待创作"
+    related:
+      - title: "协同智能终结之后：AI守门人时代的个人内容策略"
+        pillar: "个人品牌与叙事"
+        relevance: "从AI成为信息中介层切入，指导个人如何在AI守门人时代建立直达受众的内容通道"
+      - title: "技能折旧曲线——为什么你今天学的技术三年后可能一文不值"
+        pillar: "一人企业与能力资产"
+        relevance: "从RSI加速技能折旧切入，帮助Marcus重新定义能力资产"
+
+  internal_links:
+    can_reference:
+      - title: "SOUL品牌宪法"
+        context: "结尾处回扣控制性理念，形成闭环"
+    should_be_referenced_by:
+      - title: "关系性部门深度解读"
+        context: "本文提出了'不可替代性在需求侧'的核心论点，后续文章需要回链作为理论基础"
+
+  reader_journey:
+    entry_point: "读者带着焦虑进入——'AI连自己都能造了，我学什么还有用？'这种焦虑是真实的、被五路信号同时验证的"
+    transformation: "从恐慌（AI在加速自我进化）→ 看清结构（五层展开：事实层/基础设施层/叙事层/意义层/治理层）→ 重新锚定（不可替代性不在供给侧而在需求侧——人类在乎是人类做的）→ 获得行动方向（今晚可以做的三件事）"
+    exit_point: "读者带着三个新认知离开：①AI加速是事实，但目标判断力仍是人类专属；②真正不可替代的不是技能而是'你做了才有价值'的东西；③有三个具体行动可以今晚开始"
+    next_action: "引导读者做'两栏练习'：把工作分成AI做了就贬值 vs 我做才有价值，找到第二栏的核心"
+
+  content_goal:
+    reader_should_gain: "理解RSI（递归自我进化）的五层展开逻辑，掌握区分'可自动化技能'和'不可替代价值'的分析框架"
+    reader_should_feel: "焦虑被命名和验证（'原来我不是杞人忧天'）→ 被重新锚定（'但问题不是我以为的那个'）→ 有方向感的平静（'我知道该往哪走了'）"
+    reader_should_do: "①做两栏练习（AI贬值 vs 我做增值）；②找到一件'别人愿意为是你做的而付钱'的事情；③开始把它变成你的核心产品"

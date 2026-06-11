@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "feedback_raw_event.schema.json",
+  "title": "M5 原始反馈事件 (V2.1)",
+  "description": "M5 数据采集 (s-5.1.1) 的统一原始事件结构。落盘路径统一为 data/feedback/raw/{platform}-{YYYYMMDD}.json（数组形式，每元素一个事件）。解决 s-5.1.1 与 s-5.2/DIRECTORY-MAP 之间的路径与字段口径不一致。",
+  "type": "object",
+  "required": ["post_id", "platform", "collection_time", "trigger", "metrics", "is_imputed"],
+  "additionalProperties": true,
+  "properties": {
+    "post_id": { "type": "string", "description": "平台内或内部统一的内容标识" },
+    "post_url": { "type": ["string", "null"], "description": "原帖链接，缺失填 null 并登记到 missing_fields" },
+    "platform": {
+      "type": "string",
+      "enum": ["wechat", "xiaohongshu", "zhihu", "bilibili", "douyin", "jike", "weibo", "podcast", "other"]
+    },
+    "collection_time": { "type": "string", "description": "采集时间 ISO8601。区别于发布时间。" },
+    "trigger": {
+      "type": "string",
+      "enum": ["manual", "scheduled", "api", "backfill"],
+      "description": "采集触发方式"
+    },
+    "metrics": {
+      "type": "object",
+      "description": "归一化通用指标。任一缺失须登记到 missing_fields 而非填 0。",
+      "properties": {
+        "reach": { "type": ["number", "null"] },
+        "likes": { "type": ["number", "null"] },
+        "saves": { "type": ["number", "null"] },
+        "shares": { "type": ["number", "null"] },
+        "comments": { "type": ["number", "null"] },
+        "follower_gain": { "type": ["number", "null"] },
+        "completion_rate": { "type": ["number", "null"] }
+      }
+    },
+    "missing_fields": {
+      "type": "array",
+      "description": "本次采集缺失的字段名列表。下游分析必须感知缺失，不得把缺失当 0。",
+      "items": { "type": "string" }
+    },
+    "is_imputed": {
+      "type": "boolean",
+      "description": "是否包含任何估算/插补值。为 true 时禁止用于 causal 结论。"
+    }
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "gate": "content_quality_gate",
+  "artifact": {
+    "path": "data/pipeline/create-20260608-ai-recursive-self-human-value/draft-v2.md"
+  },
+  "reviewer": {
+    "agent_id": "qg-reviewer-001",
+    "context_mode": "fresh_independent"
+  },
+  "gate_status": "conditional",
+  "checks": [
+    {
+      "name": "fact_claim_audit",
+      "result": "warn",
+      "detail": "25 fact-type claims identified. 20 are plausibly supported by the 7 listed sources. 2 are unsupported by any listed source (Yale Budget Lab data, OpenAI RSI job posting). 3 are uncertain (Anthropic pause call may or may not be in the same source; Altman GPT-5.3 quote source alignment unclear; Dwarkesh guest titles unverified). The unsupported claims are marginal supporting details, not load-bearing for the core thesis."
+    },
+    {
+      "name": "brand_compliance_forbidden_expressions",
+      "result": "warn",
+      "detail": "Line 68 '你应该注意' matches the forbidden pattern '你应该…'. Context is mild observational usage ('当一个学者愿意放弃自己最成功的概念框架，你应该注意'), not a direct command, but still technically a match. The style-check report (s-3.3) flagged this as '✅ 未出现' but it is present. All other forbidden expressions ('你必须', '我来教你', '年轻人就是要', '只要努力就能') confirmed absent."
+    },
+    {
+      "name": "brand_compliance_forbidden_patterns",
+      "result": "pass",
+      "detail": "All six forbidden patterns checked: 焦虑贩卖 (PASS — names anxiety but provides framework and action, does not exploit), 空洞鸡汤 (PASS — all encouragement backed by concrete actions), 居高临下的导师姿态 (PASS — consistent 同行者 posture), 极端化AI (PASS — four-layer analysis includes skeptical views), 快速致富承诺 (PASS — absent), 理论堆砌 (PASS — all theoretical concepts have concrete embodiment, e.g. 关系性部门 grounded in pricing test exercise)."
+    },
+    {
+      "name": "brand_compliance_rivet_structure",
+      "result": "pass",
+      "detail": "RIVET method fully executed: R (Rupture) — opening three-stat shock breaks default assumption; I (Illuminate) — four-layer analysis of '拐点到了吗' reveals deeper structure; V (Validate) — names reader anxiety and reframes from supply-side to demand-side; E (Embody) — 海平面 metaphor and Mollick 128 em-dashes story make abstract tangible; T (Transform) — three concrete actions in reader's ZPD. All five stages present and effective."
+    },
+    {
+      "name": "brand_compliance_voice_posture",
+      "result": "pass",
+      "detail": "Voice posture '走在前面半步的同行者' maintained throughout. Improvements from v1 include: '帮你命名' → '把它拆开' (removing guru connotation), '有杀伤力' → '有冲击力' (softer language), '谈判' → '建立新规则' (less combative). First-person voice, collaborative tone, no talking-down."
+    },
+    {
+      "name": "narrative_core_claim_timing",
+      "result": "pass",
+      "detail": "Core claim ('不可替代性不在技能库里' / '把安全感建立在会用AI上就像把房子建在涨潮的海滩上') is planted in the title and the intro (paragraph 4) points directly at it: '我想说的是：当这三句话让你不安的时候，你真正害怕的是什么——以及那个恐惧指向的，可能不是你以为的方向.' The iteration report confirms core claim revealed in first 20%. PASS."
+    },
+    {
+      "name": "narrative_success_framework",
+      "result": "pass",
+      "detail": "SUCCESs dimensions well-executed per iteration report: Simple (core thesis one-sentence summarizable, 9/10), Unexpected (reframe from supply-side to demand-side, 8/10), Concrete (两栏清单, 多付钱测试, 第一块砖, 9/10), Credible (five sources + counter-view balance, 8/10), Emotional (anxiety naming + 海平面 metaphor, 8/10), Story (Mollick personal narrative thread, 8/10)."
+    },
+    {
+      "name": "narrative_transitions",
+      "result": "pass",
+      "detail": "Section transitions examined. S1→S2: natural flow from evidence to analysis ('拐点到了吗？'). S2→S3: clean pivot from analysis to reader experience ('你不是在杞人忧天'). S3→S4: bridge sentence added per iteration report ('说了这么多，我们到底该怎么想这件事？'). S4→S5: actionable turn ('今晚可以做的三件事'). No jarring jumps."
+    },
+    {
+      "name": "narrative_redundancy",
+      "result": "pass",
+      "detail": "Key stats (57.5% traffic, 80% code) appear multiple times but each instance serves a distinct function: opening hook, source grounding, infrastructure-layer analysis, skeptic rebuttal. This is structural reinforcement, not redundancy. S4 metaphor expansion deduplicated per iteration report. No filler content detected."
+    },
+    {
+      "name": "rewrite_regression",
+      "result": "warn",
+      "detail": "No new unsupported fact claims introduced in v2 compared to v1. Both unsupported claims (Yale Budget Lab, OpenAI RSI job posting) existed in v1. However, v2 did expand the Yale claim per style-check suggestion (from '目前还看不到明显影响' to '即使是最敏感的劳动力市场指标，目前还没有出现理论预测的结构性替代效应'), increasing its factual specificity without adding source support. One listed source (DeepMind AlphaEvolve Official 2026-04) appears in frontmatter but is never cited in the body text — present in the outline but dropped from both v1 and v2 drafts."
+    },
+    {
+      "name": "audience_fit_lily",
+      "result": "pass",
+      "detail": "Lily (25-30, '我是谁？从哪开始？'): Article names her anxiety without exploitation, provides three concrete minimum-viable actions (两栏清单 starting with '如果右边是空的，别慌'), maintains non-judgmental exploration space, avoids overwhelming with theory. The '第一块砖' exercise is calibrated to ZPD — no life overhaul, just a single written piece tonight."
+    },
+    {
+      "name": "audience_fit_marcus",
+      "result": "pass",
+      "detail": "Marcus (30-38, '如何把我是谁变成事业？'): Article addresses his core question through the '愿意多付钱测试' exercise, which translates the philosophical argument into a commercialization heuristic. v2 added explicit Marcus callout: '如果你在Marcus的阶段——正在想把能力变成自己的事业——这不只是心理学安慰。这是一条可以验证的商业路径.' This bridges from insight to business validation, serving his ZPD need for '最小商业闭环'."
+    }
+  ],
+  "blockers": [
+    {
+      "severity": "medium",
+      "summary": "Unsupported fact claim: Yale Budget Lab data",
+      "location": "Section 二, line 71: '耶鲁Budget Lab的数据也指出，即使是最敏感的劳动力市场指标，目前还没有出现理论预测的结构性替代效应'",
+      "remediation": "Either add the Yale Budget Lab source to frontmatter sources list, or remove the claim and rely solely on the Dwarkesh guest's '我们没有数据' admission which is already sourced. The Yale claim is not load-bearing — the Dwarkesh quote already establishes the same point about data vacuum."
+    },
+    {
+      "severity": "medium",
+      "summary": "Unsupported fact claim: OpenAI RSI safety researcher job posting details",
+      "location": "Section 二, line 65: 'OpenAI最近在招RSI安全研究员，岗位要求里写的是良好品味和战略性思维'",
+      "remediation": "Add a source citation for the OpenAI RSI job posting, or soften the claim to a non-fact form (e.g., '有意思的是，Anthropic自己认为AI最缺的正是目标判断力——他们称之为良好品味和战略性思维'), reframing it as interpretation rather than a specific verifiable fact about a job posting."
+    },
+    {
+      "severity": "low",
+      "summary": "Forbidden expression match: '你应该注意'",
+      "location": "Section 二, line 68: '当一个学者愿意放弃自己最成功的概念框架，你应该注意'",
+      "remediation": "Replace with brand-safe alternative, e.g., '当一个学者愿意放弃自己最成功的概念框架，值得注意' or '一个值得留意的信号'."
+    },
+    {
+      "severity": "low",
+      "summary": "Uncited source in frontmatter: DeepMind AlphaEvolve",
+      "location": "Frontmatter sources list (line 18) and body text (absent)",
+      "remediation": "Either remove 'DeepMind AlphaEvolve Official (2026-04)' from the sources list (as it is never cited), or add it to the body if it materially supports a claim. Currently it is vestigial from the outline stage."
+    },
+    {
+      "severity": "low",
+      "summary": "Unclear source alignment: Anthropic global pause call and Altman GPT-5.3 quote",
+      "location": "Section 一, lines 40 and 42",
+      "remediation": "Verify that the Anthropic 'When AI Builds Itself' source also covers the '呼吁全球暂停AI发展' statement, and that the OpenAI governance blueprint or a listed source covers the Altman GPT-5.3 '幼虫版本' quote. If these are from separate unlisted sources, add them or soften attribution."
+    }
+  ],
+  "evidence_ledger": [
+    {
+      "claim_id": "F1",
+      "claim_type": "fact",
+      "source": "Anthropic Institute: When AI Builds Itself (2026-06-04)",
+      "verdict": "supported",
+      "confidence": "high"
+    },
+    {
+      "claim_id": "F2",
+      "claim_type": "fact",
+      "source": "Cloudflare Radar Bot Traffic Report 2026",
+      "verdict": "supported",
+      "confidence": "high"
+    },
+    {
+      "claim_id": "F3",
+      "claim_type": "fact",
+      "source": "Anthropic Institute: When AI Builds Itself (2026-06-04)",
+      "verdict": "supported",
+      "confidence": "high"
+    },
+    {
+      "claim_id": "F4",
+      "claim_type": "fact",
+      "source": "Anthropic Institute: When AI Builds Itself (2026-06-04)",
+      "verdict": "supported",
+      "confidence": "high"
+    },
+    {
+      "claim_id": "F5",
+      "claim_type": "fact",
+      "source": "Anthropic Institute: When AI Builds Itself (2026-06-04)",
+      "verdict": "supported",
+      "confidence": "high"
+    },
+    {
+      "claim_id": "F6",
+      "claim_type": "fact",
+      "source": "Anthropic Institute: When AI Builds Itself (2026-06-04)",
+      "verdict": "supported",
+      "confidence": "high"
+    },
+    {
+      "claim_id": "F7",
+      "claim_type": "fact",
+      "source": "Anthropic Institute — global pause statement (may be separate from 'When AI Builds Itself' source)",
+      "verdict": "uncertain",
+      "confidence": "medium"
+    },
+    {
+      "claim_id": "F8",
+      "claim_type": "fact",
+      "source": "OpenAI 联邦治理提案 (2026-06-05)",
+      "verdict": "supported",
+      "confidence": "high"
+    },
+    {
+      "claim_id": "F9",
+      "claim_type": "fact",
+      "source": "OpenAI 联邦治理提案 or separate Altman statement — source alignment unclear",
+      "verdict": "uncertain",
+      "confidence": "medium"
+    },
+    {
+      "claim_id": "F10",
+      "claim_type": "fact",
+      "source": "Cloudflare Radar Bot Traffic Report 2026",
+      "verdict": "supported",
+      "confidence": "high"
+    },
+    {
+      "claim_id": "F11",
+      "claim_type": "fact",
+      "source": "Ethan Mollick: Co-Existence and the End of Co-Intelligence (2026-06-05)",
+      "verdict": "supported",
+      "confidence": "high"
+    },
+    {
+      "claim_id": "F12",
+      "claim_type": "fact",
+      "source": "Dwarkesh Patel Podcast: What remains scarce after AGI? (2026-06-04)",
+      "verdict": "supported",
+      "confidence": "high"
+    },
+    {
+      "claim_id": "F13",
+      "claim_type": "fact",
+      "source": "NO LISTED SOURCE — OpenAI RSI job posting not covered by any frontmatter source",
+      "verdict": "unsupported",
+      "confidence": "low"
+    },
+    {
+      "claim_id": "F14",
+      "claim_type": "fact",
+      "source": "NO LISTED SOURCE — Yale Budget Lab not in frontmatter sources",
+      "verdict": "unsupported",
+      "confidence": "low"
+    },
+    {
+      "claim_id": "F15",
+      "claim_type": "fact",
+      "source": "Gary Marcus 批评文章 (2026-06)",
+      "verdict": "supported",
+      "confidence": "high"
+    },
+    {
+      "claim_id": "F16",
+      "claim_type": "fact",
+      "source": "Ethan Mollick: Co-Existence and the End of Co-Intelligence (2026-06-05)",
+      "verdict": "supported",
+      "confidence": "high"
+    },
+    {
+      "claim_id": "F17",
+      "claim_type": "fact",
+      "source": "Dwarkesh Patel Podcast: What remains scarce after AGI? (2026-06-04)",
+      "verdict": "supported",
+      "confidence": "high"
+    },
+    {
+      "claim_id": "F18",
+      "claim_type": "fact",
+      "source": "Dwarkesh Patel Podcast — guest names and titles should match the episode",
+      "verdict": "uncertain",
+      "confidence": "medium"
+    },
+    {
+      "claim_id": "F19",
+      "claim_type": "interpretation",
+      "verdict": "not_applicable",
+      "confidence": "high"
+    },
+    {
+      "claim_id": "F20",
+      "claim_type": "metaphor",
+      "verdict": "not_applicable",
+      "confidence": "high"
+    }
+  ],
+  "human_review": {
+    "required": true,
+    "status": "pending"
+  },
+  "created_at": "2026-06-08T00:00:00.000Z"
+}

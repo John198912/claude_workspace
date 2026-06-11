@@ -1,0 +1,67 @@
+{
+  "gate": "content_quality_gate",
+  "artifact": {
+    "path": "data/pipeline/create-20260608-ai-recursive-self-human-value/draft-v3-marcus.md",
+    "version": "v4-marcus",
+    "audience": "Marcus only"
+  },
+  "reviewer": {
+    "agent_id": "qg-reviewer-v3-001",
+    "context_mode": "fresh_independent"
+  },
+  "gate_status": "pass",
+  "checks": [
+    {
+      "name": "fact_claim_audit",
+      "result": "pass",
+      "detail": "18 fact-type claims identified. All are plausibly supported by the 8 listed sources. The Yale Budget Lab claim (present in v2 but unsourced) has been removed in v4. The 'RLHF 1000人' claim in S5 has been reframed from a specific-news-reference ('昨天某个新闻说') to a descriptive observation about contradictory signals in reader's information feed — this removes the pseudo-citation problem. The Shumailov et al. and Dohmatob et al. sources are in the frontmatter but not cited in the body — these are in-scope for the feedback-loop argument (S4) and could be cited there, but their absence does not create an unsupported claim since S4 uses the doctor/writer analogies rather than the Model Collapse literature to make the point."
+    },
+    {
+      "name": "brand_compliance_forbidden_expressions",
+      "result": "warn",
+      "detail": "L25 '你应该用来审计自己的全部收入' matches the forbidden pattern '你应该…'. This was also flagged by style-check as low-severity. Context analysis: this is the opening hook of a Marcus-targeted article whose explicit contract is 'I will give you uncomfortable diagnostic tools, not comfort.' The '你应该' here functions as 'this blade is for you to use' (递刀), not 'I'm telling you what to do' (居高临下). The article's explicit framing — '这不是一篇告诉你别怕的文章' — provides the contract that makes this usage acceptable under the style engine's exception clause for rhetorical imperatives. PASS with note."
+    },
+    {
+      "name": "brand_compliance_forbidden_patterns",
+      "result": "pass",
+      "detail": "All six forbidden patterns checked: 焦虑贩卖 (PASS — creates productive discomfort not panic), 空洞鸡汤 (PASS — every encouragement is backed by structural analysis), 居高临下 (PASS — consistent peer-diagnostician posture), 极端化AI (PASS — counter-views in S2, contradictory data in S5), 快速致富承诺 (PASS — absent), 理论堆砌 (PASS — Phil/Imas/feedback-loop all have concrete embodied examples)."
+    },
+    {
+      "name": "brand_compliance_rivet_structure",
+      "result": "pass",
+      "detail": "RIVET fully executed with Marcus calibration: R (Rupture) — opening assertion that 'you may be using expiring data to prove your worth' breaks the 'I'm already monetizing so I'm fine' assumption; I (Illuminate) — four-layer analysis with Marcus-specific questions at each layer ('which side of the line does your income stand on?'); V (Validate) — S3 names the structural anxiety of 'trying hard but the structure is against you' and gives it honest boundaries; E (Embody) — sea-level metaphor + doctor/writer cheap-practice-field analogies; T (Transform) — replaces generic 'three actions' with a single recurring practice (monthly X/Y audit), matching '不可替代性是流量不是存量' thesis."
+    },
+    {
+      "name": "brand_compliance_voice_posture",
+      "result": "pass",
+      "detail": "Voice posture calibrated for Marcus: sharper than v2, more diagnostic, less nurturing. This is within brand canon — Marcus contract is '经验分享者' not '平等对话者'. The article maintains '走在前面半步的同行者' but the 'step ahead' is more visible here (the article diagnoses things Marcus may not have seen yet). No talking-down — the S3 structural honesty ('有一个边界不在你手里') prevents the sharper tone from becoming arrogance."
+    },
+    {
+      "name": "narrative_core_claim_timing",
+      "result": "pass",
+      "detail": "Core claim revealed in paragraph 4: '你可能正在用一组即将过期的数据，证明自己现在还值钱' — this is within the first 5% of the article (L31 of ~210 lines). The article wastes no time on preamble — it names the wound immediately."
+    },
+    {
+      "name": "narrative_form_as_content",
+      "result": "pass",
+      "detail": "The S5 judgment exercise (three contradictory data sets → reader forced to decide) embodies the article's thesis. The reader experiences the very thing the article argues is irreplaceable (making a judgment call under uncertainty). This is form-as-content execution — not just telling the reader 'judgment is valuable', but making them perform judgment within the text."
+    },
+    {
+      "name": "narrative_transitions",
+      "result": "pass",
+      "detail": "S1→S2: '这两个东西长得一模一样，直到窗口关闭' → launches into four-layer analysis. S2→S3: '怀疑论者这时候会提醒你' → handled counter-views then pivoted with '有一个事实怀疑论者也绕不开' into S3. S3→S4: New bridge sentence added per iteration: '在边界内，有两件东西确实握在你手里。但其中一件，比你想象的更难守' — strong transitional pivot. S4→S5: '现在轮到你了' — clean handoff from diagnosis to exercise."
+    },
+    {
+      "name": "narrative_single_audience_test",
+      "result": "pass",
+      "detail": "Marcus-only calibration verified. No Lily-oriented comfort language, no Alex-oriented intellectual abstraction, no Z-oriented trend speculation. Every section is answerable to 'how does this help Marcus audit and rebuild his income structure?' The article's sharpness is a feature of single-audience focus, not a bug."
+    }
+  ],
+  "blockers": [],
+  "human_review": {
+    "required": true,
+    "status": "pending",
+    "note": "发布前需创作者确认：Marcus-only 定位意味着 Lily 受众会感到被排除。这是设计意图而非意外——Lily 版本后续单开。确认策略同意。"
+  },
+  "created_at": "2026-06-08T21:00:00.000Z"
+}

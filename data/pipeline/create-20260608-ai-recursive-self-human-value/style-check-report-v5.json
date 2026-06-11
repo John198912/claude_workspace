@@ -1,0 +1,73 @@
+{
+  "task_id": "create-20260608-ai-recursive-self-human-value",
+  "agent": "s-3.3-style-engine",
+  "mode": "check",
+  "check_depth": "standard",
+  "draft": "draft-v5-lily.md (v6-lily-final)",
+  "original_length": 2700,
+  "brand_canon": "data/brand/brand-canon.yaml",
+  "style_profile": "data/style-profiles/personal.json",
+
+  "check_report": {
+    "overall_match_score": 8.5,
+    "grade": "良好",
+
+    "dimension_scores": {
+      "formality_match": {"score": 7, "status": "✅ 符合", "note": "正式度略低于Marcus版，更口语、更短句——符合Lily的'松绑'基调和强对话感需求"},
+      "tone_match": {"score": 9, "status": "✅ 符合", "note": "温和引导+同行者姿态。'你的不知道不是落后的证据'、'这不是你的劣势，这是你的自由'——精准的Lily调性"},
+      "humor_match": {"score": 6, "status": "✅ 符合", "note": "幽默感低——这是对的。Lily版不需要ENTP式挑衅或反差幽默，需要温和的诚实"},
+      "conversational_match": {"score": 9, "status": "✅ 符合", "note": "强对话感。'我简单说'、'我想把话说明白'、'这么说吧'——持续的口语化锚点"},
+      "info_density_match": {"score": 7, "status": "✅ 符合", "note": "信息密度低于Marcus版——这是设计意图。Lily版的信息增量在'认知框架翻转'（不知道是优势、探索是原料），不在'数据密度'。'探索→数据点→判断力'的机制解释提供了硬度支撑"},
+      "anti_cliche_match": {"score": 9, "status": "✅ 符合", "note": "零AI模板化表达。零懒惰生理描述。'你的感知系统还在工作'、'你现在整个阶段就是初稿'、'别把它压缩成答案'——都是自己造的框架词"}
+    },
+
+    "issues": [
+      {
+        "issue_id": "i-001",
+        "severity": "low",
+        "category": "语气一致性",
+        "location": "S4 L112",
+        "original_text": "它不会替你在凌晨三点失眠的时候，反复想那几个'我到底想要什么'的问题——而那些问题每被想一次，你的判断力就密了一分。",
+        "problem_description": "'凌晨三点失眠'是通用青春叙事的老套意象，与全文其他地方的具体感（Mollick初稿、远程工作、医生看片）不一致。功能是对的（命名探索期的内在工作），但表达可以更原创。",
+        "suggested_fixes": ["可选改为更具体的场景：'它不会替你在下了班以后，坐在沙发上反复想今天那个让你不舒服的瞬间到底在告诉你什么'"],
+        "auto_fix_applied": false
+      }
+    ],
+
+    "issue_summary": {
+      "total": 1,
+      "high_severity": 0,
+      "medium_severity": 0,
+      "low_severity": 1,
+      "by_category": {
+        "语气一致性": 1
+      }
+    },
+
+    "brand_compliance_check": {
+      "forbidden_patterns": {
+        "焦虑贩卖": {"status": "✅ 通过"},
+        "空洞鸡汤": {"status": "✅ 通过"},
+        "居高临下": {"status": "✅ 通过"},
+        "极端化AI": {"status": "✅ 通过"},
+        "快速致富": {"status": "✅ 通过"},
+        "理论堆砌": {"status": "✅ 通过"}
+      },
+      "forbidden_expressions_check": {
+        "你应该": "✅ 零命中",
+        "你必须": "✅ 零命中",
+        "年轻人就是要": "✅ 零命中",
+        "我来教你": "✅ 零命中",
+        "成功人士都是这样": "✅ 零命中",
+        "只要努力就能": "✅ 零命中"
+      }
+    },
+
+    "ai_cliche_scan": {
+      "chinese_blacklist": {"本质上来说": "✅", "归根结底": "✅", "底层逻辑": "✅", "赛道": "✅", "赋能": "✅"},
+      "lazy_physiological": {"心跳加速": "✅", "瞳孔放大": "✅", "手心出汗": "✅", "后背一凉": "✅"}
+    }
+  },
+
+  "human_review_required": false
+}

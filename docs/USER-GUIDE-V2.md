@@ -1,7 +1,7 @@
-# ProjectFilesV1.1 系统使用指南
+# 超级个体内容创作系统 · 使用指南
 
-> 版本：V2.0 | 更新日期：2026-04-22
-> 系统状态：✅ 完全可用
+> 版本：V2.1 | 更新日期：2026-06-07
+> 系统状态：可用（命令入口 `.claude/commands/` 已落地；关键节点受独立审查门约束，见 `docs/QUALITY-GATES.md`）
 
 ---
 
@@ -16,6 +16,16 @@ ProjectFilesV1.1 是一个完整的内容创作和知识管理系统，包含 5 
 - **M3 内容创作**：从大纲到终稿的完整创作流程
 - **M4 多平台分发**：内容切片、平台适配
 - **M5 数据反馈**：数据采集、复盘分析、策略优化
+
+### SOUL 品牌宪法
+
+- **品牌定位**：SOUL 是“超级个体成长教练”，帮助转型期个体在 AI 时代看清自己是谁，并把这个“谁”变成可持续的事业、能力资产和生活结构。
+- **核心 Slogan**：AI 是工具，哲学是地基，你才是杠杆的支点。
+- **双核心受众**：Lily（起步转型期）与 Marcus（事业化转型期）是同一条成长路径的两个主要阶段。
+- **人读版宪法**：`docs/SOUL-CORE-INSIGHTS.md`
+- **机器契约**：`data/brand/brand-canon.yaml`
+
+M2/M3/M4/M5 涉及品牌判断时默认读取 `data/brand/brand-canon.yaml`；`data/style-profiles/personal.json` 只作为风格覆盖层，不覆盖品牌定位。
 
 ### 核心命令
 
@@ -148,6 +158,7 @@ ProjectFilesV1.1 是一个完整的内容创作和知识管理系统，包含 5 
 - ✅ 审核节点：6个 → 2个（大纲审核 + 发布前确认）
 - ✅ 自动风格检查和事实核查
 - ✅ 问题自动标记到审核日志
+- ✅ 默认读取 SOUL 品牌契约，按 Lily / Marcus 阶段模型校准受众
 
 **审核节点：**
 1. **大纲审核**（必须）：确认内容结构和定位
@@ -233,7 +244,7 @@ ProjectFilesV1.1 是一个完整的内容创作和知识管理系统，包含 5 
 ```bash
 1. /learn <url>                    # 学习新内容
 2. 查看知识条目                     # knowledge-base/{category}/
-3. /kb-review --status pending_review  # 批量审核（可选）
+3. 批量审核待审条目（可选）        # 约定触发：调用 s-1.3-kb-build 审核，未单独建命令
 ```
 
 ### 流程 2：快速创作
@@ -347,6 +358,8 @@ grep "flag_for_review" data/pipeline/*/audit-log.jsonl
 | /full-pipeline | 6个 | 2个 | -67% |
 | **总计** | **14个** | **4个** | **-71%** |
 
+> 口径说明（V2.1）：**人工确认节点共 2 个类型**——「大纲审核」与「发布前确认」。表中"4个"= 这 2 个类型分别出现在 `/quick-create` 与 `/full-pipeline` 两条命令里（2 类型 × 2 命令）。**减少的是人工节点，不是质量检查**：所有质量检查改由自动质量门承担，关键节点（入库/发布/策略/事实）由独立审查门把关并可阻断，详见 `docs/QUALITY-GATES.md`。
+
 ### 自动化提升
 
 - ✅ 所有质量检查自动执行
@@ -366,20 +379,15 @@ grep "flag_for_review" data/pipeline/*/audit-log.jsonl
 ## 📖 参考文档
 
 ### 核心文档
-- `CLAUDE.md`：系统配置（V2.0）
-- `docs/SKILL-INDEX.md`：Skill 索引（20个核心Skill）
+- `CLAUDE.md` / `AGENTS.md`：系统配置（V2.1，内容一致）
+- `docs/SKILL-INDEX.md`：Skill 索引（核心21 + 扩展6）
 - `docs/DIRECTORY-MAP.md`：目录蓝图和数据传递协议
+- `docs/QUALITY-GATES.md`：6-gate 独立审查协议
+- `docs/CHANGELOG.md`：版本演进（替代手工迁移文档）
 
-### 迁移文档
-- `docs/MIGRATION-V2.md`：V2.0 迁移指南
-- `docs/P0-FINAL-DELIVERY.md`：最终交付报告
-
-### 命令文档
-- `.claude/commands/learn.md`
-- `.claude/commands/quick-create.md`
-- `.claude/commands/full-pipeline.md`
-- `.claude/commands/distribute.md`
-- `.claude/commands/review.md`
+### 命令文档（`.claude/commands/`，真实存在）
+- `learn.md` / `think.md` / `topic-mine.md` / `validate.md` / `create.md`
+- `quick-create.md` / `full-pipeline.md` / `distribute.md` / `review.md` / `style-learn.md`
 
 ---
 
@@ -395,22 +403,20 @@ cat data/pipeline/{task_id}/audit-log.jsonl
 **Q: 如何批量审核待审核的知识条目？**
 ```bash
 grep -r "creation_status: pending_review" knowledge-base/
-/kb-review --status pending_review
+# 然后调用 s-1.3-kb-build 进行审核与升级（受 kb_publish_gate 约束：未验证/单来源不得升 reviewed/core）
 ```
 
 **Q: 如何编辑已生成的切片？**
-```bash
-/edit-slices <content_id>
-```
+直接编辑 `content/slices/{parent-id}/` 下对应的切片 Markdown，再重跑导出（`scripts/xiaohongshu-export.py`）。切片格式契约见 `data/schemas/publish_package.schema.json`。
 
-**Q: 如何回滚到 V1.1？**
-参考 `docs/MIGRATION-V2.md` 的回滚方案。
+**Q: 如何回滚？**
+通过 git 回滚（`git log` 找到目标提交，`git revert` 或 `git checkout <commit> -- <path>`）。版本演进见 `docs/CHANGELOG.md`。
 
 ---
 
 ## 🎉 开始使用
 
-系统已完全可用，你可以：
+系统可用。你可以：
 
 1. **从学习开始**：`/learn <url>`
 2. **尝试快速创作**：`/quick-create "测试主题"`
@@ -422,5 +428,6 @@ grep -r "creation_status: pending_review" knowledge-base/
 ---
 
 **版本历史：**
+- V2.1（2026-06-06）：文档对齐磁盘实况；命令入口落地；新增 6-gate 独立审查协议
 - V2.0（2026-04-22）：简化审核节点，新增审核日志系统
 - V1.1（2026-03-18）：初始版本
