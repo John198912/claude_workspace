@@ -1,0 +1,64 @@
+# `.claude/settings.json` 模板
+
+> 本文件是 `.claude/settings.json` 的模板，供各环境复制使用。
+> **请勿将包含真实 API token 的文件提交到版本库。**
+> 复制本文件后，移除 `.template` 后缀，填入你的真实 API 端点配置。
+
+## 基础配置模板
+
+```json
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
+    "ANTHROPIC_AUTH_TOKEN": "sk-你的密钥",
+    "ANTHROPIC_MODEL": "DeepSeek-V4-pro",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "DeepSeek-V4-flash",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "DeepSeek-V4-pro",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "DeepSeek-V4-pro",
+    "ANTHROPIC_REASONING_MODEL": "DeepSeek-V4-pro"
+  },
+  "includeCoAuthoredBy": false,
+  "model": "haiku",
+  "effortLevel": "xhigh",
+  "skipDangerousModePermissionPrompt": true
+}
+```
+
+### 模型配置说明
+
+| 字段 | 值 | 说明 |
+|------|-----|------|
+| `ANTHROPIC_BASE_URL` | `https://api.deepseek.com/anthropic` | DeepSeek API 兼容端点（或其他兼容 Anthropic API 的端点） |
+| `ANTHROPIC_AUTH_TOKEN` | `sk-...` | 你的 API 密钥 |
+| 各 model 字段 | 对应模型标识 | 分别配置 haiku/sonnet/opus 级别的模型映射 |
+
+## 最小配置（仅 API 端点）
+
+```json
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
+    "ANTHROPIC_AUTH_TOKEN": "sk-你的密钥"
+  }
+}
+```
+
+## 权限白名单模板
+
+如需减少权限提示，可将常用工具调用加入 `permissions.allow`：
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Bash(python3 *)",
+      "Bash(git *)"
+    ]
+  }
+}
+```
+
+> 注意：`permissions.allow` 中每项都是一个 glob 模式，匹配工具调用签名。
+> 完整配置参考：`https://docs.anthropic.com/en/docs/claude-code/settings`

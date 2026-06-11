@@ -217,7 +217,7 @@ output_validator:
 
 ## Skill 调度规则
 
-1. **简化调度**：Orchestrator 直接调度 20 个核心 Skill，取消 Module Coordinator 概念
+1. **简化调度**：Orchestrator 直接调度 21 个核心 Skill，取消 Module Coordinator 概念
 2. **渐进式披露**：先查阅 `docs/SKILL-INDEX.md` 选择 Skill，再读取具体文件执行
 3. **M1 去个人化原则**：M1 模块的 Skill 不注入品牌画像、受众定义等个性化信息，这些信息仅在 M3 创作阶段引入
 4. **通能增强**：本仓内置 6 个扩展 Skill（dbskill 集成等，见 SKILL-INDEX）可全局调用；若另行安装了官方扩展技能库，也可一并调用（当前未内置，按安装情况而定）
@@ -242,14 +242,14 @@ output_validator:
 
 | 调用语法 | 映射 Agent | 典型用法 |
 |----------|-----------|--------|
-| `@研究员` | A1.1 持续学习 + s-3.2.1 | “@研究员 帮我调研AI Agent的最新进展” |
-| `@思考者` | A1.2 深度思考（a-1.2.1→1.2.4 + 自然对话） | "@思考者 从多视角分析这个观点" |
-| `@选题官` | A2.1 选题挖掘 | “@选题官 从知识库挖掘本周选题” |
-| `@写手` | A3.2 写作引擎 | “@写手 基于这个大纲写初稿” |
-| `@风格师` | A3.3 风格引擎 | “@风格师 检查这篇文章的风格” |
-| `@核查员` | s-3.4.1 事实核查 | “@核查员 验证这篇文章的数据引用” |
-| `@适配器` | A4.2 平台适配 | “@适配器 把这篇长文适配成小红书” |
-| `@复盘师` | A5.2 内容复盘 | “@复盘师 复盘上周发布的内容” |
+| `@研究员` | s-1.1-info-intake + s-3.2.1-research | “@研究员 帮我调研AI Agent的最新进展” |
+| `@思考者` | a-1.2-deep-think（a-1.2.1→1.2.4 + 自然对话） | "@思考者 从多视角分析这个观点" |
+| `@选题官` | s-2.1-topic-mine 选题挖掘 | “@选题官 从知识库挖掘本周选题” |
+| `@写手` | a-3.2.2-outline / a-3.2.3-draft / a-3.2.4-iterate | “@写手 基于这个大纲写初稿” |
+| `@风格师` | s-3.3-style-engine 风格引擎 | “@风格师 检查这篇文章的风格” |
+| `@核查员` | s-3.4.1-fact-check 事实核查 | “@核查员 验证这篇文章的数据引用” |
+| `@适配器` | s-4.2.2-adapt 平台适配 | “@适配器 把这篇长文适配成小红书” |
+| `@复盘师` | s-5.2-review-engine 内容复盘 | “@复盘师 复盘上周发布的内容” |
 
 ### 方式 3：[任务:类型]（快速模式，最简调用）
 
@@ -257,13 +257,13 @@ output_validator:
 
 | 语法 | 主要 Agent | 辅助 Agent |
 |------|-----------|----------|
-| `[任务:研究]` | A1.1 + s-3.2.1 | A1.3 知识库 |
-| `[任务:思考]` | A1.2（a-1.2.1→1.2.4） | 自然对话 |
-| `[任务:选题]` | A2.1 | A1.2, A2.2 |
-| `[任务:写作]` | A3.2 | s-3.2.1, A3.3 |
-| `[任务:校验]` | s-3.3.4 + s-3.4.1 | — |
-| `[任务:分发]` | A4.1 + A4.2 | — |
-| `[任务:复盘]` | A5.1 + A5.2 | A5.3 |
+| `[任务:研究]` | s-1.1-info-intake + s-3.2.1-research | s-1.3-kb-build 知识库 |
+| `[任务:思考]` | a-1.2-deep-think（a-1.2.1→1.2.4） | 自然对话 |
+| `[任务:选题]` | s-2.1-topic-mine | a-1.2-deep-think, s-2.2-topic-validate |
+| `[任务:写作]` | a-3.2.2-outline / a-3.2.3-draft / a-3.2.4-iterate | s-3.2.1-research, s-3.3-style-engine |
+| `[任务:校验]` | s-3.3-style-engine + s-3.4.1-fact-check | — |
+| `[任务:分发]` | s-4.1-slice-engine + s-4.2.2-adapt | — |
+| `[任务:复盘]` | s-5.1.1-data-collect + s-5.2-review-engine | s-5.3-optimize |
 
 ## 项目目录结构
 
@@ -292,5 +292,5 @@ Skill 详情查阅 `docs/SKILL-INDEX.md`（全 Skill 统一索引）。
 | web-search | `@anthropic/mcp-server-brave-search` | 搜索/热点/竞品 |
 | filesystem | `@anthropic/mcp-server-filesystem` | 读写文件 |
 | fetch | `@anthropic/mcp-server-fetch` | 网页抓取 |
-| knowledge-db | 自建 `mcp-servers/knowledge-db/` | 向量检索 |
-| data-analysis | 自建 `mcp-servers/data-analysis/` | 运营数据查询 |
+| knowledge-db | 规划中，从未建成；当前降级为文件搜索 | 向量检索（降级：grep + 标签过滤） |
+| data-analysis | 规划中，从未建成；当前降级为脚本处理 | 运营数据查询（降级：Python 脚本处理 CSV/JSON） |

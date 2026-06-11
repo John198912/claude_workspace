@@ -1,5 +1,18 @@
-# Claude Code local config
-.claude/
+# Claude Code local config — keep thin wrappers + template, ignore private state
+.claude/settings.local.json
+.claude/sessions/
+.claude/fs/
+.claude/tasks/
+.claude/plans/
+.claude/cache/
+.claude/downloads/
+.claude/paste-cache/
+.claude/backups/
+.claude/plugins/
+.claude/shell-snapshots/
+.claude/telemetry/
+.claude/session-env/
+.claude/file-history/
 
 # Logs and audit trail
 data/logs/

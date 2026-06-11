@@ -108,6 +108,80 @@ M3 Coordinator (A3.1兼任)
 
 ---
 
+## V2.2 (2026-06-12)
+
+基于代码审查（claude-code-review）的优化迭代，解决开箱可用性、命令层入仓、死引用清理等关键问题。
+
+### 🆕 新增
+
+#### 1. 命令文档入仓 (P0-1)
+
+平台中立的 10 个命令定义移至 `docs/commands/*.md`，.claude/commands/*.md 改为薄包装引用。
+
+| 文件 | 说明 |
+|------|------|
+| `docs/commands/{learn,think,topic-mine,validate,create,quick-create,distribute,review,full-pipeline,style-learn}.md` | 10 个平台中立命令定义 |
+| `.claude/commands/{同上}.md` | Claude Code 薄包装（引用 docs/commands/） |
+| `docs/mcp-config.md` | MCP Server 配置说明与规划状态 |
+
+#### 2. 质量门 reviewer 子代理定义 (P1-3)
+
+| 文件 | 说明 |
+|------|------|
+| `.claude/agents/gate-reviewer.md` | 只读 review 子代理定义，对应 6 种质量门类型 |
+
+#### 3. 配置模板入仓 (P1-4)
+
+| 文件 | 说明 |
+|------|------|
+| `.claude/settings.json.template` | 不含敏感信息的 settings 模板 |
+| `.claude/hooks/README.md` | 自动质量门触发钩子模板 |
+
+### ✅ 修复
+
+#### 1. 死引用与口径漂移 (P1-2)
+
+- CLAUDE.md / AGENTS.md 中三种调用方式表全部从 V1.1 编号（A1.1, A2.2, s-3.3.4…）更新为 V2.1 ID
+- SKILL-INDEX.md 历史表述从旧编号改为文字说明
+- s-3.4.1-fact-check.md 中三处旧 s-3.3.4 引用更新为 s-3.3-style-engine
+- s-3.4.1-fact-check.md 三处互斥阈值统一为 ≥8通过 / 7-7.9条件通过 / <7需修改（原表述含 ≥7、<8、<7 三种）
+- 🗑️ 删除 `docs/USER-GUIDE.md`（已由 USER-GUIDE-V2.md 取代）
+
+#### 2. 配置与路径修正
+
+- `.gitignore` 从忽略整个 `.claude/` 改为仅忽略私有运行时目录，允许 commands/agents/settings 模板入仓
+- MCP 配置表将 knowledge-db / data-analysis 状态从"自建"更新为"规划中，从未建成；当前降级…"
+- 口径计数修正：Orchestrator "直接调度 20 个核心 Skill" → "21 个核心 Skill"
+
+#### 3. check_consistency 增强
+
+- 新增 V1.1 死编号（A1.1 ~ A5.3, s-3.3.4, s-3.3.6, USER-GUIDE.md）到 PHANTOM_REFS 扫描
+- BRAND_ACTIVE_DOCS / BRAND_CONSUMER_DOCS 从 .claude/commands/ 更新为 docs/commands/
+- 实测 check_consistency PASS ✅（零 FAIL）
+
+### 📁 V2.2 文件变更汇总
+
+```
+Project/
+├── .gitignore                                     [修改] 细粒度 .claude/ 忽略
+├── CLAUDE.md                                      [修改] 死ID清理 + MCP表修正 + 口径计数
+├── AGENTS.md                                      [修改] 同步 CLAUDE.md 变更
+├── .claude/
+│   ├── commands/{10 files}.md                     [新建] Claude Code 薄包装命令
+│   ├── agents/gate-reviewer.md                    [新建] 质量门 reviewer 子代理定义
+│   ├── settings.json.template                     [新建] 配置模板
+│   └── hooks/README.md                            [新建] 自动质量门钩子模板
+├── docs/
+│   ├── commands/{10 files}.md                     [新建] 平台中立命令定义
+│   ├── CHANGELOG.md                               [修改] +V2.2
+│   ├── USER-GUIDE.md                              [删除] 已由 V2 取代
+│   └── mcp-config.md                              [新建] MCP 状态说明
+├── scripts/
+│   └── check_consistency.py                       [修改] +幽灵引用扫描项
+└── skills/m3-creation/
+    └── s-3.4.1-fact-check.md                      [修改] 阈值统一 + s-3.3.4→s-3.3
+```
+
 ## V1.1
 
 初始版本。二级调度架构、5模块15Agent、Context Snapshot 机制、错误恢复与降级方案。

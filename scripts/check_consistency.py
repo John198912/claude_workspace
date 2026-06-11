@@ -45,6 +45,12 @@ PHANTOM_REFS = [
     "skills_v1.1_backup",
     "skills/_archived",
     "skills/external/skills",
+    # V1.1 死编号 —— V2.0 已重构为 21 核心 Skill，旧编号不应再出现
+    "A1.1", "A1.3", "A2.1", "A3.1", "A3.2", "A3.3", "A4.1", "A4.2", "A4.3", "A5.1", "A5.2", "A5.3",
+    "s-3.3.4",  # 已合并进 s-3.3-style-engine
+    "s-3.3.6",
+    # 不再活跃的文档
+    "USER-GUIDE.md",  # 已替换为 USER-GUIDE-V2.md
 ]
 
 # 应被如实披露的扩展 Skill
@@ -63,12 +69,12 @@ BRAND_ACTIVE_DOCS = [
     "CLAUDE.md",
     "AGENTS.md",
     "docs/USER-GUIDE-V2.md",
-    ".claude/commands/create.md",
-    ".claude/commands/quick-create.md",
-    ".claude/commands/full-pipeline.md",
-    ".claude/commands/topic-mine.md",
-    ".claude/commands/validate.md",
-    ".claude/commands/distribute.md",
+    "docs/commands/create.md",
+    "docs/commands/quick-create.md",
+    "docs/commands/full-pipeline.md",
+    "docs/commands/topic-mine.md",
+    "docs/commands/validate.md",
+    "docs/commands/distribute.md",
     "skills/m2-topic/s-2.1-topic-mine.md",
     "skills/m2-topic/s-2.2-topic-validate.md",
     "skills/m3-creation/s-3.1.1-content-system.md",
@@ -99,12 +105,12 @@ RETIRED_BRAND_PATTERNS = [
 ]
 
 BRAND_CONSUMER_DOCS = [
-    ".claude/commands/create.md",
-    ".claude/commands/quick-create.md",
-    ".claude/commands/full-pipeline.md",
-    ".claude/commands/topic-mine.md",
-    ".claude/commands/validate.md",
-    ".claude/commands/distribute.md",
+    "docs/commands/create.md",
+    "docs/commands/quick-create.md",
+    "docs/commands/full-pipeline.md",
+    "docs/commands/topic-mine.md",
+    "docs/commands/validate.md",
+    "docs/commands/distribute.md",
     "skills/m2-topic/s-2.1-topic-mine.md",
     "skills/m2-topic/s-2.2-topic-validate.md",
     "skills/m3-creation/s-3.1.1-content-system.md",
