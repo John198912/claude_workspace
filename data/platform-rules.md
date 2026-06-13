@@ -48,6 +48,14 @@
   - 文字重复率 > 15% 触发审核；结构/观点相似度 > 60% 认定为洗稿，三次永久封号
 - **forbidden_terms**：诱导分享/诱导关注话术；夸大医疗/金融收益；硬广互推（不进入推荐池）；营销词占比 > 15% 驳回；未标注「广告」的商业推广
 - **soft_recommendations**：每段 ≤ 5 行；重点加粗；开头 30 字告知价值；完读率是核心流量指标（2026 年起）
+- **format_compat**（编辑器硬兼容事实，排版时必须遵守；排版决策心法见 `skills/m4-distribution/s-4.2.2-adapt.md` 公众号段）：
+  - 仅支持**纯内联样式**：CSS 必须写在元素 `style` 属性里，外部 `<style>` 标签与 class 会被剥除
+  - `<blockquote>` 样式失效：2024-11 起微信编辑器剥离 blockquote 的边距/竖线样式，引用块改用 `<section style=...>` 实现
+  - `<ul>/<ol>` 列表样式不稳定：项目符号/缩进常被吞，建议用 `<section>` + flexbox 模拟列表
+  - `margin` 简写被丢弃：`margin: 0 0 1em` 这类分拆写法会被清掉，须合并为单值或用 `margin-top/margin-bottom` 分别写
+  - **外链失效**：正文超链接（非公众号内部）不可点击，须转为文末脚注/参考列表
+  - **不支持 Mermaid / JavaScript / SVG 动态素材**：流程图须转为静态 PNG 图片后插入
+  - 中文正文用半角标点（`, : ; ? ! . ( )`）是典型 AI 味且不符合中文排版，须转全角（`，：；？！。（）`）
 - **source_url**：
   - 微信公众平台运营规范（官方）：https://mp.weixin.qq.com/mp/opshowpage?action=newoplaw
   - 微信公众平台规则中心：公众号后台 → 设置 → 规则中心

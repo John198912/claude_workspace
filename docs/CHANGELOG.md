@@ -2,6 +2,60 @@
 
 ---
 
+## V2.3 (2026-06-14)
+
+原生整合两个外部写作方法论技能的心法，修正内容质量门的两个方法论缺陷。仅借鉴心法，不复制代码/主题/脚本；来源均已标注。
+
+### 🆕 新增 / 优化
+
+#### 1. 改稿纪律与「少动」原则（a-3.2.4-iterate）
+
+借鉴 [orange2ai/renwei-writing](https://github.com/orange2ai/renwei-writing)（双授权：公开发表免费、付费/闭源需购买授权）的人味儿心法。
+
+- 新增「改稿模式判别（动手第一步）」：模式A（AI 生成稿迭代，放手四轮）/ 模式B（作者原稿·口述稿润色，少动纪律优先）
+- 模式B 七条硬约束：只做减法/毛边是手迹/不写金句/拿不准白描/只扫动过的句/逐处可逆/上限隐形
+- 修正原第三轮表达优化中的破折号误导：从“适当使用破折号增加节奏感”改为“破折号是最可靠 AI 信号，不要主动加，新增从严”
+
+#### 2. AI 写作检测方法论修正（s-3.4.2-ai-check V2.0）
+
+插入 V2.0 方法论修正层（优先级高于旧文），修正原“22 特征全文盲扫、分越高越像 AI”的失败模式（把人写手迹当瑕疵）。
+
+- 四条纪律：只审改动段不扫原文 / 人写迹象白名单 / 聚集判定 / 不要误伤
+- 22 特征表降级为“信号参考库”，仅按 V2.0 纪律用；旧文保留作信号细化参考
+
+#### 3. 公众号排版决策方法论（s-4.2.2-adapt）
+
+借鉴 [xiaohuailabs/xiaohu-wechat-format](https://github.com/xiaohuailabs/xiaohu-wechat-format)（原仓库无 LICENSE）的“写作时排版决策”心法，已剥离私有容器语法，不移植其渲染引擎。
+
+- 三条排版硬规则（形态决定形式 / 反炫技自检 / 密度交替）
+- 内容形态 → 元素决策表 + 小标题前缀变体池 + 反炫技自检阈值 + 元素边界
+
+#### 4. 微信编辑器硬兼容规则（data/platform-rules.md）
+
+公众号段新增 `format_compat` 块：纯内联样式 / blockquote 样式失效 / 列表用 section+flexbox / margin 简写被丢 / 外链转脚注 / 不支持 Mermaid·JS·SVG / 半角转全角。
+
+#### 5. 质量门接口（docs/QUALITY-GATES.md）
+
+- `content_quality_gate` 新增「人味儿回归」：改写回归据 s-3.4.2 V2.0 修正层判 AI 味
+- `publish_package_gate` 新增「公众号排版反炫技」：据 s-4.2.2 阈值 + platform-rules `format_compat` 核对
+
+### 📝 变更文件
+
+| 文件 | 变更 | 来源标注 |
+|------|------|---------|
+| `skills/m3-creation/a-3.2.4-iterate.md` | 新增改稿模式判别与少动纪律；修正破折号误导 | renwei（双授权） |
+| `skills/m3-creation/s-3.4.2-ai-check/README.md` | 插入 V2.0 方法论修正层；22 特征降为信号库 | renwei（双授权）+ dbskill CC BY-NC 4.0 |
+| `skills/m4-distribution/s-4.2.2-adapt.md` | 公众号段原生整合排版决策方法论 | xiaohu（无 LICENSE，仅借鉴心法） |
+| `data/platform-rules.md` | 公众号段新增 `format_compat` 硬兼容事实 | — |
+| `docs/QUALITY-GATES.md` | 3.4/3.5 各接一条 V2.3 接口 | — |
+
+### 来源与授权说明
+
+- **renwei**：纯心法零代码。公开发表免费使用；付费/闭源场景需向作者购买授权。本仓库仅原生整合其心法文字，使用者商业发布时需自行确认授权。
+- **xiaohu**：原仓库无 LICENSE。本仓库**仅借鉴其写作时排版决策方法论**，不复制代码、主题 JSON 与发布脚本；若需一键导出微信 HTML，建议在 Claude Code 侧把 xiaohu 排版引擎作为外部依赖调用。
+
+---
+
 ## V1.2 (2026-03-07)
 
 基于 [ai-agent-team](https://github.com/Sunnyeung369/ai-agent-team) 项目的对比分析，进行了四项架构优化。
