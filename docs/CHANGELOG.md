@@ -2,6 +2,28 @@
 
 ---
 
+## V2.3.1 (2026-06-14)
+
+接入微信 HTML 一键导出——M4 分发流程的"最后一公里"。排版渲染由外部引擎 [xiaohuailabs/xiaohu-wechat-format](https://github.com/xiaohuailabs/xiaohu-wechat-format) 完成，不复制代码进仓库。
+
+### 🆕 新增
+
+- `scripts/wechat-html-export.py`：公众号 HTML 一键导出脚本，读取 wechat slice Markdown → 调用 xiaohu 外部引擎 `format.py` → 输出内联样式 HTML
+- `scripts/test_wechat_export.py`：回归测试
+
+### 🔧 优化
+
+- `scripts/publish-checklist-gen.py`：公众号清单新增"微信 HTML 导出确认"与"手机预览"两项
+- `skills/m4-distribution/s-4.2.2-adapt.md`：公众号段新增「HTML 导出」小节，说明外部依赖与一键导出命令
+
+### 📝 设计原则
+
+- xiaohu-wechat-format 作为外部依赖独立安装到 `~/.claude/skills/xiaohu-wechat-format/`，不复制代码/主题 JSON（规避无 LICENSE 风险）
+- 默认主题 `newspaper`（干净专业，匹配 SOUL 品牌）
+- 空正文/引擎未安装/私有容器残留均明确报错，不静默跳过
+
+---
+
 ## V2.3 (2026-06-14)
 
 原生整合两个外部写作方法论技能的心法，修正内容质量门的两个方法论缺陷。仅借鉴心法，不复制代码/主题/脚本；来源均已标注。
